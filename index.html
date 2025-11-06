@@ -3,646 +3,462 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MRS DigitalAgency — Agenție digitală multilingvă în Halle</title>
-  <meta name="description" content="MRS DigitalAgency: site-uri rapide, reclame locale, Google Business și automatizări AI. Multilingv RO/FR/NL/EN/ES. Halle, Belgia." />
-  <meta property="og:title" content="MRS DigitalAgency — Creștem afaceri în Belgia (RO/FR/NL/EN/ES)" />
-  <meta property="og:description" content="Site-uri în 48h, SEO local, campanii sociale, suport în română, franceză, flamandă, engleză și spaniolă." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://dummyimage.com/1200x630/0f172a/ffffff&text=MRS+DigitalAgency" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' rx='48' fill='%230f172a'/%3E%3Ctext x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='120' font-family='Arial'%3EM%3C/text%3E%3C/svg%3E" />
+  <title>MRS DigitalAgency — Facem afacerea ta vizibilă</title>
+  <meta name="description" content="MRS DigitalAgency • Websites rapide, reclame locale, Google Business, automatizări AI. Halle, Belgia." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     html{scroll-behavior:smooth}
-    /* Fix: anchor sections hidden under sticky header */
-    section{scroll-margin-top:90px}
-    .glass{backdrop-filter:saturate(160%) blur(8px)}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
+    /* evita ca sectiunile-ancora sa intre sub header */
+    section{scroll-margin-top:92px}
+    /* sticla pentru header */
+    .glass{backdrop-filter:saturate(160%) blur(10px)}
   </style>
 </head>
-<body class="bg-slate-50 text-slate-800">
-  <!-- Top Bar -->
-  <header class="sticky top-0 z-40 bg-white/80 glass border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
-      <a href="#home" class="flex items-center gap-2 font-semibold text-slate-900">
-        <span class="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-slate-900 text-white">M</span>
-        <span>MRS DigitalAgency</span>
+<body class="bg-white text-slate-900">
+  <!-- Header -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-white/70 glass border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2">
+        <span class="inline-flex h-9 w-9 rounded-xl bg-blue-600 items-center justify-center text-white font-bold">M</span>
+        <span class="font-extrabold tracking-tight">MRS <span class="text-blue-600">DigitalAgency</span></span>
       </a>
-      <nav class="hidden md:flex items-center gap-6 text-sm">
-        <a href="#services" class="hover:text-slate-900" data-i18n="nav.services">Servicii</a>
-        <a href="#packages" class="hover:text-slate-900" data-i18n="nav.packages">Pachete</a>
-        <a href="#portfolio" class="hover:text-slate-900" data-i18n="nav.portfolio">Portofoliu</a>
-        <a href="#faq" class="hover:text-slate-900" data-i18n="nav.faq">Întrebări</a>
-        <a href="#contact" class="px-4 py-2 rounded-xl bg-slate-900 text-white hover:bg-slate-700" data-i18n="nav.contact">Contact</a>
-        <!-- Language selector -->
-        <div class="relative">
-          <select id="lang" class="rounded-lg border border-slate-300 px-3 py-1">
-            <option value="ro">RO</option>
-            <option value="fr">FR</option>
-            <option value="nl">NL</option>
-            <option value="en">EN</option>
-            <option value="es">ES</option>
-          </select>
-        </div>
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+        <a href="#services" class="hover:text-blue-600" data-i18n="nav.services">Servicii</a>
+        <a href="#pricing" class="hover:text-blue-600" data-i18n="nav.packages">Pachete</a>
+        <a href="#portfolio" class="hover:text-blue-600" data-i18n="nav.portfolio">Portofoliu</a>
+        <a href="#faq" class="hover:text-blue-600" data-i18n="nav.faq">Întrebări</a>
+        <a href="#contact" class="hover:text-blue-600" data-i18n="nav.contact">Contact</a>
       </nav>
-      <div class="md:hidden flex items-center gap-2">
-        <select id="lang-m" class="rounded-lg border border-slate-300 px-2 py-1">
+      <div class="hidden md:flex items-center gap-3">
+        <select id="lang" class="rounded-xl border-slate-300 text-sm">
           <option value="ro">RO</option>
           <option value="fr">FR</option>
           <option value="nl">NL</option>
           <option value="en">EN</option>
           <option value="es">ES</option>
         </select>
-        <a href="https://wa.me/32489202801" class="px-3 py-2 rounded-xl bg-emerald-600 text-white text-sm" data-i18n="cta.whatsapp">WhatsApp</a>
+        <a href="https://wa.me/32489202801" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-blue-600 text-white hover:bg-blue-700 text-sm"><span class="i">📲</span><span data-i18n="cta.whatsapp">WhatsApp</span></a>
+      </div>
+      <button class="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-xl border border-slate-300" id="openMenu">☰</button>
+    </div>
+    <!-- mobile menu -->
+    <div id="mobile" class="md:hidden hidden border-t border-slate-200">
+      <div class="px-4 py-3 flex items-center justify-between">
+        <nav class="flex flex-wrap gap-4 text-sm">
+          <a href="#services" class="block py-1" data-i18n="nav.services">Servicii</a>
+          <a href="#pricing" class="block py-1" data-i18n="nav.packages">Pachete</a>
+          <a href="#portfolio" class="block py-1" data-i18n="nav.portfolio">Portofoliu</a>
+          <a href="#faq" class="block py-1" data-i18n="nav.faq">Întrebări</a>
+          <a href="#contact" class="block py-1" data-i18n="nav.contact">Contact</a>
+        </nav>
+        <select id="lang-m" class="rounded-xl border-slate-300 text-sm">
+          <option value="ro">RO</option>
+          <option value="fr">FR</option>
+          <option value="nl">NL</option>
+          <option value="en">EN</option>
+          <option value="es">ES</option>
+        </select>
       </div>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section id="home" class="relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-amber-100 via-transparent to-sky-100 pointer-events-none"></div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 grid lg:grid-cols-2 gap-10 items-center">
-      <div>
-        <p class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200 text-xs text-slate-700" data-i18n="hero.badge">Agenție în Halle · RO / FR / NL / EN / ES</p>
-        <h1 class="mt-6 text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900" data-i18n="hero.title">Facem afacerea ta vizibilă în Belgia</h1>
-        <p class="mt-5 text-lg text-slate-600" data-i18n="hero.subtitle">Site-uri în 48h, reclame locale, Google Business și automatizări cu AI. Pachete simple, rezultate rapide, suport multilingv.</p>
-        <div class="mt-8 flex flex-wrap items-center gap-3">
-          <a href="#packages" class="px-5 py-3 rounded-xl bg-emerald-600 text-white hover:bg-emerald-700" data-i18n="cta.viewPackages">Vezi pachetele</a>
-          <a href="#contact" class="px-5 py-3 rounded-xl border border-slate-300 hover:border-slate-400" data-i18n="cta.quote">Cere ofertă</a>
-        </div>
-        <div class="mt-6 flex items-center gap-6 text-sm text-slate-500">
-          <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-emerald-500"></span> <span data-i18n="hero.badgeSpeed">Livrare rapidă</span></div>
-          <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-emerald-500"></span> <span data-i18n="hero.badgeFair">Prețuri corecte</span></div>
-          <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-emerald-500"></span> <span data-i18n="hero.badgeSupport">Suport multilingv</span></div>
-        </div>
-      </div>
-      <div class="relative">
-        <div class="absolute -inset-6 bg-gradient-to-tr from-emerald-200/60 to-sky-200/60 rounded-3xl blur-2xl"></div>
-        <div class="relative bg-white rounded-2xl shadow-xl ring-1 ring-slate-100 p-6">
-          <img src="https://dummyimage.com/800x500/f8fafc/0f172a&text=Preview+Website" alt="Website preview" class="rounded-lg w-full" />
-          <div class="mt-4 grid grid-cols-3 gap-3 text-center text-xs">
-            <div class="p-3 rounded-xl bg-slate-50"><div class="font-semibold text-slate-900">48h</div><div class="text-slate-500" data-i18n="hero.cardTime">timp livrare</div></div>
-            <div class="p-3 rounded-xl bg-slate-50"><div class="font-semibold text-slate-900">RO/FR/NL/EN/ES</div><div class="text-slate-500" data-i18n="hero.cardMulti">multilingv</div></div>
-            <div class="p-3 rounded-xl bg-slate-50"><div class="font-semibold text-slate-900">AI</div><div class="text-slate-500" data-i18n="hero.cardAI">automatizări</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section id="services" class="py-16 lg:py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-2xl">
-        <h2 class="text-3xl font-bold text-slate-900" data-i18n="services.title">Ce putem face pentru afacerea ta</h2>
-        <p class="mt-3 text-slate-600" data-i18n="services.subtitle">Servicii clare, optimizate pentru rezultate rapide și bugete SME.</p>
-      </div>
-      <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="p-6 rounded-2xl bg-slate-50 ring-1 ring-slate-200">
-          <h3 class="font-semibold text-slate-900" data-i18n="services.item1.title">Site-uri rapide</h3>
-          <p class="mt-2 text-sm text-slate-600" data-i18n="services.item1.desc">One-page sau multi-page, optimizate mobil, în 48–72h.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-slate-50 ring-1 ring-slate-200">
-          <h3 class="font-semibold text-slate-900" data-i18n="services.item2.title">Google Business & SEO local</h3>
-          <p class="mt-2 text-sm text-slate-600" data-i18n="services.item2.desc">Te punem pe hartă: Maps, recenzii, fotografii, cuvinte cheie locale.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-slate-50 ring-1 ring-slate-200">
-          <h3 class="font-semibold text-slate-900" data-i18n="services.item3.title">Reclame Facebook/Instagram</h3>
-          <p class="mt-2 text-sm text-slate-600" data-i18n="services.item3.desc">Campanii simple, orientate pe lead-uri, cu rapoarte clare.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-slate-50 ring-1 ring-slate-200">
-          <h3 class="font-semibold text-slate-900" data-i18n="services.item4.title">Conținut & design</h3>
-          <p class="mt-2 text-sm text-slate-600" data-i18n="services.item4.desc">Texte, vizuale, meniuri digitale, template-uri Canva.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-slate-50 ring-1 ring-slate-200">
-          <h3 class="font-semibold text-slate-900" data-i18n="services.item5.title">Automatizări cu AI</h3>
-          <p class="mt-2 text-sm text-slate-600" data-i18n="services.item5.desc">Răspunsuri automate, formulare, traduceri RO/FR/NL/EN/ES.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-slate-50 ring-1 ring-slate-200">
-          <h3 class="font-semibold text-slate-900" data-i18n="services.item6.title">Mentenanță & suport</h3>
-          <p class="mt-2 text-sm text-slate-600" data-i18n="services.item6.desc">Actualizări, securitate, asistență pe WhatsApp.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Packages -->
-  <section id="packages" class="py-16 lg:py-24 bg-slate-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-2xl">
-        <h2 class="text-3xl font-bold text-slate-900" data-i18n="pricing.title">Pachete & prețuri</h2>
-        <p class="mt-3 text-slate-600" data-i18n="pricing.subtitle">Transparență totală. Alegi ce ți se potrivește, fără costuri ascunse.</p>
-      </div>
-      <div class="mt-10 grid md:grid-cols-3 gap-6">
-        <!-- Start -->
-        <div class="rounded-2xl bg-white ring-1 ring-slate-200 p-6 flex flex-col">
-          <h3 class="text-lg font-semibold text-slate-900" data-i18n="pricing.start.title">Start</h3>
-          <p class="mt-1 text-sm text-slate-600" data-i18n="pricing.start.note">Perfect pentru început</p>
-          <div class="mt-4 text-3xl font-extrabold text-slate-900">150 €</div>
-          <ul class="mt-4 space-y-2 text-sm text-slate-700">
-            <li data-i18n="pricing.start.i1">Logo simplu</li>
-            <li data-i18n="pricing.start.i2">Pagină Facebook + Google Business</li>
-            <li data-i18n="pricing.start.i3">1 rundă revizii</li>
-          </ul>
-          <a href="#contact" class="mt-6 inline-flex justify-center px-4 py-2 rounded-xl bg-slate-900 text-white hover:bg-slate-700" data-i18n="pricing.ctaOrder">Comandă</a>
-        </div>
-        <!-- Pro -->
-        <div class="rounded-2xl bg-white ring-2 ring-emerald-500 p-6 shadow-lg flex flex-col">
-          <div class="inline-flex self-start px-2 py-1 text-xs rounded-md bg-emerald-50 text-emerald-700 ring-1 ring-emerald-200" data-i18n="pricing.popular">Popular</div>
-          <h3 class="mt-2 text-lg font-semibold text-slate-900" data-i18n="pricing.pro.title">Pro</h3>
-          <p class="mt-1 text-sm text-slate-600" data-i18n="pricing.pro.note">Rezultate rapide</p>
-          <div class="mt-4 text-3xl font-extrabold text-slate-900">400 €</div>
-          <ul class="mt-4 space-y-2 text-sm text-slate-700">
-            <li data-i18n="pricing.pro.i1">Site one-page (RO/FR/NL/EN/ES opțional)</li>
-            <li data-i18n="pricing.pro.i2">SEO local + conectare WhatsApp</li>
-            <li data-i18n="pricing.pro.i3">Campanie Facebook inițială</li>
-          </ul>
-          <a href="#contact" class="mt-6 inline-flex justify-center px-4 py-2 rounded-xl bg-emerald-600 text-white hover:bg-emerald-700" data-i18n="pricing.ctaChoosePro">Alege Pro</a>
-        </div>
-        <!-- Premium -->
-        <div class="rounded-2xl bg-white ring-1 ring-slate-200 p-6 flex flex-col">
-          <h3 class="text-lg font-semibold text-slate-900" data-i18n="pricing.premium.title">Premium</h3>
-          <p class="mt-1 text-sm text-slate-600" data-i18n="pricing.premium.note">Creștere accelerată</p>
-          <div class="mt-4 text-3xl font-extrabold text-slate-900">700 €</div>
-          <ul class="mt-4 space-y-2 text-sm text-slate-700">
-            <li data-i18n="pricing.premium.i1">Site multi-page + blog</li>
-            <li data-i18n="pricing.premium.i2">Conținut & design incluse</li>
-            <li data-i18n="pricing.premium.i3">Automatizări AI + 30 zile mentenanță</li>
-          </ul>
-          <a href="#contact" class="mt-6 inline-flex justify-center px-4 py-2 rounded-xl bg-slate-900 text-white hover:bg-slate-700" data-i18n="pricing.ctaQuote">Cere ofertă</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Portfolio -->
-  <section id="portfolio" class="py-16 lg:py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-2xl">
-        <h2 class="text-3xl font-bold text-slate-900" data-i18n="portfolio.title">Exemple & rezultate</h2>
-        <p class="mt-3 text-slate-600" data-i18n="portfolio.subtitle">Câteva machete pentru nișe populare. Le adaptăm rapid pe brandul tău.</p>
-      </div>
-      <div class="mt-8 grid md:grid-cols-3 gap-6">
-        <figure class="rounded-2xl overflow-hidden border border-slate-200 bg-slate-50">
-          <img src="https://dummyimage.com/800x600/e2e8f0/0f172a&text=Transport+%2F+Curier" alt="Site transport" class="w-full" />
-          <figcaption class="p-4 text-sm" data-i18n="portfolio.i1">Transport & curier — landing page cu formular rapid</figcaption>
-        </figure>
-        <figure class="rounded-2xl overflow-hidden border border-slate-200 bg-slate-50">
-          <img src="https://dummyimage.com/800x600/e2e8f0/0f172a&text=Restaurant+%2F+Meniu" alt="Site restaurant" class="w-full" />
-          <figcaption class="p-4 text-sm" data-i18n="portfolio.i2">Restaurant — meniu digital și rezervări</figcaption>
-        </figure>
-        <figure class="rounded-2xl overflow-hidden border border-slate-200 bg-slate-50">
-          <img src="https://dummyimage.com/800x600/e2e8f0/0f172a&text=Servicii+%2F+Meseria%C8%99i" alt="Site meseriași" class="w-full" />
-          <figcaption class="p-4 text-sm" data-i18n="portfolio.i3">Meseriași — Google Maps + recenzii automate</figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq" class="py-16 lg:py-24 bg-slate-50">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-bold text-slate-900" data-i18n="faq.title">Întrebări frecvente</h2>
-      <div class="mt-8 divide-y divide-slate-200">
-        <details class="group py-4">
-          <summary class="flex cursor-pointer list-none items-center justify-between font-medium text-slate-900"><span data-i18n="faq.q1">În cât timp livrați un site?</span><span class="transition-transform group-open:rotate-180">⌄</span></summary>
-          <p class="mt-2 text-slate-600" data-i18n="faq.a1">One-page în 48–72h, proiectele mai complexe în 7–10 zile.</p>
-        </details>
-        <details class="group py-4">
-          <summary class="flex cursor-pointer list-none items-center justify-between font-medium text-slate-900"><span data-i18n="faq.q2">Lucrați în franceză / neerlandeză / engleză / spaniolă?</span><span class="transition-transform group-open:rotate-180">⌄</span></summary>
-          <p class="mt-2 text-slate-600" data-i18n="faq.a2">Da. Putem oferi conținut multilingv RO/FR/NL/EN/ES și administrare conturi locale.</p>
-        </details>
-        <details class="group py-4">
-          <summary class="flex cursor-pointer list-none items-center justify-between font-medium text-slate-900"><span data-i18n="faq.q3">Cum plătesc?</span><span class="transition-transform group-open:rotate-180">⌄</span></summary>
-          <p class="mt-2 text-slate-600" data-i18n="faq.a3">Prin factură, transfer bancar, Revolut Business sau Stripe (card).</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="py-16 lg:py-24 bg-white">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center">
-        <h2 class="text-3xl font-bold text-slate-900" data-i18n="contact.title">Hai să începem</h2>
-        <p class="mt-3 text-slate-600" data-i18n="contact.subtitle">Spune-ne pe scurt ce ai nevoie. Răspundem în aceeași zi lucrătoare.</p>
-      </div>
-      <form class="mt-8 grid gap-4 bg-slate-50 p-6 rounded-2xl ring-1 ring-slate-200" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="contact" />
-        <p class="hidden"><label>Nu completa: <input name="bot-field" /></label></p>
-        <div class="grid md:grid-cols-2 gap-4">
-          <div>
-            <label class="block text-sm font-medium text-slate-700" data-i18n="contact.name">Nume</label>
-            <input name="name" required class="mt-1 w-full rounded-xl border-slate-300 focus:border-slate-500 focus:ring-slate-500" />
-          </div>
-          <div>
-            <label class="block text-sm font-medium text-slate-700" data-i18n="contact.email">Email</label>
-            <input name="email" type="email" required class="mt-1 w-full rounded-xl border-slate-300 focus:border-slate-500 focus:ring-slate-500" />
-          </div>
-        </div>
+  <main class="pt-20">
+    <!-- Hero -->
+    <section class="py-16 lg:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
         <div>
-          <label class="block text-sm font-medium text-slate-700" data-i18n="contact.phone">Telefon / WhatsApp</label>
-          <input name="phone" class="mt-1 w-full rounded-xl border-slate-300 focus:border-slate-500 focus:ring-slate-500" />
+          <p class="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1 rounded-full bg-blue-50 text-blue-700 ring-1 ring-blue-200" data-i18n="hero.badge">Agenție în Halle · RO / FR / NL / EN / ES</p>
+          <h1 class="mt-4 text-4xl/tight font-extrabold" data-i18n="hero.title">Facem afacerea ta vizibilă în Belgia</h1>
+          <p class="mt-4 text-slate-600" data-i18n="hero.subtitle">Site-uri în 48h, reclame locale, Google Business și automatizări cu AI. Pachete simple, rezultate rapide, suport multilingv.</p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="#pricing" class="px-5 py-3 rounded-xl bg-blue-600 text-white hover:bg-blue-700" data-i18n="cta.viewPackages">Vezi pachetele</a>
+            <a href="#contact" class="px-5 py-3 rounded-xl ring-1 ring-slate-300 hover:ring-slate-400" data-i18n="cta.quote">Cere ofertă</a>
+          </div>
+          <div class="mt-6 grid grid-cols-3 gap-3 text-sm">
+            <div class="rounded-xl bg-slate-50 p-3 ring-1 ring-slate-200"><span class="text-slate-500" data-i18n="hero.cardTime">timp livrare</span><div class="font-semibold">48–72h</div></div>
+            <div class="rounded-xl bg-slate-50 p-3 ring-1 ring-slate-200"><span class="text-slate-500" data-i18n="hero.cardMulti">multilingv</span><div class="font-semibold">RO/FR/NL/EN/ES</div></div>
+            <div class="rounded-xl bg-slate-50 p-3 ring-1 ring-slate-200"><span class="text-slate-500" data-i18n="hero.cardAI">automatizări</span><div class="font-semibold">AI-ready</div></div>
+          </div>
         </div>
-        <div>
-          <label class="block text-sm font-medium text-slate-700" data-i18n="contact.message">Mesaj</label>
-          <textarea name="message" rows="4" class="mt-1 w-full rounded-xl border-slate-300 focus:border-slate-500 focus:ring-slate-500" placeholder="Ex: am un restaurant în Halle și vreau un site + Google Business"></textarea>
+        <div class="relative">
+          <img alt="MRS DigitalAgency – echipă digitală" class="rounded-2xl w-full object-cover shadow-xl" loading="lazy"
+               src="data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='1600' height='1000'>\
+<defs><linearGradient id='g' x1='0' x2='1'>\
+<stop stop-color='%232563eb' offset='0'/>\
+<stop stop-color='%230f172a' offset='1'/>\
+</linearGradient></defs>\
+<rect width='100%' height='100%' fill='url(%23g)'/>\
+<g fill='white' opacity='0.96' font-family='Arial' font-size='64'>\
+<text x='50%' y='45%' text-anchor='middle'>MRS DigitalAgency</text>\
+<text x='50%' y='58%' text-anchor='middle'>We make your business visible</text>\
+</g></svg>" />
         </div>
-        <div class="flex flex-wrap items-center gap-3">
-          <button class="px-5 py-3 rounded-xl bg-emerald-600 text-white hover:bg-emerald-700" type="submit" data-i18n="contact.send">Trimite</button>
-          <a href="https://wa.me/32489202801" class="px-5 py-3 rounded-xl border border-slate-300 hover:border-slate-400" data-i18n="contact.whatsapp">Scrie pe WhatsApp</a>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-16 lg:py-24 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl">
+          <h2 class="text-3xl font-bold" data-i18n="services.title">Ce putem face pentru afacerea ta</h2>
+          <p class="mt-2 text-slate-600" data-i18n="services.subtitle">Servicii clare, optimizate pentru rezultate rapide și bugete SME.</p>
         </div>
-        <p class="text-xs text-slate-500" data-i18n="contact.privacy">Prin trimitere, ești de acord cu prelucrarea datelor pentru a-ți răspunde la solicitare.</p>
-      </form>
-    </div>
-  </section>
+        <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="p-6 rounded-2xl bg-white ring-1 ring-slate-200">
+            <div class="h-10 w-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold">W</div>
+            <h3 class="mt-4 font-semibold" data-i18n="services.item1.title">Site-uri rapide</h3>
+            <p class="mt-1 text-sm text-slate-600" data-i18n="services.item1.desc">One-page sau multi-page, optimizate mobil, în 48–72h.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-white ring-1 ring-slate-200">
+            <div class="h-10 w-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold">G</div>
+            <h3 class="mt-4 font-semibold" data-i18n="services.item2.title">Google Business & SEO local</h3>
+            <p class="mt-1 text-sm text-slate-600" data-i18n="services.item2.desc">Te punem pe hartă: Maps, recenzii, fotografii, cuvinte cheie locale.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-white ring-1 ring-slate-200">
+            <div class="h-10 w-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold">A</div>
+            <h3 class="mt-4 font-semibold" data-i18n="services.item5.title">Automatizări cu AI</h3>
+            <p class="mt-1 text-sm text-slate-600" data-i18n="services.item5.desc">Răspunsuri automate, formulare, traduceri RO/FR/NL/EN/ES.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="py-16 lg:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl">
+          <h2 class="text-3xl font-bold" data-i18n="pricing.title">Pachete & prețuri</h2>
+          <p class="mt-2 text-slate-600" data-i18n="pricing.subtitle">Transparență totală. Alegi ce ți se potrivește, fără costuri ascunse.</p>
+        </div>
+        <div class="mt-8 grid md:grid-cols-3 gap-6">
+          <!-- Start -->
+          <div class="p-6 rounded-2xl ring-1 ring-slate-200 bg-white flex flex-col">
+            <h3 class="text-lg font-semibold" data-i18n="pricing.start.title">Start</h3>
+            <p class="text-sm text-slate-500" data-i18n="pricing.start.note">Perfect pentru început</p>
+            <div class="mt-4 text-3xl font-extrabold">€199</div>
+            <ul class="mt-4 space-y-2 text-sm text-slate-700">
+              <li data-i18n="pricing.start.i1">Logo simplu</li>
+              <li data-i18n="pricing.start.i2">Pagină Facebook + Google Business</li>
+              <li data-i18n="pricing.start.i3">1 rundă revizii</li>
+            </ul>
+            <a href="#contact" class="mt-6 px-4 py-2 rounded-xl bg-blue-600 text-white hover:bg-blue-700 text-center" data-i18n="pricing.ctaOrder">Comandă</a>
+          </div>
+          <!-- Pro -->
+          <div class="p-6 rounded-2xl ring-2 ring-blue-300 bg-blue-50 relative flex flex-col">
+            <span class="absolute -top-3 right-4 text-xs px-2 py-1 rounded-full bg-blue-600 text-white" data-i18n="pricing.popular">Popular</span>
+            <h3 class="text-lg font-semibold" data-i18n="pricing.pro.title">Pro</h3>
+            <p class="text-sm text-slate-600" data-i18n="pricing.pro.note">Rezultate rapide</p>
+            <div class="mt-4 text-3xl font-extrabold">€399</div>
+            <ul class="mt-4 space-y-2 text-sm text-slate-700">
+              <li data-i18n="pricing.pro.i1">Site one-page (RO/FR/NL/EN/ES opțional)</li>
+              <li data-i18n="pricing.pro.i2">SEO local + conectare WhatsApp</li>
+              <li data-i18n="pricing.pro.i3">Campanie Facebook inițială</li>
+            </ul>
+            <a href="#contact" class="mt-6 px-4 py-2 rounded-xl bg-blue-600 text-white hover:bg-blue-700 text-center" data-i18n="pricing.ctaChoosePro">Alege Pro</a>
+          </div>
+          <!-- Premium -->
+          <div class="p-6 rounded-2xl ring-1 ring-slate-200 bg-white flex flex-col">
+            <h3 class="text-lg font-semibold" data-i18n="pricing.premium.title">Premium</h3>
+            <p class="text-sm text-slate-500" data-i18n="pricing.premium.note">Creștere accelerată</p>
+            <div class="mt-4 text-3xl font-extrabold">€899</div>
+            <ul class="mt-4 space-y-2 text-sm text-slate-700">
+              <li data-i18n="pricing.premium.i1">Site multi-page + blog</li>
+              <li data-i18n="pricing.premium.i2">Conținut & design incluse</li>
+              <li data-i18n="pricing.premium.i3">Automatizări AI + 30 zile mentenanță</li>
+            </ul>
+            <a href="#contact" class="mt-6 px-4 py-2 rounded-xl ring-1 ring-slate-300 hover:ring-slate-400 text-center" data-i18n="pricing.ctaQuote">Cere ofertă</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="py-16 lg:py-24 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl">
+          <h2 class="text-3xl font-bold" data-i18n="portfolio.title">Exemple & rezultate</h2>
+          <p class="mt-2 text-slate-600" data-i18n="portfolio.subtitle">Câteva machete pentru nișe populare. Le adaptăm rapid pe brandul tău.</p>
+        </div>
+        <div class="mt-8 grid md:grid-cols-3 gap-6">
+          <figure class="bg-white rounded-2xl ring-1 ring-slate-200 overflow-hidden">
+            <img alt="Transport & Logistică" class="w-full object-cover" loading="lazy"
+                 src="data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='1600' height='900'>\
+<rect width='100%' height='100%' fill='%230f172a'/>\
+<rect x='120' y='320' width='1360' height='260' rx='24' fill='%232563eb'/>\
+<circle cx='300' cy='620' r='58' fill='white'/>\
+<circle cx='1280' cy='620' r='58' fill='white'/>\
+<text x='50%' y='56%' fill='white' font-family='Arial' font-size='48' text-anchor='middle'>Transport & Logistică</text>\
+</svg>" />
+            <figcaption class="p-4 text-sm" data-i18n="portfolio.i1">Transport & curier — landing page cu formular rapid</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl ring-1 ring-slate-200 overflow-hidden">
+            <img alt="Restaurant – meniu digital" class="w-full object-cover" loading="lazy"
+                 src="data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='1600' height='900'>\
+<rect width='100%' height='100%' fill='%230f172a'/>\
+<g fill='white'>\
+<rect x='220' y='220' width='520' height='460' rx='24' fill='%232563eb'/>\
+<rect x='920' y='220' width='460' height='460' rx='24' fill='white' opacity='0.15'/>\
+<text x='480' y='500' font-size='48' font-family='Arial' text-anchor='middle'>Meniu Digital</text>\
+</g></svg>" />
+            <figcaption class="p-4 text-sm" data-i18n="portfolio.i2">Restaurant — meniu digital și rezervări</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl ring-1 ring-slate-200 overflow-hidden">
+            <img alt="Servicii & Meseriași" class="w-full object-cover" loading="lazy"
+                 src="data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='1600' height='900'>\
+<defs><linearGradient id='gg' x1='0' x2='1'>\
+<stop stop-color='%230f172a' offset='0'/>\
+<stop stop-color='%232563eb' offset='1'/>\
+</linearGradient></defs>\
+<rect width='100%' height='100%' fill='url(%23gg)'/>\
+<g stroke='white' stroke-width='18' opacity='0.9' fill='none'>\
+<line x1='300' y1='300' x2='800' y2='300'/>\
+<line x1='300' y1='360' x2='700' y2='360'/>\
+<rect x='950' y='300' width='300' height='220' rx='20'/>\
+</g>\
+<text x='50%' y='80%' fill='white' font-family='Arial' font-size='48' text-anchor='middle'>Servicii & Meseriași</text>\
+</svg>" />
+            <figcaption class="p-4 text-sm" data-i18n="portfolio.i3">Meseriași — Google Maps + recenzii automate</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-16 lg:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl">
+          <h2 class="text-3xl font-bold" data-i18n="faq.title">Întrebări frecvente</h2>
+        </div>
+        <div class="mt-8 grid md:grid-cols-3 gap-6 text-sm">
+          <div class="p-6 rounded-2xl ring-1 ring-slate-200">
+            <h3 class="font-semibold" data-i18n="faq.q1">În cât timp livrați un site?</h3>
+            <p class="mt-2 text-slate-600" data-i18n="faq.a1">One-page în 48–72h, proiectele mai complexe în 7–10 zile.</p>
+          </div>
+          <div class="p-6 rounded-2xl ring-1 ring-slate-200">
+            <h3 class="font-semibold" data-i18n="faq.q2">Lucrați în franceză / neerlandeză / engleză / spaniolă?</h3>
+            <p class="mt-2 text-slate-600" data-i18n="faq.a2">Da. Putem oferi conținut multilingv RO/FR/NL/EN/ES și administrare conturi locale.</p>
+          </div>
+          <div class="p-6 rounded-2xl ring-1 ring-slate-200">
+            <h3 class="font-semibold" data-i18n="faq.q3">Cum plătesc?</h3>
+            <p class="mt-2 text-slate-600" data-i18n="faq.a3">Prin factură, transfer bancar, Revolut Business sau Stripe (card).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-16 lg:py-24 bg-white">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h2 class="text-3xl font-bold" data-i18n="contact.title">Hai să începem</h2>
+          <p class="mt-3 text-slate-600" data-i18n="contact.subtitle">Spune-ne pe scurt ce ai nevoie. Răspundem în aceeași zi lucrătoare.</p>
+        </div>
+        <form id="contactForm" class="mt-8 grid gap-4 bg-slate-50 p-6 rounded-2xl ring-1 ring-slate-200">
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-slate-700" data-i18n="contact.name">Nume</label>
+              <input name="name" required class="mt-1 w-full rounded-xl border-slate-300 focus:border-slate-500 focus:ring-slate-500" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-slate-700" data-i18n="contact.email">Email</label>
+              <input name="email" type="email" required class="mt-1 w-full rounded-xl border-slate-300 focus:border-slate-500 focus:ring-slate-500" />
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-slate-700" data-i18n="contact.phone">Telefon / WhatsApp</label>
+            <input name="phone" class="mt-1 w-full rounded-xl border-slate-300 focus:border-slate-500 focus:ring-slate-500" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-slate-700" data-i18n="contact.message">Mesaj</label>
+            <textarea name="message" rows="4" class="mt-1 w-full rounded-xl border-slate-300 focus:border-slate-500 focus:ring-slate-500" placeholder="Ex: am un restaurant în Halle și vreau un site + Google Business"></textarea>
+          </div>
+          <div class="flex flex-wrap items-center gap-3">
+            <button class="px-5 py-3 rounded-xl bg-blue-600 text-white hover:bg-blue-700" type="submit" data-i18n="contact.send">Trimite</button>
+            <a href="https://wa.me/32489202801" class="px-5 py-3 rounded-xl border border-slate-300 hover:border-slate-400" data-i18n="contact.whatsapp">Scrie pe WhatsApp</a>
+          </div>
+          <p class="text-xs text-slate-500" data-i18n="contact.privacy">Prin trimitere, ești de acord cu prelucrarea datelor pentru a-ți răspunde la solicitare.</p>
+        </form>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
-  <footer class="py-10 bg-slate-900 text-slate-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8">
+  <footer class="border-t border-slate-200 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid md:grid-cols-3 gap-8 text-sm">
       <div>
-        <div class="flex items-center gap-2 font-semibold text-white">
-          <span class="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-white text-slate-900">M</span>
-          <span>MRS DigitalAgency</span>
-        </div>
-        <p class="mt-3 text-sm" data-i18n="footer.desc">Agenție digitală multilingvă. Halle, Belgia.</p>
+        <div class="font-extrabold">MRS <span class="text-blue-600">DigitalAgency</span></div>
+        <p class="mt-2 text-slate-600" data-i18n="footer.desc">Agenție digitală multilingvă. Halle, Belgia.</p>
       </div>
       <div>
-        <h4 class="font-semibold text-white" data-i18n="footer.contact">Contact</h4>
-        <ul class="mt-3 space-y-2 text-sm">
-          <li>Email: <a href="mailto:mrsdigitalagency@gmail.com" class="underline">mrsdigitalagency@gmail.com</a></li>
-          <li>WhatsApp: <a href="https://wa.me/32489202801" class="underline">+32 489 20 28 01</a></li>
+        <div class="font-semibold" data-i18n="footer.contact">Contact</div>
+        <ul class="mt-2 space-y-1 text-slate-600">
+          <li>WhatsApp: <a class="text-blue-600 hover:underline" href="https://wa.me/32489202801">+32 489 20 28 01</a></li>
+          <li>Email: <a class="text-blue-600 hover:underline" href="mailto:mrsdigitalagency26@gmail.com">mrsdigitalagency26@gmail.com</a></li>
           <li data-i18n="footer.city">Adresă: Halle, BE</li>
         </ul>
       </div>
       <div>
-        <h4 class="font-semibold text-white" data-i18n="footer.links">Linkuri</h4>
-        <ul class="mt-3 space-y-2 text-sm">
-          <li><a href="#services" class="underline" data-i18n="nav.services">Servicii</a></li>
-          <li><a href="#packages" class="underline" data-i18n="nav.packages">Pachete</a></li>
-          <li><a href="#portfolio" class="underline" data-i18n="nav.portfolio">Portofoliu</a></li>
-          <li><a href="#contact" class="underline" data-i18n="nav.contact">Contact</a></li>
+        <div class="font-semibold" data-i18n="footer.links">Linkuri</div>
+        <ul class="mt-2 space-y-1 text-slate-600">
+          <li><a class="hover:underline" href="#services" data-i18n="nav.services">Servicii</a></li>
+          <li><a class="hover:underline" href="#pricing" data-i18n="nav.packages">Pachete</a></li>
+          <li><a class="hover:underline" href="#portfolio" data-i18n="nav.portfolio">Portofoliu</a></li>
+          <li><a class="hover:underline" href="#contact" data-i18n="nav.contact">Contact</a></li>
         </ul>
       </div>
     </div>
-    <div class="mt-8 text-center text-xs text-slate-500">© <span id="year"></span> MRS DigitalAgency. <span data-i18n="footer.rights">Toate drepturile rezervate.</span></div>
+    <div class="border-t border-slate-200 py-4 text-center text-xs text-slate-500">
+      © <span id="year"></span> MRS DigitalAgency — <span data-i18n="footer.rights">Toate drepturile rezervate.</span>
+    </div>
   </footer>
 
   <script>
+    // Mobile menu toggle
+    (function(){
+      const btn = document.getElementById('openMenu');
+      const m = document.getElementById('mobile');
+      if(btn && m){ btn.addEventListener('click', ()=> m.classList.toggle('hidden')); }
+    })();
+
     // Year
     document.addEventListener('DOMContentLoaded', () => {
-      document.getElementById('year').textContent = new Date().getFullYear();
-    });
+      const y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
     });
 
-    // Simple i18n
+    // Contact -> open mail client with prefilled body
+    (function bindContact(){
+      const form = document.getElementById('contactForm');
+      if (!form) return;
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        const data = Object.fromEntries(new FormData(form).entries());
+        const body = encodeURIComponent(
+          `Nume: ${data.name || ''}\nEmail: ${data.email || ''}\nTelefon: ${data.phone || ''}\nMesaj: ${data.message || ''}`
+        );
+        window.location.href = `mailto:mrsdigitalagency26@gmail.com?subject=Solicitare%20MRS%20DigitalAgency&body=${body}`;
+      });
+    })();
+
+    // i18n dictionaries (keys used on this page)
     const translations = {
       ro: {
-        'nav.services': 'Servicii',
-        'nav.packages': 'Pachete',
-        'nav.portfolio': 'Portofoliu',
-        'nav.faq': 'Întrebări',
-        'nav.contact': 'Contact',
-        'cta.whatsapp': 'WhatsApp',
-        'hero.badge': 'Agenție în Halle · RO / FR / NL / EN / ES',
-        'hero.title': 'Facem afacerea ta vizibilă în Belgia',
-        'hero.subtitle': 'Site-uri în 48h, reclame locale, Google Business și automatizări cu AI. Pachete simple, rezultate rapide, suport multilingv.',
-        'cta.viewPackages': 'Vezi pachetele',
-        'cta.quote': 'Cere ofertă',
-        'hero.badgeSpeed': 'Livrare rapidă',
-        'hero.badgeFair': 'Prețuri corecte',
-        'hero.badgeSupport': 'Suport multilingv',
-        'hero.cardTime': 'timp livrare',
-        'hero.cardMulti': 'multilingv',
-        'hero.cardAI': 'automatizări',
-        'services.title': 'Ce putem face pentru afacerea ta',
-        'services.subtitle': 'Servicii clare, optimizate pentru rezultate rapide și bugete SME.',
-        'services.item1.title': 'Site-uri rapide',
-        'services.item1.desc': 'One-page sau multi-page, optimizate mobil, în 48–72h.',
-        'services.item2.title': 'Google Business & SEO local',
-        'services.item2.desc': 'Te punem pe hartă: Maps, recenzii, fotografii, cuvinte cheie locale.',
-        'services.item3.title': 'Reclame Facebook/Instagram',
-        'services.item3.desc': 'Campanii simple, orientate pe lead-uri, cu rapoarte clare.',
-        'services.item4.title': 'Conținut & design',
-        'services.item4.desc': 'Texte, vizuale, meniuri digitale, template-uri Canva.',
-        'services.item5.title': 'Automatizări cu AI',
-        'services.item5.desc': 'Răspunsuri automate, formulare, traduceri RO/FR/NL/EN/ES.',
-        'services.item6.title': 'Mentenanță & suport',
-        'services.item6.desc': 'Actualizări, securitate, asistență pe WhatsApp.',
-        'pricing.title': 'Pachete & prețuri',
-        'pricing.subtitle': 'Transparență totală. Alegi ce ți se potrivește, fără costuri ascunse.',
-        'pricing.start.title': 'Start',
-        'pricing.start.note': 'Perfect pentru început',
-        'pricing.start.i1': 'Logo simplu',
-        'pricing.start.i2': 'Pagină Facebook + Google Business',
-        'pricing.start.i3': '1 rundă revizii',
-        'pricing.ctaOrder': 'Comandă',
-        'pricing.popular': 'Popular',
-        'pricing.pro.title': 'Pro',
-        'pricing.pro.note': 'Rezultate rapide',
-        'pricing.pro.i1': 'Site one-page (RO/FR/NL/EN/ES opțional)',
-        'pricing.pro.i2': 'SEO local + conectare WhatsApp',
-        'pricing.pro.i3': 'Campanie Facebook inițială',
-        'pricing.ctaChoosePro': 'Alege Pro',
-        'pricing.premium.title': 'Premium',
-        'pricing.premium.note': 'Creștere accelerată',
-        'pricing.premium.i1': 'Site multi-page + blog',
-        'pricing.premium.i2': 'Conținut & design incluse',
-        'pricing.premium.i3': 'Automatizări AI + 30 zile mentenanță',
-        'pricing.ctaQuote': 'Cere ofertă',
-        'portfolio.title': 'Exemple & rezultate',
-        'portfolio.subtitle': 'Câteva machete pentru nișe populare. Le adaptăm rapid pe brandul tău.',
-        'portfolio.i1': 'Transport & curier — landing page cu formular rapid',
-        'portfolio.i2': 'Restaurant — meniu digital și rezervări',
-        'portfolio.i3': 'Meseriași — Google Maps + recenzii automate',
-        'faq.title': 'Întrebări frecvente',
-        'faq.q1': 'În cât timp livrați un site?',
-        'faq.a1': 'One-page în 48–72h, proiectele mai complexe în 7–10 zile.',
-        'faq.q2': 'Lucrați în franceză / neerlandeză / engleză / spaniolă?',
-        'faq.a2': 'Da. Putem oferi conținut multilingv RO/FR/NL/EN/ES și administrare conturi locale.',
-        'faq.q3': 'Cum plătesc?',
-        'faq.a3': 'Prin factură, transfer bancar, Revolut Business sau Stripe (card).',
-        'contact.title': 'Hai să începem',
-        'contact.subtitle': 'Spune-ne pe scurt ce ai nevoie. Răspundem în aceeași zi lucrătoare.',
-        'contact.name': 'Nume',
-        'contact.email': 'Email',
-        'contact.phone': 'Telefon / WhatsApp',
-        'contact.message': 'Mesaj',
-        'contact.send': 'Trimite',
-        'contact.whatsapp': 'Scrie pe WhatsApp',
-        'contact.privacy': 'Prin trimitere, ești de acord cu prelucrarea datelor pentru a-ți răspunde la solicitare.',
-        'footer.desc': 'Agenție digitală multilingvă. Halle, Belgia.',
-        'footer.contact': 'Contact',
-        'footer.links': 'Linkuri',
-        'footer.city': 'Adresă: Halle, BE',
-        'footer.rights': 'Toate drepturile rezervate.'
+        'nav.services':'Servicii','nav.packages':'Pachete','nav.portfolio':'Portofoliu','nav.faq':'Întrebări','nav.contact':'Contact','cta.whatsapp':'WhatsApp',
+        'hero.badge':'Agenție în Halle · RO / FR / NL / EN / ES','hero.title':'Facem afacerea ta vizibilă în Belgia','hero.subtitle':'Site-uri în 48h, reclame locale, Google Business și automatizări cu AI. Pachete simple, rezultate rapide, suport multilingv.',
+        'cta.viewPackages':'Vezi pachetele','cta.quote':'Cere ofertă','hero.cardTime':'timp livrare','hero.cardMulti':'multilingv','hero.cardAI':'automatizări',
+        'services.title':'Ce putem face pentru afacerea ta','services.subtitle':'Servicii clare, optimizate pentru rezultate rapide și bugete SME.',
+        'services.item1.title':'Site-uri rapide','services.item1.desc':'One-page sau multi-page, optimizate mobil, în 48–72h.',
+        'services.item2.title':'Google Business & SEO local','services.item2.desc':'Te punem pe hartă: Maps, recenzii, fotografii, cuvinte cheie locale.',
+        'services.item5.title':'Automatizări cu AI','services.item5.desc':'Răspunsuri automate, formulare, traduceri RO/FR/NL/EN/ES.',
+        'pricing.title':'Pachete & prețuri','pricing.subtitle':'Transparență totală. Alegi ce ți se potrivește, fără costuri ascunse.',
+        'pricing.start.title':'Start','pricing.start.note':'Perfect pentru început','pricing.start.i1':'Logo simplu','pricing.start.i2':'Pagină Facebook + Google Business','pricing.start.i3':'1 rundă revizii','pricing.ctaOrder':'Comandă',
+        'pricing.popular':'Popular','pricing.pro.title':'Pro','pricing.pro.note':'Rezultate rapide','pricing.pro.i1':'Site one-page (RO/FR/NL/EN/ES opțional)','pricing.pro.i2':'SEO local + conectare WhatsApp','pricing.pro.i3':'Campanie Facebook inițială','pricing.ctaChoosePro':'Alege Pro',
+        'pricing.premium.title':'Premium','pricing.premium.note':'Creștere accelerată','pricing.premium.i1':'Site multi-page + blog','pricing.premium.i2':'Conținut & design incluse','pricing.premium.i3':'Automatizări AI + 30 zile mentenanță','pricing.ctaQuote':'Cere ofertă',
+        'portfolio.title':'Exemple & rezultate','portfolio.subtitle':'Câteva machete pentru nișe populare. Le adaptăm rapid pe brandul tău.','portfolio.i1':'Transport & curier — landing page cu formular rapid','portfolio.i2':'Restaurant — meniu digital și rezervări','portfolio.i3':'Meseriași — Google Maps + recenzii automate',
+        'faq.title':'Întrebări frecvente','faq.q1':'În cât timp livrați un site?','faq.a1':'One-page în 48–72h, proiectele mai complexe în 7–10 zile.','faq.q2':'Lucrați în franceză / neerlandeză / engleză / spaniolă?','faq.a2':'Da. Putem oferi conținut multilingv RO/FR/NL/EN/ES și administrare conturi locale.','faq.q3':'Cum plătesc?','faq.a3':'Prin factură, transfer bancar, Revolut Business sau Stripe (card).',
+        'contact.title':'Hai să începem','contact.subtitle':'Spune-ne pe scurt ce ai nevoie. Răspundem în aceeași zi lucrătoare.','contact.name':'Nume','contact.email':'Email','contact.phone':'Telefon / WhatsApp','contact.message':'Mesaj','contact.send':'Trimite','contact.whatsapp':'Scrie pe WhatsApp','contact.privacy':'Prin trimitere, ești de acord cu prelucrarea datelor pentru a-ți răspunde la solicitare.',
+        'footer.desc':'Agenție digitală multilingvă. Halle, Belgia.','footer.contact':'Contact','footer.links':'Linkuri','footer.city':'Adresă: Halle, BE','footer.rights':'Toate drepturile rezervate.'
       },
       fr: {
-        'nav.services': 'Services',
-        'nav.packages': 'Forfaits',
-        'nav.portfolio': 'Portfolio',
-        'nav.faq': 'FAQ',
-        'nav.contact': 'Contact',
-        'cta.whatsapp': 'WhatsApp',
-        'hero.badge': 'Agence à Halle · RO / FR / NL / EN / ES',
-        'hero.title': 'Nous rendons votre entreprise visible en Belgique',
-        'hero.subtitle': "Sites en 48h, pubs locales, Google Business et automatisations IA. Offres simples, résultats rapides, support multilingue.",
-        'cta.viewPackages': 'Voir les forfaits',
-        'cta.quote': 'Demander un devis',
-        'hero.badgeSpeed': 'Livraison rapide',
-        'hero.badgeFair': 'Prix justes',
-        'hero.badgeSupport': 'Support multilingue',
-        'hero.cardTime': 'délai',
-        'hero.cardMulti': 'multilingue',
-        'hero.cardAI': 'automatisations',
-        'services.title': 'Ce que nous faisons pour votre activité',
-        'services.subtitle': 'Services clairs, optimisés pour des résultats rapides et des budgets PME.',
-        'services.item1.title': 'Sites rapides',
-        'services.item1.desc': 'One-page ou multi-page, optimisés mobile, en 48–72h.',
-        'services.item2.title': 'Google Business & SEO local',
-        'services.item2.desc': 'Cartes, avis, photos, mots-clés locaux.',
-        'services.item3.title': 'Publicités Facebook/Instagram',
-        'services.item3.desc': 'Campagnes orientées leads avec reporting clair.',
-        'services.item4.title': 'Contenu & design',
-        'services.item4.desc': 'Textes, visuels, menus digitaux, modèles Canva.',
-        'services.item5.title': 'Automatisations IA',
-        'services.item5.desc': 'Réponses automatiques, formulaires, traductions RO/FR/NL/EN/ES.',
-        'services.item6.title': 'Maintenance & support',
-        'services.item6.desc': 'Mises à jour, sécurité, assistance WhatsApp.',
-        'pricing.title': 'Forfaits & prix',
-        'pricing.subtitle': 'Transparence totale. Choisissez ce qui vous convient, sans frais cachés.',
-        'pricing.start.title': 'Start',
-        'pricing.start.note': 'Parfait pour commencer',
-        'pricing.start.i1': 'Logo simple',
-        'pricing.start.i2': 'Page Facebook + Google Business',
-        'pricing.start.i3': '1 tour de révisions',
-        'pricing.ctaOrder': 'Commander',
-        'pricing.popular': 'Populaire',
-        'pricing.pro.title': 'Pro',
-        'pricing.pro.note': 'Résultats rapides',
-        'pricing.pro.i1': 'Site one-page (RO/FR/NL/EN/ES en option)',
-        'pricing.pro.i2': 'SEO local + WhatsApp connecté',
-        'pricing.pro.i3': 'Campagne Facebook initiale',
-        'pricing.ctaChoosePro': 'Choisir Pro',
-        'pricing.premium.title': 'Premium',
-        'pricing.premium.note': 'Croissance accélérée',
-        'pricing.premium.i1': 'Site multi-page + blog',
-        'pricing.premium.i2': 'Contenu & design inclus',
-        'pricing.premium.i3': 'Automatisations IA + 30 jours de maintenance',
-        'pricing.ctaQuote': 'Demander un devis',
-        'portfolio.title': 'Exemples & résultats',
-        'portfolio.subtitle': 'Quelques maquettes pour des niches populaires. Adaptées à votre marque.',
-        'portfolio.i1': 'Transport & coursier — landing page avec formulaire rapide',
-        'portfolio.i2': 'Restaurant — menu digital et réservations',
-        'portfolio.i3': 'Artisans — Google Maps + avis automatisés',
-        'faq.title': 'Questions fréquentes',
-        'faq.q1': 'En combien de temps livrez-vous un site ?',
-        'faq.a1': 'One-page en 48–72h, projets complexes en 7–10 jours.',
-        'faq.q2': 'Travaillez-vous en FR / NL / EN / ES ?',
-        'faq.a2': 'Oui, contenu multilingue RO/FR/NL/EN/ES et gestion des comptes locaux.',
-        'faq.q3': 'Comment payer ?',
-        'faq.a3': 'Facture, virement, Revolut Business ou Stripe (carte).',
-        'contact.title': 'Commençons',
-        'contact.subtitle': 'Dites-nous brièvement votre besoin. Réponse le jour ouvrable.',
-        'contact.name': 'Nom',
-        'contact.email': 'Email',
-        'contact.phone': 'Téléphone / WhatsApp',
-        'contact.message': 'Message',
-        'contact.send': 'Envoyer',
-        'contact.whatsapp': 'Écrire sur WhatsApp',
-        'contact.privacy': 'En envoyant, vous acceptez le traitement des données pour répondre à votre demande.',
-        'footer.desc': 'Agence digitale multilingue. Halle, Belgique.',
-        'footer.contact': 'Contact',
-        'footer.links': 'Liens',
-        'footer.city': 'Adresse : Halle, BE',
-        'footer.rights': 'Tous droits réservés.'
+        'nav.services':'Services','nav.packages':'Forfaits','nav.portfolio':'Portfolio','nav.faq':'FAQ','nav.contact':'Contact','cta.whatsapp':'WhatsApp',
+        'hero.badge':'Agence à Halle · RO / FR / NL / EN / ES','hero.title':'Nous rendons votre entreprise visible en Belgique','hero.subtitle':'Sites en 48h, pubs locales, Google Business et automatisations IA. Offres simples, résultats rapides, support multilingue.',
+        'cta.viewPackages':'Voir les forfaits','cta.quote':'Demander un devis','hero.cardTime':'délai','hero.cardMulti':'multilingue','hero.cardAI':'automatisations',
+        'services.title':'Ce que nous faisons pour votre activité','services.subtitle':'Services clairs, optimisés pour des résultats rapides et des budgets PME.',
+        'services.item1.title':'Sites rapides','services.item1.desc':'One-page ou multi-page, optimisés mobile, en 48–72h.',
+        'services.item2.title':'Google Business & SEO local','services.item2.desc':'Cartes, avis, photos, mots-clés locaux.',
+        'services.item5.title':'Automatisations IA','services.item5.desc':'Réponses automatiques, formulaires, traductions RO/FR/NL/EN/ES.',
+        'pricing.title':'Forfaits & prix','pricing.subtitle':'Transparence totale. Choisissez ce qui vous convient, sans frais cachés.',
+        'pricing.start.title':'Start','pricing.start.note':'Parfait pour commencer','pricing.start.i1':'Logo simple','pricing.start.i2':'Page Facebook + Google Business','pricing.start.i3':'1 tour de révisions','pricing.ctaOrder':'Commander',
+        'pricing.popular':'Populaire','pricing.pro.title':'Pro','pricing.pro.note':'Résultats rapides','pricing.pro.i1':'Site one-page (RO/FR/NL/EN/ES en option)','pricing.pro.i2':'SEO local + WhatsApp connecté','pricing.pro.i3':'Campagne Facebook initiale','pricing.ctaChoosePro':'Choisir Pro',
+        'pricing.premium.title':'Premium','pricing.premium.note':'Croissance accélérée','pricing.premium.i1':'Site multi-page + blog','pricing.premium.i2':'Contenu & design inclus','pricing.premium.i3':'Automatisations IA + 30 jours de maintenance','pricing.ctaQuote':'Demander un devis',
+        'portfolio.title':'Exemples & résultats','portfolio.subtitle':'Quelques maquettes pour des niches populaires. Adaptées à votre marque.','portfolio.i1':'Transport & coursier — landing page avec formulaire rapide','portfolio.i2':'Restaurant — menu digital et réservations','portfolio.i3':'Artisans — Google Maps + avis automatisés',
+        'faq.title':'Questions fréquentes','faq.q1':'En combien de temps livrez-vous un site ?','faq.a1':'One-page en 48–72h, projets complexes en 7–10 jours.','faq.q2':'Travaillez-vous en FR / NL / EN / ES ?','faq.a2':'Oui. Contenu multilingue RO/FR/NL/EN/ES et gestion des comptes locaux.','faq.q3':'Comment payer ?','faq.a3':'Facture, virement, Revolut Business ou Stripe (carte).',
+        'contact.title':'Commençons','contact.subtitle':'Dites-nous brièvement votre besoin. Réponse le jour ouvrable.','contact.name':'Nom','contact.email':'Email','contact.phone':'Téléphone / WhatsApp','contact.message':'Message','contact.send':'Envoyer','contact.whatsapp':'Écrire sur WhatsApp','contact.privacy':'En envoyant, vous acceptez le traitement des données pour répondre à votre demande.',
+        'footer.desc':'Agence digitale multilingue. Halle, Belgique.','footer.contact':'Contact','footer.links':'Liens','footer.city':'Adresse : Halle, BE','footer.rights':'Tous droits réservés.'
       },
       nl: {
-        'nav.services': 'Diensten',
-        'nav.packages': 'Pakketten',
-        'nav.portfolio': 'Portfolio',
-        'nav.faq': 'FAQ',
-        'nav.contact': 'Contact',
-        'cta.whatsapp': 'WhatsApp',
-        'hero.badge': 'Agentschap in Halle · RO / FR / NL / EN / ES',
-        'hero.title': 'We maken je bedrijf zichtbaar in België',
-        'hero.subtitle': 'Websites in 48u, lokale advertenties, Google Business en AI-automatiseringen. Simpele pakketten, snelle resultaten, meertalige support.',
-        'cta.viewPackages': 'Bekijk pakketten',
-        'cta.quote': 'Offerte aanvragen',
-        'hero.badgeSpeed': 'Snelle levering',
-        'hero.badgeFair': 'Eerlijke prijzen',
-        'hero.badgeSupport': 'Meertalige support',
-        'hero.cardTime': 'levertijd',
-        'hero.cardMulti': 'meertalig',
-        'hero.cardAI': 'automatiseringen',
-        'services.title': 'Wat we voor jouw bedrijf doen',
-        'services.subtitle': 'Heldere diensten, geoptimaliseerd voor snelle resultaten en KMO-budgetten.',
-        'services.item1.title': 'Snelle websites',
-        'services.item1.desc': 'One-page of multi-page, mobiel geoptimaliseerd, in 48–72u.',
-        'services.item2.title': 'Google Business & lokale SEO',
-        'services.item2.desc': 'Op de kaart: Maps, reviews, foto’s, lokale keywords.',
-        'services.item3.title': 'Facebook/Instagram advertenties',
-        'services.item3.desc': 'Leadgerichte campagnes met duidelijke rapportage.',
-        'services.item4.title': 'Content & design',
-        'services.item4.desc': 'Teksten, visuals, digitale menu’s, Canva-templates.',
-        'services.item5.title': 'AI‑automatiseringen',
-        'services.item5.desc': 'Auto‑antwoorden, formulieren, vertalingen RO/FR/NL/EN/ES.',
-        'services.item6.title': 'Onderhoud & support',
-        'services.item6.desc': 'Updates, security, WhatsApp‑assistentie.',
-        'pricing.title': 'Pakketten & prijzen',
-        'pricing.subtitle': 'Volledige transparantie. Kies wat past, geen verborgen kosten.',
-        'pricing.start.title': 'Start',
-        'pricing.start.note': 'Perfect om te beginnen',
-        'pricing.start.i1': 'Eenvoudig logo',
-        'pricing.start.i2': 'Facebook‑pagina + Google Business',
-        'pricing.start.i3': '1 revisieronde',
-        'pricing.ctaOrder': 'Bestel',
-        'pricing.popular': 'Populair',
-        'pricing.pro.title': 'Pro',
-        'pricing.pro.note': 'Snelle resultaten',
-        'pricing.pro.i1': 'One‑page site (RO/FR/NL/EN/ES optioneel)',
-        'pricing.pro.i2': 'Lokale SEO + WhatsApp‑koppeling',
-        'pricing.pro.i3': 'Eerste Facebook‑campagne',
-        'pricing.ctaChoosePro': 'Kies Pro',
-        'pricing.premium.title': 'Premium',
-        'pricing.premium.note': 'Versnelde groei',
-        'pricing.premium.i1': 'Multi‑page site + blog',
-        'pricing.premium.i2': 'Content & design inbegrepen',
-        'pricing.premium.i3': 'AI‑automatiseringen + 30 dagen onderhoud',
-        'pricing.ctaQuote': 'Offerte',
-        'portfolio.title': 'Voorbeelden & resultaten',
-        'portfolio.subtitle': 'Enkele mockups voor populaire niches. Snel op jouw merk aangepast.',
-        'portfolio.i1': 'Transport & koerier — landingspagina met snel formulier',
-        'portfolio.i2': 'Restaurant — digitaal menu en reservaties',
-        'portfolio.i3': 'Vakmensen — Google Maps + automatische reviews',
-        'faq.title': 'Veelgestelde vragen',
-        'faq.q1': 'Hoe snel leveren jullie een site?',
-        'faq.a1': 'One‑page in 48–72u, complexere projecten in 7–10 dagen.',
-        'faq.q2': 'Werken jullie in FR / NL / EN / ES?',
-        'faq.a2': 'Ja. Meertalige content RO/FR/NL/EN/ES en beheer van lokale accounts.',
-        'faq.q3': 'Hoe betaal ik?',
-        'faq.a3': 'Factuur, overschrijving, Revolut Business of Stripe (kaart).',
-        'contact.title': 'Laten we starten',
-        'contact.subtitle': 'Vertel kort wat je nodig hebt. Antwoord op dezelfde werkdag.',
-        'contact.name': 'Naam',
-        'contact.email': 'E‑mail',
-        'contact.phone': 'Telefoon / WhatsApp',
-        'contact.message': 'Bericht',
-        'contact.send': 'Verzenden',
-        'contact.whatsapp': 'Schrijf op WhatsApp',
-        'contact.privacy': 'Door te verzenden ga je akkoord met gegevensverwerking voor een reactie.',
-        'footer.desc': 'Meertalig digitaal agentschap. Halle, België.',
-        'footer.contact': 'Contact',
-        'footer.links': 'Links',
-        'footer.city': 'Adres: Halle, BE',
-        'footer.rights': 'Alle rechten voorbehouden.'
+        'nav.services':'Diensten','nav.packages':'Pakketten','nav.portfolio':'Portfolio','nav.faq':'FAQ','nav.contact':'Contact','cta.whatsapp':'WhatsApp',
+        'hero.badge':'Agentschap in Halle · RO / FR / NL / EN / ES','hero.title':'We maken je bedrijf zichtbaar in België','hero.subtitle':'Websites in 48u, lokale advertenties, Google Business en AI-automatiseringen. Simpele pakketten, snelle resultaten, meertalige support.',
+        'cta.viewPackages':'Bekijk pakketten','cta.quote':'Offerte aanvragen','hero.cardTime':'levertijd','hero.cardMulti':'meertalig','hero.cardAI':'automatiseringen',
+        'services.title':'Wat we voor jouw bedrijf doen','services.subtitle':'Heldere diensten, geoptimaliseerd voor snelle resultaten en KMO-budgetten.',
+        'services.item1.title':'Snelle websites','services.item1.desc':'One-page of multi-page, mobiel geoptimaliseerd, in 48–72u.',
+        'services.item2.title':'Google Business & lokale SEO','services.item2.desc':'Op de kaart: Maps, reviews, foto’s, lokale keywords.',
+        'services.item5.title':'AI‑automatiseringen','services.item5.desc':'Auto‑antwoorden, formulieren, vertalingen RO/FR/NL/EN/ES.',
+        'pricing.title':'Pakketten & prijzen','pricing.subtitle':'Volledige transparantie. Kies wat past, geen verborgen kosten.',
+        'pricing.start.title':'Start','pricing.start.note':'Perfect om te beginnen','pricing.start.i1':'Eenvoudig logo','pricing.start.i2':'Facebook‑pagina + Google Business','pricing.start.i3':'1 revisieronde','pricing.ctaOrder':'Bestel',
+        'pricing.popular':'Populair','pricing.pro.title':'Pro','pricing.pro.note':'Snelle resultaten','pricing.pro.i1':'One‑page site (RO/FR/NL/EN/ES optioneel)','pricing.pro.i2':'Lokale SEO + WhatsApp‑koppeling','pricing.pro.i3':'Eerste Facebook‑campagne','pricing.ctaChoosePro':'Kies Pro',
+        'pricing.premium.title':'Premium','pricing.premium.note':'Versnelde groei','pricing.premium.i1':'Multi‑page site + blog','pricing.premium.i2':'Content & design inbegrepen','pricing.premium.i3':'AI‑automatiseringen + 30 dagen onderhoud','pricing.ctaQuote':'Offerte',
+        'portfolio.title':'Voorbeelden & resultaten','portfolio.subtitle':'Enkele mockups voor populaire niches. Snel op jouw merk aangepast.','portfolio.i1':'Transport & koerier — landingspagina met snel formulier','portfolio.i2':'Restaurant — digitaal menu en reservaties','portfolio.i3':'Vakmensen — Google Maps + automatische reviews',
+        'faq.title':'Veelgestelde vragen','faq.q1':'Hoe snel leveren jullie een site?','faq.a1':'One‑page in 48–72u, complexere projecten in 7–10 dagen.','faq.q2':'Werken jullie in FR / NL / EN / ES?','faq.a2':'Ja. Meertalige content RO/FR/NL/EN/ES en beheer van lokale accounts.','faq.q3':'Hoe betaal ik?','faq.a3':'Factuur, overschrijving, Revolut Business of Stripe (kaart).',
+        'contact.title':'Laten we starten','contact.subtitle':'Vertel kort wat je nodig hebt. Antwoord op dezelfde werkdag.','contact.name':'Naam','contact.email':'E‑mail','contact.phone':'Telefoon / WhatsApp','contact.message':'Bericht','contact.send':'Verzenden','contact.whatsapp':'Schrijf op WhatsApp','contact.privacy':'Door te verzenden ga je akkoord met gegevensverwerking voor een reactie.',
+        'footer.desc':'Meertalig digitaal agentschap. Halle, België.','footer.contact':'Contact','footer.links':'Links','footer.city':'Adres: Halle, BE','footer.rights':'Alle rechten voorbehouden.'
       },
       en: {
-        'nav.services': 'Services',
-        'nav.packages': 'Packages',
-        'nav.portfolio': 'Portfolio',
-        'nav.faq': 'FAQ',
-        'nav.contact': 'Contact',
-        'cta.whatsapp': 'WhatsApp',
-        'hero.badge': 'Agency in Halle · RO / FR / NL / EN / ES',
-        'hero.title': 'We make your business visible in Belgium',
-        'hero.subtitle': 'Websites in 48h, local ads, Google Business and AI automations. Simple packages, fast results, multilingual support.',
-        'cta.viewPackages': 'View packages',
-        'cta.quote': 'Request a quote',
-        'hero.badgeSpeed': 'Fast delivery',
-        'hero.badgeFair': 'Fair pricing',
-        'hero.badgeSupport': 'Multilingual support',
-        'hero.cardTime': 'delivery time',
-        'hero.cardMulti': 'multilingual',
-        'hero.cardAI': 'automations',
-        'services.title': 'What we can do for your business',
-        'services.subtitle': 'Clear services, optimized for quick results and SME budgets.',
-        'services.item1.title': 'Fast websites',
-        'services.item1.desc': 'One-page or multi-page, mobile-optimized, in 48–72h.',
-        'services.item2.title': 'Google Business & local SEO',
-        'services.item2.desc': 'Maps, reviews, photos, local keywords.',
-        'services.item3.title': 'Facebook/Instagram ads',
-        'services.item3.desc': 'Lead-oriented campaigns with clear reporting.',
-        'services.item4.title': 'Content & design',
-        'services.item4.desc': 'Copy, visuals, digital menus, Canva templates.',
-        'services.item5.title': 'AI automations',
-        'services.item5.desc': 'Auto-replies, forms, RO/FR/NL/EN/ES translations.',
-        'services.item6.title': 'Maintenance & support',
-        'services.item6.desc': 'Updates, security, WhatsApp assistance.',
-        'pricing.title': 'Packages & pricing',
-        'pricing.subtitle': 'Full transparency. Choose what fits, no hidden fees.',
-        'pricing.start.title': 'Start',
-        'pricing.start.note': 'Perfect to begin',
-        'pricing.start.i1': 'Simple logo',
-        'pricing.start.i2': 'Facebook Page + Google Business',
-        'pricing.start.i3': '1 revision round',
-        'pricing.ctaOrder': 'Order',
-        'pricing.popular': 'Popular',
-        'pricing.pro.title': 'Pro',
-        'pricing.pro.note': 'Fast results',
-        'pricing.pro.i1': 'One-page site (RO/FR/NL/EN/ES optional)',
-        'pricing.pro.i2': 'Local SEO + WhatsApp connect',
-        'pricing.pro.i3': 'Initial Facebook campaign',
-        'pricing.ctaChoosePro': 'Choose Pro',
-        'pricing.premium.title': 'Premium',
-        'pricing.premium.note': 'Accelerated growth',
-        'pricing.premium.i1': 'Multi-page site + blog',
-        'pricing.premium.i2': 'Content & design included',
-        'pricing.premium.i3': 'AI automations + 30 days maintenance',
-        'pricing.ctaQuote': 'Get a quote',
-        'portfolio.title': 'Examples & results',
-        'portfolio.subtitle': 'Mockups for popular niches. Quickly adapted to your brand.',
-        'portfolio.i1': 'Transport & courier — landing page with fast form',
-        'portfolio.i2': 'Restaurant — digital menu & reservations',
-        'portfolio.i3': 'Trades — Google Maps + auto reviews',
-        'faq.title': 'Frequently asked questions',
-        'faq.q1': 'How fast do you deliver a site?',
-        'faq.a1': 'One-page in 48–72h, more complex in 7–10 days.',
-        'faq.q2': 'Do you work in FR / NL / EN / ES?',
-        'faq.a2': 'Yes. Multilingual content RO/FR/NL/EN/ES and local account management.',
-        'faq.q3': 'How do I pay?',
-        'faq.a3': 'Invoice, bank transfer, Revolut Business or Stripe (card).',
-        'contact.title': "Let's get started",
-        'contact.subtitle': 'Tell us briefly what you need. We respond the same business day.',
-        'contact.name': 'Name',
-        'contact.email': 'Email',
-        'contact.phone': 'Phone / WhatsApp',
-        'contact.message': 'Message',
-        'contact.send': 'Send',
-        'contact.whatsapp': 'Message on WhatsApp',
-        'contact.privacy': 'By submitting, you agree to data processing to reply to your request.',
-        'footer.desc': 'Multilingual digital agency. Halle, Belgium.',
-        'footer.contact': 'Contact',
-        'footer.links': 'Links',
-        'footer.city': 'Address: Halle, BE',
-        'footer.rights': 'All rights reserved.'
+        'nav.services':'Services','nav.packages':'Packages','nav.portfolio':'Portfolio','nav.faq':'FAQ','nav.contact':'Contact','cta.whatsapp':'WhatsApp',
+        'hero.badge':'Agency in Halle · RO / FR / NL / EN / ES','hero.title':'We make your business visible in Belgium','hero.subtitle':'Websites in 48h, local ads, Google Business and AI automations. Simple packages, fast results, multilingual support.',
+        'cta.viewPackages':'View packages','cta.quote':'Request a quote','hero.cardTime':'delivery time','hero.cardMulti':'multilingual','hero.cardAI':'automations',
+        'services.title':'What we can do for your business','services.subtitle':'Clear services, optimized for quick results and SME budgets.',
+        'services.item1.title':'Fast websites','services.item1.desc':'One-page or multi-page, mobile-optimized, in 48–72h.',
+        'services.item2.title':'Google Business & local SEO','services.item2.desc':'Maps, reviews, photos, local keywords.',
+        'services.item5.title':'AI automations','services.item5.desc':'Auto-replies, forms, RO/FR/NL/EN/ES translations.',
+        'pricing.title':'Packages & pricing','pricing.subtitle':'Full transparency. Choose what fits, no hidden fees.',
+        'pricing.start.title':'Start','pricing.start.note':'Perfect to begin','pricing.start.i1':'Simple logo','pricing.start.i2':'Facebook Page + Google Business','pricing.start.i3':'1 revision round','pricing.ctaOrder':'Order',
+        'pricing.popular':'Popular','pricing.pro.title':'Pro','pricing.pro.note':'Fast results','pricing.pro.i1':'One-page site (RO/FR/NL/EN/ES optional)','pricing.pro.i2':'Local SEO + WhatsApp connect','pricing.pro.i3':'Initial Facebook campaign','pricing.ctaChoosePro':'Choose Pro',
+        'pricing.premium.title':'Premium','pricing.premium.note':'Accelerated growth','pricing.premium.i1':'Multi-page site + blog','pricing.premium.i2':'Content & design included','pricing.premium.i3':'AI automations + 30 days maintenance','pricing.ctaQuote':'Get a quote',
+        'portfolio.title':'Examples & results','portfolio.subtitle':'Mockups for popular niches. Quickly adapted to your brand.','portfolio.i1':'Transport & courier — landing page with fast form','portfolio.i2':'Restaurant — digital menu & reservations','portfolio.i3':'Trades — Google Maps + auto reviews',
+        'faq.title':'Frequently asked questions','faq.q1':'How fast do you deliver a site?','faq.a1':'One-page in 48–72h, more complex in 7–10 days.','faq.q2':'Do you work in FR / NL / EN / ES?','faq.a2':'Yes. Multilingual content RO/FR/NL/EN/ES and local account management.','faq.q3':'How do I pay?','faq.a3':'Invoice, bank transfer, Revolut Business or Stripe (card).',
+        'contact.title':"Let's get started",'contact.subtitle':'Tell us briefly what you need. We respond the same business day.','contact.name':'Name','contact.email':'Email','contact.phone':'Phone / WhatsApp','contact.message':'Message','contact.send':'Send','contact.whatsapp':'Message on WhatsApp','contact.privacy':'By submitting, you agree to data processing to reply to your request.',
+        'footer.desc':'Multilingual digital agency. Halle, Belgium.','footer.contact':'Contact','footer.links':'Links','footer.city':'Address: Halle, BE','footer.rights':'All rights reserved.'
       },
       es: {
-        'nav.services': 'Servicios',
-        'nav.packages': 'Paquetes',
-        'nav.portfolio': 'Portafolio',
-        'nav.faq': 'FAQ',
-        'nav.contact': 'Contacto',
-        'cta.whatsapp': 'WhatsApp',
-        'hero.badge': 'Agencia en Halle · RO / FR / NL / EN / ES',
-        'hero.title': 'Hacemos visible tu negocio en Bélgica',
-        'hero.subtitle': 'Webs en 48h, anuncios locales, Google Business y automatizaciones con IA. Paquetes simples, resultados rápidos, soporte multilingüe.',
-        'cta.viewPackages': 'Ver paquetes',
-        'cta.quote': 'Pedir presupuesto',
-        'hero.badgeSpeed': 'Entrega rápida',
-        'hero.badgeFair': 'Precios justos',
-        'hero.badgeSupport': 'Soporte multilingüe',
-        'hero.cardTime': 'tiempo de entrega',
-        'hero.cardMulti': 'multilingüe',
-        'hero.cardAI': 'automatizaciones',
-        'services.title': 'Qué podemos hacer por tu negocio',
-        'services.subtitle': 'Servicios claros, optimizados para resultados rápidos y presupuestos PYME.',
-        'services.item1.title': 'Webs rápidas',
-        'services.item1.desc': 'One-page o multi-page, optimizadas para móvil, en 48–72h.',
-        'services.item2.title': 'Google Business y SEO local',
-        'services.item2.desc': 'Mapas, reseñas, fotos, palabras clave locales.',
-        'services.item3.title': 'Anuncios Facebook/Instagram',
-        'services.item3.desc': 'Campañas orientadas a leads con informes claros.',
-        'services.item4.title': 'Contenido y diseño',
-        'services.item4.desc': 'Textos, visuales, menús digitales, plantillas de Canva.',
-        'services.item5.title': 'Automatizaciones IA',
-        'services.item5.desc': 'Respuestas automáticas, formularios, traducciones RO/FR/NL/EN/ES.',
-        'services.item6.title': 'Manteni
+        'nav.services':'Servicios','nav.packages':'Paquetes','nav.portfolio':'Portafolio','nav.faq':'FAQ','nav.contact':'Contacto','cta.whatsapp':'WhatsApp',
+        'hero.badge':'Agencia en Halle · RO / FR / NL / EN / ES','hero.title':'Hacemos visible tu negocio en Bélgica','hero.subtitle':'Webs en 48h, anuncios locales, Google Business y automatizaciones con IA. Paquetes simples, resultados rápidos, soporte multilingüe.',
+        'cta.viewPackages':'Ver paquetes','cta.quote':'Pedir presupuesto','hero.cardTime':'tiempo de entrega','hero.cardMulti':'multilingüe','hero.cardAI':'automatizaciones',
+        'services.title':'Qué podemos hacer por tu negocio','services.subtitle':'Servicios claros, optimizados para resultados rápidos y presupuestos PYME.',
+        'services.item1.title':'Webs rápidas','services.item1.desc':'One-page o multi-page, optimizadas para móvil, en 48–72h.',
+        'services.item2.title':'Google Business y SEO local','services.item2.desc':'Mapas, reseñas, fotos, palabras clave locales.',
+        'services.item5.title':'Automatizaciones IA','services.item5.desc':'Respuestas automáticas, formularios, traducciones RO/FR/NL/EN/ES.',
+        'pricing.title':'Paquetes y precios','pricing.subtitle':'Transparencia total. Elige lo que encaja, sin costes ocultos.',
+        'pricing.start.title':'Start','pricing.start.note':'Perfecto para empezar','pricing.start.i1':'Logo simple','pricing.start.i2':'Página de Facebook + Google Business','pricing.start.i3':'1 ronda de revisiones','pricing.ctaOrder':'Encargar',
+        'pricing.popular':'Popular','pricing.pro.title':'Pro','pricing.pro.note':'Resultados rápidos','pricing.pro.i1':'Sitio one‑page (RO/FR/NL/EN/ES opcional)','pricing.pro.i2':'SEO local + conexión WhatsApp','pricing.pro.i3':'Campaña inicial de Facebook','pricing.ctaChoosePro':'Elegir Pro',
+        'pricing.premium.title':'Premium','pricing.premium.note':'Crecimiento acelerado','pricing.premium.i1':'Sitio multi‑página + blog','pricing.premium.i2':'Contenido y diseño incluidos','pricing.premium.i3':'Automatizaciones IA + 30 días de mantenimiento','pricing.ctaQuote':'Pedir presupuesto',
+        'portfolio.title':'Ejemplos y resultados','portfolio.subtitle':'Algunos bocetos para nichos populares. Rápida adaptación a tu marca.','portfolio.i1':'Transporte y mensajería — landing con formulario rápido','portfolio.i2':'Restaurante — menú digital y reservas','portfolio.i3':'Oficios — Google Maps + reseñas automáticas',
+        'faq.title':'Preguntas frecuentes','faq.q1':'¿En cuánto tiempo entregan un sitio?','faq.a1':'One‑page en 48–72h, más complejos en 7–10 días.','faq.q2':'¿Trabajan en FR / NL / EN / ES?','faq.a2':'Sí. Contenido multilingüe RO/FR/NL/EN/ES y gestión de cuentas locales.','faq.q3':'¿Cómo pago?','faq.a3':'Factura, transferencia, Revolut Business o Stripe (tarjeta).',
+        'contact.title':'Empecemos','contact.subtitle':'Cuéntanos brevemente qué necesitas. Respondemos el mismo día laborable.','contact.name':'Nombre','contact.email':'Correo','contact.phone':'Teléfono / WhatsApp','contact.message':'Mensaje','contact.send':'Enviar','contact.whatsapp':'Escribe por WhatsApp','contact.privacy':'Al enviar, aceptas el tratamiento de datos para responder a tu solicitud.',
+        'footer.desc':'Agencia digital multilingüe. Halle, Bélgica.','footer.contact':'Contacto','footer.links':'Enlaces','footer.city':'Dirección: Halle, BE','footer.rights':'Todos los derechos reservados.'
+      }
+    };
+
+    function setLang(lang){
+      const dict = translations[lang] || translations.ro;
+      document.querySelectorAll('[data-i18n]').forEach(el=>{
+        const key = el.getAttribute('data-i18n');
+        if (dict[key]) el.textContent = dict[key];
+      });
+      document.documentElement.lang = lang;
+      const sel1 = document.getElementById('lang');
+      const sel2 = document.getElementById('lang-m');
+      if (sel1) sel1.value = lang; if (sel2) sel2.value = lang;
+      try{ localStorage.setItem('mrs-lang', lang);}catch(e){}
+    }
+    function detectLang(){
+      const saved = localStorage.getItem('mrs-lang');
+      if (saved) return saved;
+      const map = { ro:'ro', fr:'fr', nl:'nl', en:'en', es:'es' };
+      const n = (navigator.language||'').slice(0,2).toLowerCase();
+      return map[n] || 'ro';
+    }
+    setLang(detectLang());
+    document.getElementById('lang')?.addEventListener('change', e=> setLang(e.target.value));
+    document.getElementById('lang-m')?.addEventListener('change', e=> setLang(e.target.value));
+  </script>
+</body>
+</html>
