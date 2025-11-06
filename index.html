@@ -13,6 +13,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     html{scroll-behavior:smooth}
+    /* Fix: anchor sections hidden under sticky header */
+    section{scroll-margin-top:90px}
     .glass{backdrop-filter:saturate(160%) blur(8px)}
   </style>
 </head>
@@ -223,7 +225,9 @@
         <h2 class="text-3xl font-bold text-slate-900" data-i18n="contact.title">Hai să începem</h2>
         <p class="mt-3 text-slate-600" data-i18n="contact.subtitle">Spune-ne pe scurt ce ai nevoie. Răspundem în aceeași zi lucrătoare.</p>
       </div>
-      <form class="mt-8 grid gap-4 bg-slate-50 p-6 rounded-2xl ring-1 ring-slate-200" action="https://formspree.io/f/your-id" method="POST">
+      <form class="mt-8 grid gap-4 bg-slate-50 p-6 rounded-2xl ring-1 ring-slate-200" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact" />
+        <p class="hidden"><label>Nu completa: <input name="bot-field" /></label></p>
         <div class="grid md:grid-cols-2 gap-4">
           <div>
             <label class="block text-sm font-medium text-slate-700" data-i18n="contact.name">Nume</label>
@@ -286,6 +290,7 @@
     // Year
     document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('year').textContent = new Date().getFullYear();
+    });
     });
 
     // Simple i18n
@@ -640,84 +645,4 @@
         'services.item4.desc': 'Textos, visuales, menús digitales, plantillas de Canva.',
         'services.item5.title': 'Automatizaciones IA',
         'services.item5.desc': 'Respuestas automáticas, formularios, traducciones RO/FR/NL/EN/ES.',
-        'services.item6.title': 'Mantenimiento y soporte',
-        'services.item6.desc': 'Actualizaciones, seguridad, asistencia por WhatsApp.',
-        'pricing.title': 'Paquetes y precios',
-        'pricing.subtitle': 'Transparencia total. Elige lo que encaja, sin costes ocultos.',
-        'pricing.start.title': 'Start',
-        'pricing.start.note': 'Perfecto para empezar',
-        'pricing.start.i1': 'Logo simple',
-        'pricing.start.i2': 'Página de Facebook + Google Business',
-        'pricing.start.i3': '1 ronda de revisiones',
-        'pricing.ctaOrder': 'Encargar',
-        'pricing.popular': 'Popular',
-        'pricing.pro.title': 'Pro',
-        'pricing.pro.note': 'Resultados rápidos',
-        'pricing.pro.i1': 'Sitio one‑page (RO/FR/NL/EN/ES opcional)',
-        'pricing.pro.i2': 'SEO local + conexión WhatsApp',
-        'pricing.pro.i3': 'Campaña inicial de Facebook',
-        'pricing.ctaChoosePro': 'Elegir Pro',
-        'pricing.premium.title': 'Premium',
-        'pricing.premium.note': 'Crecimiento acelerado',
-        'pricing.premium.i1': 'Sitio multi‑página + blog',
-        'pricing.premium.i2': 'Contenido y diseño incluidos',
-        'pricing.premium.i3': 'Automatizaciones IA + 30 días de mantenimiento',
-        'pricing.ctaQuote': 'Pedir presupuesto',
-        'portfolio.title': 'Ejemplos y resultados',
-        'portfolio.subtitle': 'Algunos bocetos para nichos populares. Rápida adaptación a tu marca.',
-        'portfolio.i1': 'Transporte y mensajería — landing con formulario rápido',
-        'portfolio.i2': 'Restaurante — menú digital y reservas',
-        'portfolio.i3': 'Oficios — Google Maps + reseñas automáticas',
-        'faq.title': 'Preguntas frecuentes',
-        'faq.q1': '¿En cuánto tiempo entregan un sitio?',
-        'faq.a1': 'One‑page en 48–72h, más complejos en 7–10 días.',
-        'faq.q2': '¿Trabajan en FR / NL / EN / ES?',
-        'faq.a2': 'Sí. Contenido multilingüe RO/FR/NL/EN/ES y gestión de cuentas locales.',
-        'faq.q3': '¿Cómo pago?',
-        'faq.a3': 'Factura, transferencia, Revolut Business o Stripe (tarjeta).',
-        'contact.title': 'Empecemos',
-        'contact.subtitle': 'Cuéntanos brevemente qué necesitas. Respondemos el mismo día laborable.',
-        'contact.name': 'Nombre',
-        'contact.email': 'Correo',
-        'contact.phone': 'Teléfono / WhatsApp',
-        'contact.message': 'Mensaje',
-        'contact.send': 'Enviar',
-        'contact.whatsapp': 'Escribe por WhatsApp',
-        'contact.privacy': 'Al enviar, aceptas el tratamiento de datos para responder a tu solicitud.',
-        'footer.desc': 'Agencia digital multilingüe. Halle, Bélgica.',
-        'footer.contact': 'Contacto',
-        'footer.links': 'Enlaces',
-        'footer.city': 'Dirección: Halle, BE',
-        'footer.rights': 'Todos los derechos reservados.'
-      }
-    };
-
-    function setLang(lang) {
-      const dict = translations[lang] || translations.ro;
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (dict[key]) el.textContent = dict[key];
-      });
-      // Update html lang
-      document.documentElement.lang = lang;
-      // Sync both selectors
-      const sel1 = document.getElementById('lang');
-      const sel2 = document.getElementById('lang-m');
-      if (sel1) sel1.value = lang;
-      if (sel2) sel2.value = lang;
-    }
-
-    function detectLang() {
-      const map = { 'ro': 'ro', 'fr': 'fr', 'nl': 'nl', 'en': 'en', 'es': 'es' };
-      const n = navigator.language?.slice(0,2).toLowerCase();
-      return map[n] || 'ro';
-    }
-
-    const initial = detectLang();
-    setLang(initial);
-
-    document.getElementById('lang')?.addEventListener('change', (e)=> setLang(e.target.value));
-    document.getElementById('lang-m')?.addEventListener('change', (e)=> setLang(e.target.value));
-  </script>
-</body>
-</html>
+        'services.item6.title': 'Manteni
