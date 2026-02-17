@@ -3,1623 +3,943 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#0b1220" />
-
-  <title>MRS Digital Agency | Site-uri rapide, SEO local & leaduri</title>
-  <meta name="description" content="Construim site-uri rapide, SEO local și automatizări care aduc leaduri. Pachete clare, rezultate măsurabile. Consultare gratuită." />
+  <meta name="theme-color" content="#07161a" />
+  <title>MRS Digital Agency | Website-uri rapide, SEO local & leaduri</title>
+  <meta name="description" content="MRS Digital Agency: website-uri rapide, SEO local și automatizări pentru leaduri. Pachete clare, proces simplu, rezultate măsurabile." />
   <link rel="canonical" href="https://mrs-digitalagency.com/" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="MRS Digital Agency" />
-  <meta property="og:description" content="Site-uri rapide • SEO local • Leaduri. Pachete clare, rezultate măsurabile." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://mrs-digitalagency.com/" />
-  <meta property="og:image" content="https://mrs-digitalagency.com/og.png" />
-  <meta name="twitter:card" content="summary_large_image" />
 
   <style>
     :root{
-      --bg:#0b1220;
-      --panel:#0f1a30;
-      --panel2:#0c1528;
-      --text:#e9eefc;
-      --muted:#b8c3e6;
-      --line:rgba(255,255,255,.12);
-      --accent:#7c5cff;
-      --accent2:#22c55e;
-      --warn:#ffcc66;
-      --danger:#ff7a7a;
-      --shadow: 0 18px 70px rgba(0,0,0,.38);
-      --shadow2: 0 14px 40px rgba(0,0,0,.28);
-      --radius: 18px;
-      --radius2: 24px;
-      --max: 1180px;
-      --focus: 0 0 0 4px rgba(124,92,255,.18);
+      --bg:#07161a; --bg2:#0b1b1e; --panel:#0d2327; --text:#eaf7f7; --muted:#b8d3d3;
+      --line:rgba(255,255,255,.11);
+      --brand:#18b6a3; --brand2:#0ea5a5; --shadow:0 18px 70px rgba(0,0,0,.42);
+      --shadow2:0 12px 38px rgba(0,0,0,.28);
+      --radius2:26px; --max:1200px; --focus:0 0 0 4px rgba(24,182,163,.18);
+      --h1:clamp(34px,4.2vw,60px); --h2:30px; --h3:18px;
     }
-
-    *{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
     body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      margin:0; font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       color:var(--text);
       background:
-        radial-gradient(1200px 700px at 20% -10%, rgba(124,92,255,.25), transparent 60%),
-        radial-gradient(900px 600px at 90% 10%, rgba(34,197,94,.18), transparent 55%),
-        radial-gradient(900px 650px at 10% 70%, rgba(255,204,102,.10), transparent 62%),
-        var(--bg);
-      line-height:1.5;
-      overflow-x:hidden;
+        radial-gradient(1200px 700px at 12% -10%, rgba(24,182,163,.22), transparent 60%),
+        radial-gradient(1000px 650px at 92% 10%, rgba(14,165,165,.16), transparent 55%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      line-height:1.55; overflow-x:hidden;
     }
-
-    a{ color:inherit; }
-    img{ max-width:100%; height:auto; display:block; }
-    .container{ width:min(var(--max), calc(100% - 32px)); margin-inline:auto; }
-
-    .skip-link{
-      position:absolute; left:-999px; top:auto;
-      width:1px; height:1px; overflow:hidden;
-    }
-    .skip-link:focus{
-      left:16px; top:16px; width:auto; height:auto;
-      background:#000; color:#fff; padding:10px 12px; border-radius:10px;
-      z-index:9999;
-    }
-
-    /* Header */
+    a{color:inherit} .container{width:min(var(--max), calc(100% - 32px)); margin-inline:auto;}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
     .site-header{
-      position:sticky; top:0; z-index:60;
-      backdrop-filter: blur(10px);
-      background: rgba(11,18,32,.76);
-      border-bottom:1px solid var(--line);
+      position:sticky; top:0; z-index:60; backdrop-filter:blur(10px);
+      background:rgba(7,22,26,.72); border-bottom:1px solid var(--line);
     }
-    .header-inner{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:14px 0;
-      gap:12px;
-    }
-    .brand{
-      display:flex; align-items:center; gap:10px;
-      text-decoration:none;
-    }
+    .header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:240px}
     .logo-mark{
-      width:40px; height:40px; border-radius:14px;
-      background: linear-gradient(180deg, rgba(124,92,255,1), rgba(124,92,255,.75));
-      display:grid; place-items:center;
-      box-shadow: 0 10px 25px rgba(124,92,255,.25);
-      flex:0 0 auto;
+      width:42px;height:42px;border-radius:16px;background:linear-gradient(180deg, rgba(24,182,163,1), rgba(24,182,163,.72));
+      border:1px solid rgba(255,255,255,.14); display:grid; place-items:center; box-shadow:0 16px 30px rgba(24,182,163,.12);
     }
-    .logo-mark svg{ width:22px; height:22px; }
-    .brand-text{ display:flex; flex-direction:column; line-height:1.1; }
-    .brand-text strong{ font-size:14px; letter-spacing:.2px; }
-    .brand-text span{ font-size:12px; color:var(--muted); }
+    .logo-mark svg{width:22px;height:22px}
+    .brand-text{display:flex;flex-direction:column;line-height:1.1}
+    .brand-text strong{font-weight:1000;font-size:14px}
+    .brand-text span{font-size:12px;color:var(--muted);font-weight:800}
 
     .site-nav{
-      display:flex; align-items:center; gap:18px;
+      display:flex;align-items:center;gap:10px;padding:8px;border:1px solid var(--line);
+      border-radius:999px;background:rgba(255,255,255,.03);
     }
-    .site-nav a{
-      text-decoration:none;
-      color:var(--muted);
-      font-weight:700;
-      font-size:14px;
-      padding:8px 10px;
-      border-radius:999px;
-    }
-    .site-nav a:hover{ color:var(--text); background: rgba(255,255,255,.06); }
+    .site-nav a{color:var(--muted);font-weight:900;font-size:13px;padding:8px 10px;border-radius:999px;text-decoration:none}
+    .site-nav a:hover{color:var(--text);background:rgba(255,255,255,.06)}
+    .site-nav a:focus{outline:none;box-shadow:var(--focus)}
 
-    .nav-actions{
-      display:flex; align-items:center; gap:10px;
-    }
-
+    .nav-actions{display:flex;align-items:center;gap:10px}
     .nav-toggle{
-      display:none;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.03);
-      color:var(--text);
-      padding:10px 12px;
-      border-radius:14px;
-      cursor:pointer;
+      display:none;border:1px solid var(--line);background:rgba(255,255,255,.03);color:var(--text);
+      padding:10px 12px;border-radius:14px;cursor:pointer;
     }
-    .hamburger{
-      width:22px; height:2px; background:var(--text);
-      display:block; position:relative; border-radius:2px;
-    }
-    .hamburger::before,.hamburger::after{
-      content:""; position:absolute; left:0; width:22px; height:2px; background:var(--text);
-      border-radius:2px;
-    }
-    .hamburger::before{ top:-7px; }
-    .hamburger::after{ top:7px; }
+    .hamburger{width:22px;height:2px;background:var(--text);display:block;position:relative;border-radius:2px}
+    .hamburger::before,.hamburger::after{content:"";position:absolute;left:0;width:22px;height:2px;background:var(--text);border-radius:2px}
+    .hamburger::before{top:-7px}.hamburger::after{top:7px}
 
-    .chip{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 10px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.03);
-      border-radius:999px;
-      font-weight:700;
-      color:var(--muted);
-      font-size:13px;
-      cursor:pointer;
+    .chip, select.lang{
+      display:inline-flex;align-items:center;gap:8px;padding:9px 12px;border-radius:999px;border:1px solid var(--line);
+      background:rgba(255,255,255,.03);color:var(--muted);font-weight:900;font-size:13px;
     }
-    .chip:hover{ background: rgba(255,255,255,.06); color:var(--text); }
-    .chip:focus{ outline:none; box-shadow: var(--focus); }
+    select.lang{cursor:pointer}
+    .chip:hover, select.lang:hover{background:rgba(255,255,255,.06);color:var(--text)}
+    .chip:focus, select.lang:focus{outline:none;box-shadow:var(--focus)}
 
-    /* Buttons */
     .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      padding:12px 14px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      text-decoration:none;
-      font-weight:900;
-      cursor:pointer;
-      user-select:none;
-      white-space:nowrap;
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 14px;border-radius:999px;
+      border:1px solid var(--line);text-decoration:none;font-weight:1000;cursor:pointer;user-select:none;white-space:nowrap;
     }
     .btn-primary{
-      background: linear-gradient(180deg, rgba(124,92,255,1), rgba(124,92,255,.82));
-      border-color: rgba(124,92,255,.65);
-      color:white;
-      box-shadow: 0 16px 40px rgba(124,92,255,.18);
+      background:linear-gradient(180deg, rgba(24,182,163,1), rgba(14,165,165,.9));
+      border-color:rgba(24,182,163,.55);color:#041013;box-shadow:0 20px 55px rgba(24,182,163,.14);
     }
-    .btn-primary:hover{ filter: brightness(1.05); }
-    .btn-ghost{
-      background: rgba(255,255,255,.03);
-      color:var(--text);
-    }
-    .btn-ghost:hover{ background: rgba(255,255,255,.06); }
-    .btn-soft{
-      background: rgba(34,197,94,.10);
-      border-color: rgba(34,197,94,.35);
-      color: var(--text);
-    }
-    .btn-soft:hover{ background: rgba(34,197,94,.16); }
-    .btn:focus{ outline:none; box-shadow: var(--focus); }
+    .btn-primary:hover{filter:brightness(1.05)}
+    .btn-ghost{background:rgba(255,255,255,.03);color:var(--text)}
+    .btn-ghost:hover{background:rgba(255,255,255,.06)}
+    .btn:focus{outline:none;box-shadow:var(--focus)}
 
-    /* Hero */
-    .main{ outline:none; }
-    .hero{
-      padding:56px 0 26px;
-      position:relative;
-    }
-    .hero::before{
-      content:"";
-      position:absolute; inset:-120px -120px auto -120px;
-      height:420px;
-      background: radial-gradient(closest-side at 25% 30%, rgba(124,92,255,.18), transparent 65%),
-                  radial-gradient(closest-side at 70% 10%, rgba(34,197,94,.12), transparent 60%);
-      pointer-events:none;
-      filter: blur(2px);
-      opacity:.9;
-    }
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap:28px;
-      align-items:start;
-      position:relative;
-    }
-    .pill{
-      display:inline-flex; gap:10px; align-items:center;
-      padding:8px 12px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.03);
-      border-radius:999px;
-      color:var(--muted);
-      margin:0 0 14px;
-      font-weight:800;
-      font-size:13px;
-      width: fit-content;
-    }
-    .dot{
-      width:10px; height:10px; border-radius:999px;
-      background: var(--accent2);
-      box-shadow: 0 0 0 6px rgba(34,197,94,.14);
-    }
-    h1{
-      font-size: clamp(36px, 4.3vw, 60px);
-      line-height:1.02;
-      margin:0 0 12px;
-      letter-spacing:-.6px;
-    }
-    .lead{
-      color:var(--muted);
-      font-size:18px;
-      margin:0 0 18px;
-      max-width: 56ch;
-    }
-    .hero-cta{
-      display:flex; gap:12px; flex-wrap:wrap;
-      margin:10px 0 14px;
-      align-items:center;
-    }
-    .hero-trust{
-      list-style:none; padding:0; margin:12px 0 0;
-      display:flex; gap:12px; flex-wrap:wrap;
-      color:var(--muted);
-      font-weight:700;
-      font-size:13px;
-    }
-    .hero-trust li{
-      display:flex; align-items:center; gap:8px;
-      padding:8px 10px;
-      border:1px solid var(--line);
-      border-radius:999px;
-      background: rgba(255,255,255,.02);
-    }
-    .hero-trust svg{ width:16px; height:16px; }
+    .hero{padding:56px 0 22px;position:relative}
+    .hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:22px;align-items:start}
+    .pill{display:inline-flex;gap:10px;align-items:center;padding:8px 12px;border:1px solid var(--line);background:rgba(255,255,255,.03);border-radius:999px;color:var(--muted);margin:0 0 14px;font-weight:1000;font-size:13px}
+    .dot{width:10px;height:10px;border-radius:999px;background:var(--brand);box-shadow:0 0 0 6px rgba(24,182,163,.14)}
+    h1{font-size:var(--h1);line-height:1.02;margin:0 0 12px;letter-spacing:-.6px}
+    .lead{color:var(--muted);font-size:18px;margin:0 0 16px;max-width:62ch;font-weight:700}
+    .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin:10px 0 14px;align-items:center}
+    .hero-card{border:1px solid var(--line);background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));border-radius:var(--radius2);padding:18px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+    .metric{display:flex;justify-content:space-between;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--line)}
+    .metric:last-of-type{border-bottom:none}
+    .metric-label{color:var(--muted);font-weight:1000}
+    .metric-value{font-weight:1100}
+    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+    .kpi{border:1px solid var(--line);border-radius:16px;padding:12px;background:rgba(0,0,0,.18)}
+    .kpi strong{display:block;font-size:14px;font-weight:1100}
+    .kpi span{display:block;color:var(--muted);font-size:12px;margin-top:2px;font-weight:800}
 
-    .hero-card{
-      border:1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      border-radius: var(--radius2);
-      padding:18px;
-      box-shadow: var(--shadow);
-      position:relative;
-      overflow:hidden;
-    }
-    .hero-card::after{
-      content:"";
-      position:absolute; inset:auto -60px -90px auto;
-      width:280px; height:280px;
-      background: radial-gradient(closest-side, rgba(124,92,255,.28), transparent 70%);
-      transform: rotate(14deg);
-      pointer-events:none;
-    }
-    .metric{
-      display:flex; justify-content:space-between; align-items:baseline;
-      padding:12px 0;
-      border-bottom:1px solid var(--line);
-      position:relative;
-      z-index:1;
-    }
-    .metric:last-of-type{ border-bottom:none; }
-    .metric-label{ color:var(--muted); font-weight:800; }
-    .metric-value{ font-weight:1000; }
-    .small{ font-size:13px; }
-    .muted{ color:var(--muted); }
+    .section{padding:56px 0}
+    .section.alt{background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;margin-bottom:18px;flex-wrap:wrap}
+    .section-head h2{margin:0;font-size:var(--h2);font-weight:1100}
+    .section-head p{margin:0;max-width:78ch;color:var(--muted);font-weight:800}
 
-    .kpis{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:10px;
-      margin-top:12px;
-      position:relative;
-      z-index:1;
-    }
-    .kpi{
-      border:1px solid var(--line);
-      border-radius: 16px;
-      padding:12px;
-      background: rgba(0,0,0,.18);
-    }
-    .kpi strong{ display:block; font-size:15px; }
-    .kpi span{ display:block; color:var(--muted); font-size:12px; margin-top:2px; }
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{border:1px solid var(--line);background:rgba(13,35,39,.55);border-radius:var(--radius2);padding:18px;box-shadow:var(--shadow2)}
+    .card h3{margin:0 0 8px;font-size:var(--h3);font-weight:1100}
+    .card p{margin:0 0 10px;color:var(--muted);font-weight:800}
+    .list{margin:10px 0 0;padding-left:18px;color:var(--muted);font-weight:800}
+    .list li{margin:6px 0}
 
-    /* Sections */
-    .section{ padding:56px 0; }
-    .section.alt{
-      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0));
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
-    }
-    .section-head{
-      display:flex; justify-content:space-between; align-items:flex-end; gap:18px;
-      margin-bottom:18px;
-      flex-wrap:wrap;
-    }
-    .section-head h2{
-      margin:0;
-      font-size:30px;
-      letter-spacing:-.2px;
-    }
-    .section-head p{ margin:0; max-width: 70ch; }
+    .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .price{border:1px solid var(--line);background:rgba(13,35,39,.55);border-radius:var(--radius2);padding:18px;box-shadow:var(--shadow2);position:relative}
+    .price.featured{border-color:rgba(24,182,163,.52);background:linear-gradient(180deg, rgba(24,182,163,.12), rgba(13,35,39,.55));box-shadow:0 26px 90px rgba(24,182,163,.14)}
+    .badge{position:absolute;top:14px;right:14px;background:rgba(24,182,163,.14);border:1px solid rgba(24,182,163,.32);padding:6px 10px;border-radius:999px;font-size:12px;font-weight:1100}
+    .price-tag{margin:0 0 10px;color:var(--muted);font-weight:900}
+    .price-amount{display:flex;align-items:baseline;gap:8px;margin:12px 0 10px;font-weight:1100}
+    .price-amount .num{font-size:34px;letter-spacing:-.6px}
+    .price-amount .per{color:var(--muted);font-weight:900;font-size:13px}
+    .meta{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px}
+    .tag{font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);background:rgba(255,255,255,.02);font-weight:900}
 
-    .grid-2{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:18px;
-      align-items:start;
-    }
+    .steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .step{border:1px solid var(--line);border-radius:var(--radius2);padding:16px;background:rgba(13,35,39,.55);box-shadow:var(--shadow2)}
+    .step .n{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:14px;background:rgba(24,182,163,.14);border:1px solid rgba(24,182,163,.28);font-weight:1200;margin-bottom:10px}
+    .step strong{display:block;margin-bottom:6px;font-weight:1100}
+    .step span{color:var(--muted);font-weight:900;font-size:13px}
 
-    /* Cards */
-    .cards{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:16px;
-    }
-    .card{
-      border:1px solid var(--line);
-      background: rgba(15,26,48,.55);
-      border-radius: var(--radius2);
-      padding:18px;
-      box-shadow: var(--shadow2);
-      position:relative;
-      overflow:hidden;
-      transform: translateY(0);
-      transition: transform .18s ease, background .18s ease, border-color .18s ease;
-    }
-    .card:hover{
-      transform: translateY(-3px);
-      background: rgba(15,26,48,.68);
-      border-color: rgba(124,92,255,.32);
-    }
-    .card h3{ margin:0 0 8px; letter-spacing:-.2px; }
-    .card p{ margin:0 0 10px; color:var(--muted); }
-    .list{ margin:10px 0 0; padding-left:18px; color:var(--muted); }
-    .list li{ margin:6px 0; }
-    .icon{
-      width:42px; height:42px;
-      border-radius:16px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.03);
-      display:grid; place-items:center;
-      margin-bottom:12px;
-    }
-    .icon svg{ width:20px; height:20px; }
+    .faq{display:grid;gap:10px}
+    details{border:1px solid var(--line);background:rgba(13,35,39,.55);border-radius:18px;padding:14px 16px;box-shadow:var(--shadow2)}
+    summary{cursor:pointer;font-weight:1100;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    summary::-webkit-details-marker{display:none}
+    details p{margin:10px 0 0;color:var(--muted);font-weight:900}
 
-    /* Pricing */
-    .pricing{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:16px;
-      align-items:stretch;
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+    .contact-card{border:1px solid var(--line);background:rgba(13,35,39,.55);border-radius:var(--radius2);padding:18px;box-shadow:var(--shadow2)}
+    .contact-list{margin:12px 0 0;padding-left:18px;color:var(--muted);font-weight:900}
+    .contact-list li{margin:7px 0}
+    .form{border:1px solid var(--line);background:rgba(13,35,39,.55);border-radius:var(--radius2);padding:18px;box-shadow:var(--shadow2)}
+    .field{display:grid;gap:6px;margin-bottom:12px}
+    label{font-weight:1100;font-size:13px}
+    input,textarea,select{
+      width:100%;padding:12px 12px;border-radius:16px;border:1px solid var(--line);
+      background:rgba(0,0,0,.22);color:var(--text);outline:none;font:inherit;
     }
-    .price{
-      position:relative;
-      border:1px solid var(--line);
-      background: rgba(15,26,48,.55);
-      border-radius: var(--radius2);
-      padding:18px;
-      box-shadow: var(--shadow2);
-      overflow:hidden;
-    }
-    .price.featured{
-      border-color: rgba(124,92,255,.55);
-      box-shadow: 0 24px 90px rgba(124,92,255,.20);
-      background: linear-gradient(180deg, rgba(124,92,255,.12), rgba(15,26,48,.58));
-    }
-    .badge{
-      position:absolute; top:14px; right:14px;
-      background: rgba(124,92,255,.18);
-      border:1px solid rgba(124,92,255,.45);
-      padding:6px 10px; border-radius:999px;
-      font-size:12px; color:var(--text);
-      font-weight:900;
-    }
-    .price h3{ margin:0 0 6px; }
-    .price-tag{ margin:0 0 10px; color:var(--muted); font-weight:700; }
-    .price-amount{
-      display:flex; align-items:baseline; gap:8px;
-      margin:12px 0 10px;
-      font-weight:1000;
-    }
-    .price-amount .num{ font-size:34px; letter-spacing:-.6px; }
-    .price-amount .per{ color:var(--muted); font-weight:800; }
-    .price .meta{
-      display:flex; flex-wrap:wrap; gap:8px;
-      margin:10px 0 14px;
-    }
-    .tag{
-      font-size:12px;
-      padding:6px 10px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      color:var(--muted);
-      background: rgba(255,255,255,.02);
-      font-weight:800;
-    }
+    input:focus,textarea:focus,select:focus{border-color:rgba(24,182,163,.68);box-shadow:var(--focus)}
+    textarea{resize:vertical;min-height:130px}
+    .error{min-height:16px;color:#ffb4b4;font-weight:1000;font-size:12px}
+    .note{margin:8px 0 0;font-weight:1000;color:var(--muted);font-size:13px}
 
-    /* Portfolio */
-    .portfolio{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:16px;
-    }
-    .work{
-      border:1px solid var(--line);
-      border-radius: var(--radius2);
-      overflow:hidden;
-      background: rgba(15,26,48,.55);
-      box-shadow: var(--shadow2);
-      transition: transform .18s ease, border-color .18s ease;
-    }
-    .work:hover{ transform: translateY(-3px); border-color: rgba(34,197,94,.38); }
-    .work-top{
-      height:150px;
-      background:
-        radial-gradient(450px 220px at 20% 20%, rgba(124,92,255,.35), transparent 60%),
-        radial-gradient(380px 220px at 90% 10%, rgba(34,197,94,.25), transparent 60%),
-        linear-gradient(180deg, rgba(255,255,255,.06), rgba(0,0,0,0));
-      position:relative;
-    }
-    .work-top::after{
-      content:"";
-      position:absolute; inset:auto 14px 14px auto;
-      width:120px; height:40px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.18);
-      background: rgba(0,0,0,.18);
-      backdrop-filter: blur(10px);
-    }
-    .work-body{ padding:16px; }
-    .work-body h3{ margin:0 0 6px; }
-    .work-body p{ margin:0 0 10px; color:var(--muted); }
-    .work-foot{
-      display:flex; justify-content:space-between; align-items:center;
-      gap:10px;
-    }
-    .mini{
-      display:inline-flex; align-items:center; gap:8px;
-      font-weight:900;
-      color: var(--text);
-      font-size:13px;
-    }
-    .mini svg{ width:16px; height:16px; opacity:.9; }
+    .footer{border-top:1px solid var(--line);padding:22px 0;color:var(--muted)}
+    .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+    .footer a{color:var(--muted);text-decoration:none;font-weight:1000}
+    .footer a:hover{color:var(--text)}
 
-    /* Testimonials */
-    .testimonials{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:16px;
-      align-items:start;
-    }
-    .quote{
-      border:1px solid var(--line);
-      border-radius: var(--radius2);
-      padding:18px;
-      background: rgba(15,26,48,.55);
-      box-shadow: var(--shadow2);
-    }
-    blockquote{ margin:0; }
-    .quote p{
-      margin:0 0 14px;
-      color:var(--text);
-      font-size:16px;
-    }
-    .quote .who{
-      display:flex; align-items:center; gap:10px;
-      color:var(--muted);
-      font-weight:800;
-    }
-    .avatar{
-      width:38px; height:38px; border-radius:14px;
-      background: linear-gradient(180deg, rgba(34,197,94,.35), rgba(124,92,255,.22));
-      border:1px solid rgba(255,255,255,.16);
-    }
-    .stats{
-      display:grid; gap:12px;
-    }
-    .stat{
-      border:1px solid var(--line);
-      border-radius: var(--radius2);
-      padding:16px;
-      background: rgba(0,0,0,.18);
-    }
-    .stat strong{ font-size:20px; display:block; }
-    .stat span{ color:var(--muted); font-weight:700; font-size:13px; }
+    .reveal{opacity:0;transform:translateY(12px);transition:opacity .55s ease, transform .55s ease}
+    .reveal.in{opacity:1;transform:translateY(0)}
 
-    /* Process */
-    .steps{
-      margin:0;
-      padding:0;
-      list-style:none;
-      display:grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap:12px;
-    }
-    .step{
-      border:1px solid var(--line);
-      border-radius: var(--radius2);
-      padding:16px;
-      background: rgba(15,26,48,.55);
-      box-shadow: var(--shadow2);
-      position:relative;
-      overflow:hidden;
-    }
-    .step::before{
-      content:"";
-      position:absolute; inset:-60px auto auto -60px;
-      width:140px; height:140px;
-      background: radial-gradient(closest-side, rgba(124,92,255,.22), transparent 70%);
-      transform: rotate(18deg);
-    }
-    .step .n{
-      display:inline-flex; align-items:center; justify-content:center;
-      width:32px; height:32px; border-radius:12px;
-      background: rgba(124,92,255,.18);
-      border:1px solid rgba(124,92,255,.35);
-      font-weight:1000;
-      margin-bottom:10px;
-      position:relative;
-      z-index:1;
-    }
-    .step strong{ display:block; margin-bottom:6px; position:relative; z-index:1; }
-    .step span{ color:var(--muted); font-weight:700; font-size:13px; position:relative; z-index:1; }
-
-    /* FAQ */
-    .faq{ display:grid; gap:10px; }
-    details{
-      border:1px solid var(--line);
-      background: rgba(15,26,48,.55);
-      border-radius: 16px;
-      padding:14px 16px;
-      box-shadow: var(--shadow2);
-    }
-    summary{
-      cursor:pointer;
-      font-weight:1000;
-      list-style:none;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-    }
-    summary::-webkit-details-marker{ display:none; }
-    .caret{
-      width:18px; height:18px;
-      transition: transform .16s ease;
-      opacity:.9;
-      flex:0 0 auto;
-    }
-    details[open] .caret{ transform: rotate(180deg); }
-    details p{ margin:10px 0 0; color:var(--muted); font-weight:700; }
-
-    /* Contact */
-    .contact{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:16px;
-      align-items:start;
-    }
-    .contact-card{
-      border:1px solid var(--line);
-      background: rgba(15,26,48,.55);
-      border-radius: var(--radius2);
-      padding:18px;
-      box-shadow: var(--shadow2);
-    }
-    .contact-list{
-      margin:12px 0 0;
-      padding-left:18px;
-      color:var(--muted);
-      font-weight:700;
-    }
-    .contact-list li{ margin:7px 0; }
-
-    .form{
-      border:1px solid var(--line);
-      background: rgba(15,26,48,.55);
-      border-radius: var(--radius2);
-      padding:18px;
-      box-shadow: var(--shadow2);
-    }
-    .field{ display:grid; gap:6px; margin-bottom:12px; }
-    label{ font-weight:1000; font-size:13px; }
-    input, textarea, select{
-      width:100%;
-      padding:12px 12px;
-      border-radius: 14px;
-      border:1px solid var(--line);
-      background: rgba(0,0,0,.22);
-      color:var(--text);
-      outline:none;
-      font: inherit;
-    }
-    input:focus, textarea:focus, select:focus{
-      border-color: rgba(124,92,255,.7);
-      box-shadow: var(--focus);
-    }
-    textarea{ resize: vertical; min-height: 130px; }
-    .error{ min-height:16px; color:#ffb4b4; font-weight:800; font-size:12px; }
-    .note{ margin:8px 0 0; font-weight:800; color:var(--muted); font-size:13px; }
-
-    /* CTA strip */
-    .cta-strip{
-      border:1px solid rgba(124,92,255,.35);
-      background: linear-gradient(180deg, rgba(124,92,255,.16), rgba(15,26,48,.55));
-      border-radius: var(--radius2);
-      padding:18px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:14px;
-      box-shadow: 0 24px 90px rgba(124,92,255,.16);
-      overflow:hidden;
-      position:relative;
-    }
-    .cta-strip::after{
-      content:"";
-      position:absolute; inset:auto -120px -160px auto;
-      width:340px; height:340px;
-      background: radial-gradient(closest-side, rgba(34,197,94,.26), transparent 70%);
-      transform: rotate(12deg);
-      pointer-events:none;
-    }
-    .cta-strip h3{ margin:0 0 6px; }
-    .cta-strip p{ margin:0; color:var(--muted); font-weight:700; max-width: 62ch; }
-    .cta-actions{ display:flex; gap:10px; flex-wrap:wrap; position:relative; z-index:1; }
-
-    /* Footer */
-    .footer{
-      border-top:1px solid var(--line);
-      padding:22px 0;
-      color:var(--muted);
-    }
-    .footer-inner{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:12px;
-      flex-wrap:wrap;
-    }
-    .footer a{ color:var(--muted); text-decoration:none; font-weight:800; }
-    .footer a:hover{ color:var(--text); }
-
-    /* Cookie banner */
-    .cookie{
-      position:fixed;
-      left:16px;
-      right:16px;
-      bottom:16px;
-      z-index:80;
-      display:none;
-    }
-    .cookie.show{ display:block; }
-    .cookie-inner{
-      width:min(var(--max), calc(100% - 0px));
-      margin-inline:auto;
-      border:1px solid var(--line);
-      border-radius: var(--radius2);
-      background: rgba(11,18,32,.88);
-      backdrop-filter: blur(12px);
-      box-shadow: var(--shadow);
-      padding:14px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:14px;
-      flex-wrap:wrap;
-    }
-    .cookie p{ margin:0; color:var(--muted); font-weight:700; font-size:13px; }
-    .cookie-actions{ display:flex; gap:10px; flex-wrap:wrap; }
-
-    /* Utilities */
-    .sr-only{
-      position:absolute; width:1px; height:1px; padding:0; margin:-1px;
-      overflow:hidden; clip:rect(0,0,0,0); border:0;
-    }
-    .divider{
-      height:1px;
-      background: var(--line);
-      margin:16px 0;
-    }
-
-    /* Reveal animation */
-    .reveal{
-      opacity:0;
-      transform: translateY(12px);
-      transition: opacity .5s ease, transform .5s ease;
-    }
-    .reveal.in{
-      opacity:1;
-      transform: translateY(0);
-    }
-
-    /* Responsive */
-    @media (max-width: 1040px){
-      .testimonials{ grid-template-columns: 1fr; }
-      .steps{ grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 980px){
-      .hero-grid{ grid-template-columns: 1fr; }
-      .cards{ grid-template-columns: 1fr; }
-      .pricing{ grid-template-columns: 1fr; }
-      .portfolio{ grid-template-columns: 1fr; }
-      .contact{ grid-template-columns: 1fr; }
-      .kpis{ grid-template-columns: 1fr; }
-      .nav-toggle{ display:inline-flex; }
+    @media (max-width:1040px){.steps{grid-template-columns:1fr 1fr}}
+    @media (max-width:980px){
+      .hero-grid{grid-template-columns:1fr}
+      .cards,.pricing,.contact{grid-template-columns:1fr}
+      .kpis{grid-template-columns:1fr}
       .site-nav{
-        position:absolute;
-        right:16px; top:64px;
-        display:none;
-        flex-direction:column;
-        align-items:stretch;
-        min-width: 240px;
-        padding:12px;
-        background: rgba(11,18,32,.95);
-        border:1px solid var(--line);
-        border-radius: 18px;
-        box-shadow: var(--shadow);
+        position:absolute; right:16px; top:64px; display:none; flex-direction:column; align-items:stretch;
+        min-width:240px; padding:12px; background:rgba(7,22,26,.96); border:1px solid var(--line);
+        border-radius:20px; box-shadow:var(--shadow);
       }
-      .site-nav[data-open="true"]{ display:flex; }
-      .site-nav a{ width:100%; }
-      .cta-strip{ flex-direction:column; align-items:flex-start; }
+      .site-nav[data-open="true"]{display:flex}
+      .site-nav a{width:100%}
+      .nav-toggle{display:inline-flex}
     }
   </style>
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"ProfessionalService",
-    "name":"MRS Digital Agency",
-    "url":"https://mrs-digitalagency.com/",
-    "description":"Site-uri rapide, SEO local și automatizări care aduc leaduri.",
-    "areaServed":["BE","RO","FR","NL"],
-    "contactPoint":[{"@type":"ContactPoint","contactType":"sales","availableLanguage":["ro","en","fr","nl","es"]}]
-  }
-  </script>
 </head>
 
 <body>
-  <a class="skip-link" href="#main">Sari la conținut</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#top" aria-label="MRS Digital Agency">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M6 17V7h3l3 6 3-6h3v10h-3v-5l-3 6-3-6v5H6z" fill="#041013"/></svg>
+      </span>
+      <span class="brand-text">
+        <strong>MRS Digital Agency</strong>
+        <span data-i18n="tagline">Website-uri rapide • SEO local • Leaduri</span>
+      </span>
+    </a>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="MRS Digital Agency - Acasă">
-        <span class="logo-mark" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none">
-            <path d="M6 17V7h3l3 6 3-6h3v10h-3v-5l-3 6-3-6v5H6z" fill="white"/>
-          </svg>
-        </span>
-        <span class="brand-text">
-          <strong>MRS Digital Agency</strong>
-          <span>Site-uri rapide • SEO local • Leaduri</span>
-        </span>
-      </a>
+    <nav class="site-nav" aria-label="Navigare" data-nav id="siteNav">
+      <a href="#servicii" data-i18n="nav_services">Servicii</a>
+      <a href="#pachete" data-i18n="nav_pricing">Pachete</a>
+      <a href="#proces" data-i18n="nav_process">Proces</a>
+      <a href="#faq" data-i18n="nav_faq">Întrebări</a>
+      <a class="btn btn-primary" href="#contact" data-i18n="nav_cta">Consultare</a>
+    </nav>
 
-      <div class="nav-actions">
-        <button class="chip" type="button" id="themeBtn" aria-label="Schimbă tema">
-          <span aria-hidden="true">🌙</span> Tema
-        </button>
+    <div class="nav-actions">
+      <select class="lang" id="langSelect" aria-label="Selectează limba">
+        <option value="ro">RO</option>
+        <option value="en">EN</option>
+        <option value="fr">FR</option>
+        <option value="nl">NL</option>
+        <option value="es">ES</option>
+      </select>
 
-        <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" id="navToggle">
-          <span class="sr-only">Deschide meniul</span>
-          <span class="hamburger" aria-hidden="true"></span>
-        </button>
+      <button class="nav-toggle" type="button" aria-controls="siteNav" aria-expanded="false" id="navToggle">
+        <span class="sr-only" data-i18n="nav_open">Deschide meniul</span>
+        <span class="hamburger" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section id="top" class="hero">
+    <div class="container hero-grid">
+      <div class="reveal">
+        <p class="pill"><span class="dot" aria-hidden="true"></span> <span data-i18n="hero_pill">Rapid • SEO local • Leaduri</span></p>
+        <h1 data-i18n="hero_h1">Transformăm vizitatorii în clienți, cu un site care chiar lucrează pentru tine.</h1>
+        <p class="lead" data-i18n="hero_lead">
+          Construim website-uri rapide și clare, optimizate pentru mobil, cu SEO local și un flux simplu de leaduri.
+          Scopul e simplu: să fii găsit pe Google și să primești cereri reale.
+        </p>
+
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#contact"><span aria-hidden="true">✅</span> <span data-i18n="hero_cta1">Cere ofertă</span></a>
+          <a class="btn btn-ghost" href="#audit"><span aria-hidden="true">🔎</span> <span data-i18n="hero_cta2">Audit gratuit</span></a>
+          <a class="btn btn-ghost" href="#pachete"><span aria-hidden="true">📦</span> <span data-i18n="hero_cta3">Pachete</span></a>
+        </div>
       </div>
 
-      <nav id="site-nav" class="site-nav" aria-label="Navigare principală" data-nav>
-        <a href="#servicii">Servicii</a>
-        <a href="#pachete">Pachete</a>
-        <a href="#portofoliu">Portofoliu</a>
-        <a href="#proces">Proces</a>
-        <a href="#faq">Întrebări</a>
-        <a class="btn btn-primary" href="#contact">Consultare</a>
-      </nav>
+      <div class="hero-card reveal">
+        <div class="metric"><span class="metric-label" data-i18n="m1_label">Timp încărcare</span><span class="metric-value">&lt; 1.5s</span></div>
+        <div class="metric"><span class="metric-label" data-i18n="m2_label">SEO local</span><span class="metric-value" data-i18n="m2_val">Structură + GBP</span></div>
+        <div class="metric"><span class="metric-label" data-i18n="m3_label">Conversii</span><span class="metric-value" data-i18n="m3_val">CTA + Funnel</span></div>
+
+        <div class="kpis">
+          <div class="kpi"><strong data-i18n="k1_t">Claritate</strong><span data-i18n="k1_s">ofertă + mesaj</span></div>
+          <div class="kpi"><strong data-i18n="k2_t">Încredere</strong><span data-i18n="k2_s">design + dovadă</span></div>
+          <div class="kpi"><strong data-i18n="k3_t">Măsurare</strong><span data-i18n="k3_s">tracking corect</span></div>
+        </div>
+
+        <p class="note" data-i18n="hero_note">Livrăm rapid, curat și testat (fără dependențe fragile).</p>
+      </div>
     </div>
-  </header>
+  </section>
 
-  <main id="main" class="main" tabindex="-1">
-    <!-- HERO -->
-    <section id="top" class="hero">
-      <div class="container hero-grid">
+  <section id="servicii" class="section">
+    <div class="container">
+      <header class="section-head">
         <div class="reveal">
-          <p class="pill"><span class="dot" aria-hidden="true"></span> Rapid • SEO local • Leaduri</p>
-          <h1>Îți facem afacerea vizibilă și îți aducem clienți.</h1>
-          <p class="lead">
-            Construim site-uri rapide, optimizate pentru mobil și conversii. Setăm SEO local și un flux simplu de leaduri,
-            ca să nu mai “exiști” doar pe Facebook — ci să fii găsit pe Google.
-          </p>
+          <h2 data-i18n="s_h2">Servicii</h2>
+          <p data-i18n="s_p">Tot ce facem e gândit să aducă cereri: structură, mesaj, viteză, SEO local și follow-up simplu.</p>
+        </div>
+      </header>
 
-          <div class="hero-cta">
-            <a class="btn btn-primary" href="#contact">
-              <span aria-hidden="true">⚡</span> Vreau consultare
-            </a>
-            <a class="btn btn-ghost" href="#pachete">
-              <span aria-hidden="true">📦</span> Vezi pachetele
-            </a>
-            <a class="btn btn-soft" href="#audit">
-              <span aria-hidden="true">🔎</span> Audit rapid
-            </a>
+      <div class="cards">
+        <article class="card reveal">
+          <h3 data-i18n="svc1_t">Website rapid (care vinde)</h3>
+          <p data-i18n="svc1_p">Landing sau website complet, cu structură clară și CTA-uri puternice.</p>
+          <ul class="list">
+            <li data-i18n="svc1_l1">Design modern și curat</li>
+            <li data-i18n="svc1_l2">Copy orientat pe conversie</li>
+            <li data-i18n="svc1_l3">Performanță + accesibilitate</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <h3 data-i18n="svc2_t">SEO local (Google)</h3>
+          <p data-i18n="svc2_p">Te facem vizibil în orașul/zona ta pentru serviciile tale.</p>
+          <ul class="list">
+            <li data-i18n="svc2_l1">Optimizare Google Business Profile</li>
+            <li data-i18n="svc2_l2">Structură SEO pe pagini</li>
+            <li data-i18n="svc2_l3">Titluri + meta corecte</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <h3 data-i18n="svc3_t">Automatizări leaduri</h3>
+          <p data-i18n="svc3_p">Formular + notificare + follow-up: răspunzi mai repede și închizi mai ușor.</p>
+          <ul class="list">
+            <li data-i18n="svc3_l1">Flux simplu pentru cereri</li>
+            <li data-i18n="svc3_l2">Template email + răspuns rapid</li>
+            <li data-i18n="svc3_l3">Integrări ușoare</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="pachete" class="section alt">
+    <div class="container">
+      <header class="section-head">
+        <div class="reveal">
+          <h2 data-i18n="p_h2">Pachete</h2>
+          <p data-i18n="p_p">Prețuri clare + ce primești. Dacă ai nevoie de ceva custom, îl adaptăm.</p>
+        </div>
+      </header>
+
+      <div class="pricing">
+        <article class="price reveal">
+          <h3 data-i18n="pk1_t">Start</h3>
+          <p class="price-tag" data-i18n="pk1_s">Rapid, simplu, perfect pentru început</p>
+          <div class="price-amount"><span class="num">€299+</span><span class="per" data-i18n="one_time">o singură dată</span></div>
+          <div class="meta">
+            <span class="tag" data-i18n="t_landing">Landing 1 pagină</span>
+            <span class="tag" data-i18n="t_form">Formular</span>
+            <span class="tag" data-i18n="t_seo">SEO basic</span>
           </div>
+          <ul class="list">
+            <li data-i18n="pk1_l1">Hero + servicii + contact</li>
+            <li data-i18n="pk1_l2">CTA-uri și structură conversie</li>
+            <li data-i18n="pk1_l3">Design responsive</li>
+            <li data-i18n="pk1_l4">Implementare rapidă</li>
+          </ul>
+          <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;">
+            <a class="btn btn-ghost" href="#contact" data-i18n="btn_quote">Cere ofertă</a>
+            <a class="btn btn-ghost" href="#audit" data-i18n="btn_audit">Audit</a>
+          </div>
+        </article>
 
-          <ul class="hero-trust">
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Optimizat pentru mobil
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Viteză & SEO
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Mesaje care convertesc
-            </li>
+        <article class="price featured reveal">
+          <div class="badge" data-i18n="recommended">Recomandat</div>
+          <h3 data-i18n="pk2_t">Growth</h3>
+          <p class="price-tag" data-i18n="pk2_s">Leaduri constante & SEO local solid</p>
+          <div class="price-amount"><span class="num">€599+</span><span class="per" data-i18n="one_time">o singură dată</span></div>
+          <div class="meta">
+            <span class="tag" data-i18n="t_pages">3–5 pagini</span>
+            <span class="tag" data-i18n="t_localseo">SEO local</span>
+            <span class="tag" data-i18n="t_tracking">Tracking</span>
+          </div>
+          <ul class="list">
+            <li data-i18n="pk2_l1">Structură completă 3–5 pagini</li>
+            <li data-i18n="pk2_l2">Copy orientat pe conversii</li>
+            <li data-i18n="pk2_l3">SEO local + GBP (setup)</li>
+            <li data-i18n="pk2_l4">Evenimente & raportare de bază</li>
+          </ul>
+          <div style="margin-top:14px;">
+            <a class="btn btn-primary" href="#contact" data-i18n="btn_consult">Programează consultare</a>
+          </div>
+        </article>
+
+        <article class="price reveal">
+          <h3 data-i18n="pk3_t">Pro</h3>
+          <p class="price-tag" data-i18n="pk3_s">Scalare: locații + automatizări + optimizări</p>
+          <div class="price-amount"><span class="num">€899+</span><span class="per" data-i18n="one_time">o singură dată</span></div>
+          <div class="meta">
+            <span class="tag" data-i18n="t_locations">Pagini locații</span>
+            <span class="tag" data-i18n="t_auto">Automatizări</span>
+            <span class="tag" data-i18n="t_opt">Optimizări</span>
+          </div>
+          <ul class="list">
+            <li data-i18n="pk3_l1">Pagini pe oraș/zonă (SEO local)</li>
+            <li data-i18n="pk3_l2">Follow-up automat pentru cereri</li>
+            <li data-i18n="pk3_l3">Optimizări lunare (opțional)</li>
+            <li data-i18n="pk3_l4">Raportare & îmbunătățiri</li>
+          </ul>
+          <div style="margin-top:14px;">
+            <a class="btn btn-ghost" href="#contact" data-i18n="btn_talk">Vorbește cu noi</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="proces" class="section">
+    <div class="container">
+      <header class="section-head">
+        <div class="reveal">
+          <h2 data-i18n="pr_h2">Proces în 4 pași</h2>
+          <p data-i18n="pr_p">Rapid, fără complicații. Știi mereu ce urmează și ce primești.</p>
+        </div>
+      </header>
+
+      <ul class="steps">
+        <li class="step reveal"><span class="n">1</span><strong data-i18n="st1_t">Audit & obiectiv</strong><span data-i18n="st1_s">Clarificăm ce vrei: cereri, rezervări, programări.</span></li>
+        <li class="step reveal"><span class="n">2</span><strong data-i18n="st2_t">Structură & mesaj</strong><span data-i18n="st2_s">Wireframe + copy + CTA, fără umplutură.</span></li>
+        <li class="step reveal"><span class="n">3</span><strong data-i18n="st3_t">Implementare</strong><span data-i18n="st3_s">Site + SEO + formulare + testare completă.</span></li>
+        <li class="step reveal"><span class="n">4</span><strong data-i18n="st4_t">Optimizare</strong><span data-i18n="st4_s">Măsurăm, îmbunătățim, creștem conversiile.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="audit" class="section alt">
+    <div class="container">
+      <header class="section-head">
+        <div class="reveal">
+          <h2 data-i18n="a_h2">Audit gratuit</h2>
+          <p data-i18n="a_p">Completează 5 câmpuri și îți răspundem cu pași concreți.</p>
+        </div>
+      </header>
+
+      <div class="contact">
+        <div class="contact-card reveal">
+          <h3 data-i18n="a_left_t">Ce primești</h3>
+          <ul class="list">
+            <li data-i18n="a_l1">3–7 îmbunătățiri cu impact imediat</li>
+            <li data-i18n="a_l2">Structură recomandată (pagini + secțiuni)</li>
+            <li data-i18n="a_l3">Recomandări SEO local pentru oraș/zonă</li>
+            <li data-i18n="a_l4">Ce CTA-uri & funnel punem</li>
           </ul>
         </div>
 
-        <div class="hero-card reveal" role="img" aria-label="Dashboard cu indicatori de performanță">
-          <div class="metric">
-            <span class="metric-label">Timp încărcare</span>
-            <span class="metric-value">&lt; 1.5s</span>
-          </div>
-          <div class="metric">
-            <span class="metric-label">SEO local</span>
-            <span class="metric-value">+ vizibilitate</span>
-          </div>
-          <div class="metric">
-            <span class="metric-label">Leaduri</span>
-            <span class="metric-value">+ cereri</span>
+        <form class="form reveal" name="audit" method="POST" data-netlify="true" data-netlify-honeypot="bot-field-audit" netlify>
+          <input type="hidden" name="form-name" value="audit" />
+          <p class="sr-only"><label>Nu completa: <input name="bot-field-audit" /></label></p>
+
+          <div class="field">
+            <label for="audit_name" data-i18n="f_name">Nume</label>
+            <input id="audit_name" name="name" type="text" autocomplete="name" required minlength="2" />
+            <small class="error" data-error-for="audit_name"></small>
           </div>
 
-          <div class="kpis">
-            <div class="kpi">
-              <strong>Structură clară</strong>
-              <span>fără pagini inutile</span>
-            </div>
-            <div class="kpi">
-              <strong>CTA-uri puternice</strong>
-              <span>pentru conversii</span>
-            </div>
-            <div class="kpi">
-              <strong>Tracking</strong>
-              <span>măsurăm tot</span>
-            </div>
+          <div class="field">
+            <label for="audit_email" data-i18n="f_email">Email</label>
+            <input id="audit_email" name="email" type="email" autocomplete="email" required />
+            <small class="error" data-error-for="audit_email"></small>
           </div>
 
-          <p class="small muted" style="margin:12px 0 0;">
-            *Rezultatele depind de nișă și concurență. Îți spunem realist ce se poate.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="servicii" class="section">
-      <div class="container">
-        <header class="section-head">
-          <div class="reveal">
-            <h2>Servicii</h2>
-            <p class="muted">Alege un pachet sau combinăm exact ce ai nevoie. Totul orientat spre leaduri și rezultate, nu doar “să arate bine”.</p>
-          </div>
-          <div class="reveal">
-            <a class="btn btn-ghost" href="#contact"><span aria-hidden="true">📞</span> Discutăm 15 min</a>
-          </div>
-        </header>
-
-        <div class="cards">
-          <article class="card reveal">
-            <div class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M4 5h16v14H4V5z" stroke="currentColor" stroke-width="2"/><path d="M4 9h16" stroke="currentColor" stroke-width="2"/><path d="M8 19V9" stroke="currentColor" stroke-width="2" opacity=".7"/></svg>
-            </div>
-            <h3>Website rapid</h3>
-            <p>Landing / site prezentare, structură clară, copy care vinde, optimizat pentru mobil.</p>
-            <ul class="list">
-              <li>Design modern & claritate</li>
-              <li>Performanță (viteza contează)</li>
-              <li>CTA-uri & funnel simplu</li>
-            </ul>
-          </article>
-
-          <article class="card reveal">
-            <div class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M10 21a8 8 0 1 1 5.3-14" stroke="currentColor" stroke-width="2"/><path d="M21 21l-6-6" stroke="currentColor" stroke-width="2"/><path d="M10 10h4" stroke="currentColor" stroke-width="2" opacity=".7"/></svg>
-            </div>
-            <h3>SEO local</h3>
-            <p>Google Business Profile, pagini localizate, cuvinte cheie și structură care te urcă în rezultate.</p>
-            <ul class="list">
-              <li>Setare & optimizare GBP</li>
-              <li>Pagină/oraș sau zonă</li>
-              <li>Raportare de bază</li>
-            </ul>
-          </article>
-
-          <article class="card reveal">
-            <div class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M7 7h10v10H7V7z" stroke="currentColor" stroke-width="2"/><path d="M4 12h3" stroke="currentColor" stroke-width="2"/><path d="M17 12h3" stroke="currentColor" stroke-width="2"/><path d="M12 4v3" stroke="currentColor" stroke-width="2"/><path d="M12 17v3" stroke="currentColor" stroke-width="2"/></svg>
-            </div>
-            <h3>Automatizări</h3>
-            <p>Formulare, emailuri, follow-up, răspunsuri rapide. Mai puțin timp pierdut, mai multe conversii.</p>
-            <ul class="list">
-              <li>Flux leaduri</li>
-              <li>Template email + follow-up</li>
-              <li>Integrări simple</li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="grid-2">
-          <div class="card reveal">
-            <h3>Ce primești în plus (default)</h3>
-            <ul class="list">
-              <li>Structură SEO: titluri, meta, link-uri interne</li>
-              <li>Best practices pentru mobil & accesibilitate</li>
-              <li>Micro-copy: butoane + secțiuni care conving</li>
-              <li>Setare tracking (GA4 / Pixel dacă ai)</li>
-            </ul>
-          </div>
-          <div class="card reveal">
-            <h3>Pentru cine e perfect</h3>
-            <p class="muted" style="margin:0 0 10px;">
-              Dacă ai o afacere locală sau servicii și vrei cereri predictibile.
-            </p>
-            <ul class="list">
-              <li>Horeca (cafenele, restaurante)</li>
-              <li>Beauty (salon, lash, barber)</li>
-              <li>Servicii (reparații, instalatori, curățenie)</li>
-              <li>Clinici / cabinete / profesioniști</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PRICING -->
-    <section id="pachete" class="section alt">
-      <div class="container">
-        <header class="section-head">
-          <div class="reveal">
-            <h2>Pachete</h2>
-            <p class="muted">Transparență totală. Începem cu baza și scalăm. Prețurile sunt orientative — îți facem ofertă exactă după audit.</p>
-          </div>
-        </header>
-
-        <div class="pricing">
-          <article class="price reveal">
-            <h3>Start</h3>
-            <p class="price-tag">Pentru afaceri la început</p>
-            <div class="price-amount">
-              <span class="num">€299+</span>
-              <span class="per">o singură dată</span>
-            </div>
-            <div class="meta">
-              <span class="tag">Landing 1 pagină</span>
-              <span class="tag">SEO basic</span>
-              <span class="tag">Formular</span>
-            </div>
-            <ul class="list">
-              <li>Structură clară + CTA</li>
-              <li>Optimizat pentru mobil</li>
-              <li>Copy simplu care vinde</li>
-              <li>Livrare rapidă</li>
-            </ul>
-            <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
-              <a class="btn btn-ghost" href="#contact"><span aria-hidden="true">✉️</span> Cere ofertă</a>
-              <a class="btn btn-soft" href="#audit"><span aria-hidden="true">🔎</span> Audit</a>
-            </div>
-          </article>
-
-          <article class="price featured reveal" aria-label="Pachet recomandat">
-            <div class="badge">Recomandat</div>
-            <h3>Growth</h3>
-            <p class="price-tag">Pentru leaduri constante</p>
-            <div class="price-amount">
-              <span class="num">€599+</span>
-              <span class="per">o singură dată</span>
-            </div>
-            <div class="meta">
-              <span class="tag">3–5 pagini</span>
-              <span class="tag">SEO local</span>
-              <span class="tag">Tracking</span>
-            </div>
-            <ul class="list">
-              <li>Site complet 3–5 pagini</li>
-              <li>SEO local + GBP (basic)</li>
-              <li>Copy orientat pe conversii</li>
-              <li>Evenimente/analytics</li>
-            </ul>
-            <div style="margin-top:14px;">
-              <a class="btn btn-primary" href="#contact"><span aria-hidden="true">📞</span> Programează consultare</a>
-            </div>
-          </article>
-
-          <article class="price reveal">
-            <h3>Pro</h3>
-            <p class="price-tag">Pentru scalare & automatizări</p>
-            <div class="price-amount">
-              <span class="num">€899+</span>
-              <span class="per">o singură dată</span>
-            </div>
-            <div class="meta">
-              <span class="tag">Pagini locații</span>
-              <span class="tag">Automatizări</span>
-              <span class="tag">Optimizări</span>
-            </div>
-            <ul class="list">
-              <li>Site complet + pagini orașe</li>
-              <li>Automatizări follow-up</li>
-              <li>Optimizări lunare (opțional)</li>
-              <li>Raportare</li>
-            </ul>
-            <div style="margin-top:14px;">
-              <a class="btn btn-ghost" href="#contact"><span aria-hidden="true">🤝</span> Vorbește cu noi</a>
-            </div>
-          </article>
-        </div>
-
-        <div style="margin-top:18px" class="cta-strip reveal">
-          <div>
-            <h3>Vrei să îți spunem exact ce merită făcut?</h3>
-            <p>Îți facem un audit scurt: ce lipsește, ce blochează conversiile și ce îți aduce bani în următoarele 30 zile.</p>
-          </div>
-          <div class="cta-actions">
-            <a class="btn btn-primary" href="#audit"><span aria-hidden="true">🔎</span> Începe auditul</a>
-            <a class="btn btn-ghost" href="#contact"><span aria-hidden="true">✉️</span> Scrie-ne</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PORTFOLIO -->
-    <section id="portofoliu" class="section">
-      <div class="container">
-        <header class="section-head">
-          <div class="reveal">
-            <h2>Portofoliu (demo)</h2>
-            <p class="muted">Aici poți pune proiectele tale. Am lăsat 3 “carduri” demo ca să arate complet. Le schimbi tu cu numele și descrierile reale.</p>
-          </div>
-        </header>
-
-        <div class="portfolio">
-          <article class="work reveal">
-            <div class="work-top" aria-hidden="true"></div>
-            <div class="work-body">
-              <h3>Restaurant / Cafe</h3>
-              <p>Landing cu meniu, rezervări și SEO local (oraș + cartier).</p>
-              <div class="work-foot">
-                <span class="mini">
-                  <svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16" stroke="currentColor" stroke-width="2"/><path d="M14 6l6 6-6 6" stroke="currentColor" stroke-width="2"/></svg>
-                  Conversii: rezervări
-                </span>
-                <span class="tag">1.2s</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="work reveal">
-            <div class="work-top" aria-hidden="true"></div>
-            <div class="work-body">
-              <h3>Beauty / Salon</h3>
-              <p>Site 5 pagini + pagină servicii + butoane WhatsApp / call.</p>
-              <div class="work-foot">
-                <span class="mini">
-                  <svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16" stroke="currentColor" stroke-width="2"/><path d="M14 6l6 6-6 6" stroke="currentColor" stroke-width="2"/></svg>
-                  Leaduri: programări
-                </span>
-                <span class="tag">SEO</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="work reveal">
-            <div class="work-top" aria-hidden="true"></div>
-            <div class="work-body">
-              <h3>Servicii locale</h3>
-              <p>Pagini locații + formular + automatizare follow-up pentru cereri.</p>
-              <div class="work-foot">
-                <span class="mini">
-                  <svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16" stroke="currentColor" stroke-width="2"/><path d="M14 6l6 6-6 6" stroke="currentColor" stroke-width="2"/></svg>
-                  Flux: email + CRM
-                </span>
-                <span class="tag">Pro</span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- TESTIMONIALS -->
-    <section class="section alt" id="rezultate">
-      <div class="container">
-        <header class="section-head">
-          <div class="reveal">
-            <h2>Încredere & rezultate</h2>
-            <p class="muted">Pune aici testimoniale reale când le ai. Deocamdată sunt exemple ca să arate profi.</p>
-          </div>
-        </header>
-
-        <div class="testimonials">
-          <div class="quote reveal">
-            <blockquote>
-              <p>„În 2 săptămâni am trecut de la ‘nu sună nimeni’ la cereri zilnice. Site-ul e clar, rapid și oamenii înțeleg imediat ce oferim.”</p>
-            </blockquote>
-            <div class="who">
-              <span class="avatar" aria-hidden="true"></span>
-              <div>
-                <div style="font-weight:1000; color:var(--text)">Client demo</div>
-                <div style="font-size:12px">Afacere locală • BE</div>
-              </div>
-            </div>
+          <div class="field">
+            <label for="audit_business" data-i18n="f_business">Tip afacere</label>
+            <select id="audit_business" name="business_type" required>
+              <option value="" selected disabled data-i18n="f_choose">Alege…</option>
+              <option>Horeca</option><option>Beauty</option><option>Servicii locale</option><option>Clinică / cabinet</option><option>Comerț / eCommerce</option><option data-i18n="other">Altceva</option>
+            </select>
+            <small class="error" data-error-for="audit_business"></small>
           </div>
 
-          <div class="stats">
-            <div class="stat reveal">
-              <strong>+ vizibilitate</strong>
-              <span>SEO local + structură pagini</span>
-            </div>
-            <div class="stat reveal">
-              <strong>+ conversii</strong>
-              <span>CTA-uri, copy, formular clar</span>
-            </div>
-            <div class="stat reveal">
-              <strong>+ încredere</strong>
-              <span>design curat + rapiditate</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROCESS -->
-    <section id="proces" class="section">
-      <div class="container">
-        <header class="section-head">
-          <div class="reveal">
-            <h2>Proces simplu în 4 pași</h2>
-            <p class="muted">Fără haos. Fără promisiuni aiurea. Doar pași clari și livrare rapidă.</p>
-          </div>
-        </header>
-
-        <ul class="steps">
-          <li class="step reveal">
-            <span class="n">1</span>
-            <strong>Audit rapid</strong>
-            <span>Vedem ce ai, ce lipsește, ce aduce bani.</span>
-          </li>
-          <li class="step reveal">
-            <span class="n">2</span>
-            <strong>Plan & structură</strong>
-            <span>Wireframe + mesaje + call-to-action.</span>
-          </li>
-          <li class="step reveal">
-            <span class="n">3</span>
-            <strong>Implementare</strong>
-            <span>Site + SEO + tracking, totul testat.</span>
-          </li>
-          <li class="step reveal">
-            <span class="n">4</span>
-            <strong>Optimizare</strong>
-            <span>Măsurăm, ajustăm, creștem.</span>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- AUDIT (Netlify form) -->
-    <section id="audit" class="section alt">
-      <div class="container">
-        <header class="section-head">
-          <div class="reveal">
-            <h2>Audit rapid (gratuit)</h2>
-            <p class="muted">Spune-ne ce afacere ai și unde activezi. Îți răspundem cu pași concreți (nu roman).</p>
-          </div>
-        </header>
-
-        <div class="contact">
-          <div class="contact-card reveal">
-            <h3>Ce verificăm în audit</h3>
-            <ul class="list">
-              <li>Viteză + mobile UX (primele 5 secunde contează)</li>
-              <li>Mesaj & ofertă: înțelege clientul ce vinzi?</li>
-              <li>SEO local: cum apari pe Google + GBP</li>
-              <li>Conversie: CTA-uri, formular, follow-up</li>
-            </ul>
-            <div class="divider"></div>
-            <p class="muted small" style="margin:0;">
-              Tip: dacă ai deja site, pune link-ul. Dacă nu ai, pune pagina ta de Facebook/Instagram.
-            </p>
+          <div class="field">
+            <label for="audit_location" data-i18n="f_location">Oraș / zonă</label>
+            <input id="audit_location" name="location" type="text" required minlength="2" />
+            <small class="error" data-error-for="audit_location"></small>
           </div>
 
-          <form class="form reveal" name="audit" method="POST" data-netlify="true" data-netlify-honeypot="bot-field-audit" netlify>
-            <input type="hidden" name="form-name" value="audit" />
-            <p class="sr-only"><label>Nu completa: <input name="bot-field-audit" /></label></p>
-
-            <div class="field">
-              <label for="audit_name">Nume</label>
-              <input id="audit_name" name="name" type="text" autocomplete="name" required minlength="2" />
-              <small class="error" data-error-for="audit_name"></small>
-            </div>
-
-            <div class="field">
-              <label for="audit_email">Email</label>
-              <input id="audit_email" name="email" type="email" autocomplete="email" required />
-              <small class="error" data-error-for="audit_email"></small>
-            </div>
-
-            <div class="field">
-              <label for="audit_business">Tip afacere</label>
-              <select id="audit_business" name="business_type" required>
-                <option value="" selected disabled>Alege…</option>
-                <option>Horeca</option>
-                <option>Beauty</option>
-                <option>Servicii locale</option>
-                <option>Clinică / cabinet</option>
-                <option>Altceva</option>
-              </select>
-              <small class="error" data-error-for="audit_business"></small>
-            </div>
-
-            <div class="field">
-              <label for="audit_location">Oraș / zonă</label>
-              <input id="audit_location" name="location" type="text" placeholder="ex: Bruxelles / Halle / București" required minlength="2" />
-              <small class="error" data-error-for="audit_location"></small>
-            </div>
-
-            <div class="field">
-              <label for="audit_link">Link site / social (opțional)</label>
-              <input id="audit_link" name="link" type="url" placeholder="https://..." />
-            </div>
-
-            <div class="field">
-              <label for="audit_message">Ce vrei să obții în următoarele 30 zile?</label>
-              <textarea id="audit_message" name="goal" required minlength="10" placeholder="ex: 10 cereri/săptămână, rezervări, programări etc."></textarea>
-              <small class="error" data-error-for="audit_message"></small>
-            </div>
-
-            <button class="btn btn-primary" type="submit"><span aria-hidden="true">🚀</span> Trimite audit</button>
-            <p class="note" id="auditNote" aria-live="polite"></p>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="section">
-      <div class="container">
-        <header class="section-head">
-          <div class="reveal">
-            <h2>Întrebări frecvente</h2>
-            <p class="muted">Răspunsuri scurte, fără “marketing fluff”.</p>
-          </div>
-        </header>
-
-        <div class="faq">
-          <details class="reveal">
-            <summary>
-              Cât durează să fie gata?
-              <svg class="caret" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </summary>
-            <p>Depinde de pachet și de cât de repede primim materialele. Pentru Start, de obicei e foarte rapid; pentru Growth/Pro, depinde de pagini și conținut.</p>
-          </details>
-
-          <details class="reveal">
-            <summary>
-              Lucrați în Belgia (FR/NL) și în România?
-              <svg class="caret" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </summary>
-            <p>Da. Putem face site-uri multilingve și SEO local pe orașe/zone. Important e să alegem clar pagina/limba pentru fiecare zonă.</p>
-          </details>
-
-          <details class="reveal">
-            <summary>
-              Puteți integra WhatsApp / call / programări?
-              <svg class="caret" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </summary>
-            <p>Da. Putem adăuga butoane rapide, formulare, rezervări și automatizări de follow-up, în funcție de pachet.</p>
-          </details>
-
-          <details class="reveal">
-            <summary>
-              Aveți mentenanță / optimizări lunare?
-              <svg class="caret" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </summary>
-            <p>Da, opțional. Uneori e suficient “one-time setup”, alteori are sens optimizarea lunară (mai ales pe SEO local/locații).</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section alt">
-      <div class="container">
-        <header class="section-head">
-          <div class="reveal">
-            <h2>Contact</h2>
-            <p class="muted">Completează formularul și îți răspundem cu pași clari. Sau scrie direct pe email.</p>
-          </div>
-        </header>
-
-        <div class="contact">
-          <div class="contact-card reveal">
-            <h3>Detalii rapide</h3>
-            <ul class="contact-list">
-              <li><strong>Email:</strong> <a href="mailto:contact@mrs-digitalagency.com">contact@mrs-digitalagency.com</a></li>
-              <li><strong>Program:</strong> Lun–Vin</li>
-              <li><strong>Limbi:</strong> RO / EN / FR / NL / ES</li>
-              <li><strong>Focus:</strong> afaceri locale & servicii</li>
-            </ul>
-
-            <div class="divider"></div>
-
-            <h3 style="margin:0 0 8px;">Ce include consultarea</h3>
-            <ul class="list">
-              <li>Îți spunem ce pachet are sens</li>
-              <li>Îți arătăm ce te ține pe loc acum</li>
-              <li>Plan de acțiune simplu (priorități)</li>
-            </ul>
+          <div class="field">
+            <label for="audit_goal" data-i18n="f_goal">Obiectiv (30 zile)</label>
+            <textarea id="audit_goal" name="goal" required minlength="10"></textarea>
+            <small class="error" data-error-for="audit_goal"></small>
           </div>
 
-          <!-- Netlify Forms -->
-          <form class="form reveal" id="leadForm" name="lead" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" netlify>
-            <input type="hidden" name="form-name" value="lead" />
-            <p class="sr-only"><label>Nu completa: <input name="bot-field" /></label></p>
-
-            <div class="field">
-              <label for="name">Nume</label>
-              <input id="name" name="name" type="text" autocomplete="name" required minlength="2" />
-              <small class="error" data-error-for="name"></small>
-            </div>
-
-            <div class="field">
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" autocomplete="email" required />
-              <small class="error" data-error-for="email"></small>
-            </div>
-
-            <div class="field">
-              <label for="company">Firmă (opțional)</label>
-              <input id="company" name="company" type="text" autocomplete="organization" />
-            </div>
-
-            <div class="field">
-              <label for="interest">Ce te interesează?</label>
-              <select id="interest" name="interest" required>
-                <option value="" selected disabled>Alege…</option>
-                <option>Website rapid</option>
-                <option>SEO local</option>
-                <option>Automatizări</option>
-                <option>Tot pachetul (Growth/Pro)</option>
-              </select>
-              <small class="error" data-error-for="interest"></small>
-            </div>
-
-            <div class="field">
-              <label for="message">Cu ce te ajutăm?</label>
-              <textarea id="message" name="message" required minlength="10" placeholder="Scrie pe scurt: ce vinzi, în ce oraș, ce vrei să obții."></textarea>
-              <small class="error" data-error-for="message"></small>
-            </div>
-
-            <button class="btn btn-primary" type="submit"><span aria-hidden="true">✅</span> Trimite</button>
-            <p class="note" id="formNote" aria-live="polite"></p>
-          </form>
-        </div>
-
-        <div style="margin-top:18px" class="cta-strip reveal">
-          <div>
-            <h3>Vrei să începem chiar azi?</h3>
-            <p>Dă-ne 2–3 detalii și îți răspundem cu “ce facem acum / ce facem după”. Simplu.</p>
-          </div>
-          <div class="cta-actions">
-            <a class="btn btn-primary" href="#contact"><span aria-hidden="true">⚡</span> Trimite cerere</a>
-            <a class="btn btn-ghost" href="#pachete"><span aria-hidden="true">📦</span> Pachete</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> MRS Digital Agency. Toate drepturile rezervate.</p>
-      <div style="display:flex; gap:12px; flex-wrap:wrap;">
-        <a href="#top">Sus ↑</a>
-        <a href="#contact">Contact</a>
+          <button class="btn btn-primary" type="submit"><span aria-hidden="true">🚀</span> <span data-i18n="a_send">Trimite audit</span></button>
+          <p class="note" id="auditNote" aria-live="polite"></p>
+        </form>
       </div>
     </div>
-  </footer>
+  </section>
 
-  <!-- Cookie banner -->
-  <div class="cookie" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Preferințe cookie">
-    <div class="cookie-inner">
-      <p>Folosim cookie-uri pentru funcționalitate și statistici de bază. Poți accepta sau refuza.</p>
-      <div class="cookie-actions">
-        <button class="btn btn-ghost" type="button" id="cookieReject">Refuz</button>
-        <button class="btn btn-primary" type="button" id="cookieAccept">Accept</button>
+  <section id="faq" class="section">
+    <div class="container">
+      <header class="section-head">
+        <div class="reveal">
+          <h2 data-i18n="faq_h2">Întrebări frecvente</h2>
+          <p data-i18n="faq_p">Răspunsuri clare. Dacă ai ceva specific, scrie în formular.</p>
+        </div>
+      </header>
+
+      <div class="faq">
+        <details class="reveal">
+          <summary><span data-i18n="q1">Cât durează livrarea?</span>
+            <svg class="caret" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <p data-i18n="a1">Depinde de pachet și conținut. Start e rapid; Growth/Pro depinde de pagini și integrare.</p>
+        </details>
+
+        <details class="reveal">
+          <summary><span data-i18n="q2">Lucrați în Belgia și România?</span>
+            <svg class="caret" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <p data-i18n="a2">Da. Putem livra multilingv și face SEO local pe orașe/zone.</p>
+        </details>
+
+        <details class="reveal">
+          <summary><span data-i18n="q3">Cum primesc leadurile?</span>
+            <svg class="caret" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <p data-i18n="a3">Prin Netlify Forms: ajung în Netlify + pe email (setat din Netlify). Se pot integra și automatizări.</p>
+        </details>
       </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section alt">
+    <div class="container">
+      <header class="section-head">
+        <div class="reveal">
+          <h2 data-i18n="c_h2">Contact</h2>
+          <p data-i18n="c_p">Completează formularul și revenim cu pași concreți + ofertă clară.</p>
+        </div>
+      </header>
+
+      <div class="contact">
+        <div class="contact-card reveal">
+          <h3 data-i18n="c_left_t">Detalii</h3>
+          <ul class="contact-list">
+            <li><strong>Email:</strong> <a href="mailto:contact@mrs-digitalagency.com">contact@mrs-digitalagency.com</a></li>
+            <li><strong data-i18n="c_hours">Program:</strong> Lun–Vin</li>
+            <li><strong data-i18n="c_langs">Limbi:</strong> RO / EN / FR / NL / ES</li>
+          </ul>
+        </div>
+
+        <form class="form reveal" id="leadForm" name="lead" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" netlify>
+          <input type="hidden" name="form-name" value="lead" />
+          <p class="sr-only"><label>Nu completa: <input name="bot-field" /></label></p>
+
+          <div class="field">
+            <label for="name" data-i18n="f_name">Nume</label>
+            <input id="name" name="name" type="text" autocomplete="name" required minlength="2" />
+            <small class="error" data-error-for="name"></small>
+          </div>
+
+          <div class="field">
+            <label for="email" data-i18n="f_email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+            <small class="error" data-error-for="email"></small>
+          </div>
+
+          <div class="field">
+            <label for="interest" data-i18n="f_interest">Ce te interesează?</label>
+            <select id="interest" name="interest" required>
+              <option value="" selected disabled data-i18n="f_choose">Alege…</option>
+              <option data-i18n="i1">Website</option>
+              <option data-i18n="i2">SEO local</option>
+              <option data-i18n="i3">Automatizări</option>
+              <option data-i18n="i4">Tot pachetul</option>
+            </select>
+            <small class="error" data-error-for="interest"></small>
+          </div>
+
+          <div class="field">
+            <label for="message" data-i18n="f_message">Mesaj</label>
+            <textarea id="message" name="message" required minlength="10"></textarea>
+            <small class="error" data-error-for="message"></small>
+          </div>
+
+          <button class="btn btn-primary" type="submit"><span aria-hidden="true">✅</span> <span data-i18n="c_send">Trimite</span></button>
+          <p class="note" id="formNote" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <p>© <span id="year"></span> MRS Digital Agency.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+      <a href="#top" data-i18n="top">Sus ↑</a>
+      <a href="#contact" data-i18n="contact">Contact</a>
     </div>
   </div>
+</footer>
 
-  <script>
-  (() => {
-    "use strict";
+<script>
+(() => {
+  "use strict";
+  const qs = (s, r=document) => r.querySelector(s);
+  const qsa = (s, r=document) => Array.from(r.querySelectorAll(s));
 
-    const qs = (sel, root=document) => root.querySelector(sel);
+  // Year
+  const yearEl = qs("#year");
+  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-    // Year
-    const yearEl = qs("#year");
-    if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+  // Mobile nav
+  const nav = qs("#siteNav");
+  const toggle = qs("#navToggle");
+  const closeNav = () => { if(!nav||!toggle) return; nav.dataset.open="false"; toggle.setAttribute("aria-expanded","false"); };
+  const openNav  = () => { if(!nav||!toggle) return; nav.dataset.open="true";  toggle.setAttribute("aria-expanded","true"); };
+  if (nav && toggle) {
+    closeNav();
+    toggle.addEventListener("click", () => (nav.dataset.open==="true") ? closeNav() : openNav());
+    nav.addEventListener("click", (e) => { if (e.target && e.target.matches("a")) closeNav(); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeNav(); });
+  }
 
-    // Mobile nav
-    const nav = qs("[data-nav]");
-    const toggle = qs("#navToggle");
-    const closeNav = () => {
-      if (!nav || !toggle) return;
-      nav.dataset.open = "false";
-      toggle.setAttribute("aria-expanded", "false");
-    };
-    const openNav = () => {
-      if (!nav || !toggle) return;
-      nav.dataset.open = "true";
-      toggle.setAttribute("aria-expanded", "true");
-    };
-    if (nav && toggle) {
-      closeNav();
-      toggle.addEventListener("click", () => {
-        const isOpen = nav.dataset.open === "true";
-        isOpen ? closeNav() : openNav();
-      });
-      nav.addEventListener("click", (e) => {
-        const t = e.target;
-        if (t && t.matches("a")) closeNav();
-      });
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") closeNav();
-      });
+  // Reveal
+  const revealEls = qsa(".reveal");
+  const io = ("IntersectionObserver" in window) ? new IntersectionObserver((entries) => {
+    entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
+  }, { threshold: 0.12 }) : null;
+  if (io) revealEls.forEach(el => io.observe(el)); else revealEls.forEach(el => el.classList.add("in"));
+
+  // i18n dictionary
+  const dict = {
+    ro: {
+      tagline:"Website-uri rapide • SEO local • Leaduri",
+      nav_services:"Servicii", nav_pricing:"Pachete", nav_process:"Proces", nav_faq:"Întrebări", nav_cta:"Consultare", nav_open:"Deschide meniul",
+      hero_pill:"Rapid • SEO local • Leaduri",
+      hero_h1:"Transformăm vizitatorii în clienți, cu un site care chiar lucrează pentru tine.",
+      hero_lead:"Construim website-uri rapide și clare, optimizate pentru mobil, cu SEO local și un flux simplu de leaduri. Scopul e simplu: să fii găsit pe Google și să primești cereri reale.",
+      hero_cta1:"Cere ofertă", hero_cta2:"Audit gratuit", hero_cta3:"Pachete",
+      m1_label:"Timp încărcare", m2_label:"SEO local", m2_val:"Structură + GBP", m3_label:"Conversii", m3_val:"CTA + Funnel",
+      k1_t:"Claritate", k1_s:"ofertă + mesaj", k2_t:"Încredere", k2_s:"design + dovadă", k3_t:"Măsurare", k3_s:"tracking corect",
+      hero_note:"Livrăm rapid, curat și testat (fără dependențe fragile).",
+
+      s_h2:"Servicii", s_p:"Tot ce facem e gândit să aducă cereri: structură, mesaj, viteză, SEO local și follow-up simplu.",
+      svc1_t:"Website rapid (care vinde)", svc1_p:"Landing sau website complet, cu structură clară și CTA-uri puternice.",
+      svc1_l1:"Design modern și curat", svc1_l2:"Copy orientat pe conversie", svc1_l3:"Performanță + accesibilitate",
+      svc2_t:"SEO local (Google)", svc2_p:"Te facem vizibil în orașul/zona ta pentru serviciile tale.",
+      svc2_l1:"Optimizare Google Business Profile", svc2_l2:"Structură SEO pe pagini", svc2_l3:"Titluri + meta corecte",
+      svc3_t:"Automatizări leaduri", svc3_p:"Formular + notificare + follow-up: răspunzi mai repede și închizi mai ușor.",
+      svc3_l1:"Flux simplu pentru cereri", svc3_l2:"Template email + răspuns rapid", svc3_l3:"Integrări ușoare",
+
+      p_h2:"Pachete", p_p:"Prețuri clare + ce primești. Dacă ai nevoie de ceva custom, îl adaptăm.",
+      pk1_t:"Start", pk1_s:"Rapid, simplu, perfect pentru început",
+      pk1_l1:"Hero + servicii + contact", pk1_l2:"CTA-uri și structură conversie", pk1_l3:"Design responsive", pk1_l4:"Implementare rapidă",
+      pk2_t:"Growth", pk2_s:"Leaduri constante & SEO local solid",
+      pk2_l1:"Structură completă 3–5 pagini", pk2_l2:"Copy orientat pe conversii", pk2_l3:"SEO local + GBP (setup)", pk2_l4:"Evenimente & raportare de bază",
+      pk3_t:"Pro", pk3_s:"Scalare: locații + automatizări + optimizări",
+      pk3_l1:"Pagini pe oraș/zonă (SEO local)", pk3_l2:"Follow-up automat pentru cereri", pk3_l3:"Optimizări lunare (opțional)", pk3_l4:"Raportare & îmbunătățiri",
+      recommended:"Recomandat", one_time:"o singură dată",
+      t_landing:"Landing 1 pagină", t_form:"Formular", t_seo:"SEO basic", t_pages:"3–5 pagini", t_localseo:"SEO local", t_tracking:"Tracking", t_locations:"Pagini locații", t_auto:"Automatizări", t_opt:"Optimizări",
+      btn_quote:"Cere ofertă", btn_audit:"Audit", btn_consult:"Programează consultare", btn_talk:"Vorbește cu noi",
+
+      pr_h2:"Proces în 4 pași", pr_p:"Rapid, fără complicații. Știi mereu ce urmează și ce primești.",
+      st1_t:"Audit & obiectiv", st1_s:"Clarificăm ce vrei: cereri, rezervări, programări.",
+      st2_t:"Structură & mesaj", st2_s:"Wireframe + copy + CTA, fără umplutură.",
+      st3_t:"Implementare", st3_s:"Site + SEO + formulare + testare completă.",
+      st4_t:"Optimizare", st4_s:"Măsurăm, îmbunătățim, creștem conversiile.",
+
+      a_h2:"Audit gratuit", a_p:"Completează 5 câmpuri și îți răspundem cu pași concreți.",
+      a_left_t:"Ce primești", a_l1:"3–7 îmbunătățiri cu impact imediat", a_l2:"Structură recomandată (pagini + secțiuni)", a_l3:"Recomandări SEO local pentru oraș/zonă", a_l4:"Ce CTA-uri & funnel punem",
+      a_send:"Trimite audit",
+
+      faq_h2:"Întrebări frecvente", faq_p:"Răspunsuri clare. Dacă ai ceva specific, scrie în formular.",
+      q1:"Cât durează livrarea?", a1:"Depinde de pachet și conținut. Start e rapid; Growth/Pro depinde de pagini și integrare.",
+      q2:"Lucrați în Belgia și România?", a2:"Da. Putem livra multilingv și face SEO local pe orașe/zone.",
+      q3:"Cum primesc leadurile?", a3:"Prin Netlify Forms: ajung în Netlify + pe email (setat din Netlify). Se pot integra și automatizări.",
+
+      c_h2:"Contact", c_p:"Completează formularul și revenim cu pași concreți + ofertă clară.",
+      c_left_t:"Detalii", c_hours:"Program:", c_langs:"Limbi:", c_send:"Trimite",
+
+      f_name:"Nume", f_email:"Email", f_interest:"Ce te interesează?", f_message:"Mesaj", f_business:"Tip afacere", f_location:"Oraș / zonă", f_goal:"Obiectiv (30 zile)", f_choose:"Alege…",
+      i1:"Website", i2:"SEO local", i3:"Automatizări", i4:"Tot pachetul", other:"Altceva",
+      top:"Sus ↑", contact:"Contact"
+    },
+
+    en: {
+      tagline:"Fast websites • Local SEO • Leads",
+      nav_services:"Services", nav_pricing:"Pricing", nav_process:"Process", nav_faq:"FAQ", nav_cta:"Consultation", nav_open:"Open menu",
+      hero_pill:"Fast • Local SEO • Leads",
+      hero_h1:"We turn visitors into customers with a website that actually works for you.",
+      hero_lead:"We build fast, clear, mobile-first websites with local SEO and a simple lead flow. The goal is simple: get found on Google and receive real inquiries.",
+      hero_cta1:"Request a quote", hero_cta2:"Free audit", hero_cta3:"Pricing",
+      m1_label:"Load time", m2_label:"Local SEO", m2_val:"Structure + GBP", m3_label:"Conversions", m3_val:"CTA + Funnel",
+      k1_t:"Clarity", k1_s:"offer + message", k2_t:"Trust", k2_s:"design + proof", k3_t:"Measurement", k3_s:"proper tracking",
+      hero_note:"Fast delivery, clean build, fully tested.",
+
+      s_h2:"Services", s_p:"Everything we do is built to generate inquiries: structure, messaging, speed, local SEO and simple follow-up.",
+      svc1_t:"High-converting website", svc1_p:"Landing page or full website with clear structure and strong CTAs.",
+      svc1_l1:"Clean modern design", svc1_l2:"Conversion-focused copy", svc1_l3:"Performance + accessibility",
+      svc2_t:"Local SEO (Google)", svc2_p:"We make you visible in your city/area for your services.",
+      svc2_l1:"Google Business Profile optimization", svc2_l2:"On-page SEO structure", svc2_l3:"Proper titles + meta",
+      svc3_t:"Lead automations", svc3_p:"Form + notifications + follow-up: reply faster and close easier.",
+      svc3_l1:"Simple inquiry flow", svc3_l2:"Email templates + fast replies", svc3_l3:"Easy integrations",
+
+      p_h2:"Pricing", p_p:"Clear pricing and deliverables. Need custom? We adapt.",
+      pk1_t:"Start", pk1_s:"Quick, simple, perfect to begin",
+      pk1_l1:"Hero + services + contact", pk1_l2:"CTAs and conversion structure", pk1_l3:"Responsive design", pk1_l4:"Fast delivery",
+      pk2_t:"Growth", pk2_s:"Consistent leads & solid local SEO",
+      pk2_l1:"Full 3–5 page structure", pk2_l2:"Conversion-focused copy", pk2_l3:"Local SEO + GBP setup", pk2_l4:"Events & basic reporting",
+      pk3_t:"Pro", pk3_s:"Scale: locations + automations + optimization",
+      pk3_l1:"City/area pages (local SEO)", pk3_l2:"Automated follow-up for inquiries", pk3_l3:"Monthly optimization (optional)", pk3_l4:"Reporting & improvements",
+      recommended:"Recommended", one_time:"one-time",
+      t_landing:"1-page landing", t_form:"Form", t_seo:"Basic SEO", t_pages:"3–5 pages", t_localseo:"Local SEO", t_tracking:"Tracking", t_locations:"Location pages", t_auto:"Automations", t_opt:"Optimization",
+      btn_quote:"Request a quote", btn_audit:"Audit", btn_consult:"Book a consultation", btn_talk:"Talk to us",
+
+      pr_h2:"4-step process", pr_p:"Fast, no complications. You always know what’s next.",
+      st1_t:"Audit & goal", st1_s:"We clarify the goal: inquiries, bookings, appointments.",
+      st2_t:"Structure & message", st2_s:"Wireframe + copy + CTA, no fluff.",
+      st3_t:"Build", st3_s:"Website + SEO + forms + full testing.",
+      st4_t:"Optimize", st4_s:"Measure, improve, increase conversions.",
+
+      a_h2:"Free audit", a_p:"Fill 5 fields and we’ll reply with concrete steps.",
+      a_left_t:"What you get", a_l1:"3–7 high-impact improvements", a_l2:"Recommended structure (pages + sections)", a_l3:"Local SEO recommendations", a_l4:"CTAs & funnel plan",
+      a_send:"Send audit",
+
+      faq_h2:"FAQ", faq_p:"Clear answers. Ask anything specific in the form.",
+      q1:"How long does delivery take?", a1:"Depends on the package and content. Start is fast; Growth/Pro depends on pages and integrations.",
+      q2:"Do you work in Belgium and Romania?", a2:"Yes. We can deliver multi-language and local SEO by city/area.",
+      q3:"How do I receive leads?", a3:"Via Netlify Forms: stored in Netlify and emailed (configured in Netlify). Automations available.",
+
+      c_h2:"Contact", c_p:"Fill the form and we’ll come back with steps + a clear quote.",
+      c_left_t:"Details", c_hours:"Hours:", c_langs:"Languages:", c_send:"Send",
+
+      f_name:"Name", f_email:"Email", f_interest:"What do you need?", f_message:"Message", f_business:"Business type", f_location:"City / area", f_goal:"Goal (30 days)", f_choose:"Choose…",
+      i1:"Website", i2:"Local SEO", i3:"Automations", i4:"Full package", other:"Other",
+      top:"Top ↑", contact:"Contact"
+    },
+
+    fr: {
+      tagline:"Sites rapides • SEO local • Prospects",
+      nav_services:"Services", nav_pricing:"Offres", nav_process:"Process", nav_faq:"FAQ", nav_cta:"Consultation", nav_open:"Ouvrir le menu",
+      hero_pill:"Rapide • SEO local • Prospects",
+      hero_h1:"On transforme les visiteurs en clients grâce à un site qui travaille vraiment pour vous.",
+      hero_lead:"Nous créons des sites rapides, clairs, mobile-first, avec SEO local et un flux simple de prospects. Objectif: être trouvé sur Google et recevoir de vraies demandes.",
+      hero_cta1:"Demander un devis", hero_cta2:"Audit gratuit", hero_cta3:"Offres",
+      m1_label:"Temps de chargement", m2_label:"SEO local", m2_val:"Structure + GBP", m3_label:"Conversions", m3_val:"CTA + Funnel",
+      k1_t:"Clarté", k1_s:"offre + message", k2_t:"Confiance", k2_s:"design + preuve", k3_t:"Mesure", k3_s:"tracking",
+      hero_note:"Livraison rapide, code propre, entièrement testé.",
+
+      s_h2:"Services", s_p:"Tout est pensé pour générer des demandes : structure, message, vitesse, SEO local et suivi simple.",
+      svc1_t:"Site qui convertit", svc1_p:"Landing page ou site complet avec structure claire et CTA forts.",
+      svc1_l1:"Design moderne et propre", svc1_l2:"Texte orienté conversion", svc1_l3:"Performance + accessibilité",
+      svc2_t:"SEO local (Google)", svc2_p:"Visibilité dans votre ville/zone pour vos services.",
+      svc2_l1:"Optimisation Google Business Profile", svc2_l2:"Structure SEO on-page", svc2_l3:"Titres + meta corrects",
+      svc3_t:"Automatisations prospects", svc3_p:"Formulaire + notifications + suivi : réponse plus rapide, plus de ventes.",
+      svc3_l1:"Flux simple de demandes", svc3_l2:"Templates email + réponse rapide", svc3_l3:"Intégrations faciles",
+
+      p_h2:"Offres", p_p:"Prix clairs + livrables. Besoin de sur-mesure ? On adapte.",
+      pk1_t:"Start", pk1_s:"Rapide et simple pour démarrer",
+      pk1_l1:"Hero + services + contact", pk1_l2:"CTA et structure de conversion", pk1_l3:"Design responsive", pk1_l4:"Livraison rapide",
+      pk2_t:"Growth", pk2_s:"Prospects réguliers & SEO local solide",
+      pk2_l1:"Structure complète 3–5 pages", pk2_l2:"Copy orienté conversion", pk2_l3:"SEO local + GBP", pk2_l4:"Événements & reporting",
+      pk3_t:"Pro", pk3_s:"Scale: pages locales + automatisations + optimisation",
+      pk3_l1:"Pages ville/zone", pk3_l2:"Suivi automatique", pk3_l3:"Optimisation mensuelle (option)", pk3_l4:"Reporting & améliorations",
+      recommended:"Recommandé", one_time:"paiement unique",
+      t_landing:"Landing 1 page", t_form:"Formulaire", t_seo:"SEO basic", t_pages:"3–5 pages", t_localseo:"SEO local", t_tracking:"Tracking", t_locations:"Pages locales", t_auto:"Automations", t_opt:"Optimisation",
+      btn_quote:"Demander un devis", btn_audit:"Audit", btn_consult:"Réserver", btn_talk:"Nous contacter",
+
+      pr_h2:"Process en 4 étapes", pr_p:"Rapide, simple, sans complication.",
+      st1_t:"Audit & objectif", st1_s:"Demandes, réservations, rendez-vous.",
+      st2_t:"Structure & message", st2_s:"Wireframe + texte + CTA, sans bla-bla.",
+      st3_t:"Mise en place", st3_s:"Site + SEO + formulaires + tests.",
+      st4_t:"Optimisation", st4_s:"Mesurer, améliorer, convertir.",
+
+      a_h2:"Audit gratuit", a_p:"Remplissez 5 champs et on répond avec des étapes concrètes.",
+      a_left_t:"Vous recevez", a_l1:"3–7 améliorations à fort impact", a_l2:"Structure recommandée", a_l3:"Recommandations SEO local", a_l4:"CTA & funnel",
+      a_send:"Envoyer l’audit",
+
+      faq_h2:"FAQ", faq_p:"Réponses claires. Posez vos questions dans le formulaire.",
+      q1:"Combien de temps ?", a1:"Selon l’offre et le contenu. Start est rapide; Growth/Pro dépend des pages et intégrations.",
+      q2:"Belgique et Roumanie ?", a2:"Oui. Multilingue possible + SEO local par ville/zone.",
+      q3:"Comment je reçois les prospects ?", a3:"Via Netlify Forms : Netlify + email (config Netlify). Automations possibles.",
+
+      c_h2:"Contact", c_p:"Remplissez le formulaire, on revient avec des étapes + un devis clair.",
+      c_left_t:"Détails", c_hours:"Horaires:", c_langs:"Langues:", c_send:"Envoyer",
+
+      f_name:"Nom", f_email:"Email", f_interest:"Besoin", f_message:"Message", f_business:"Type d’activité", f_location:"Ville / zone", f_goal:"Objectif (30 jours)", f_choose:"Choisir…",
+      i1:"Site web", i2:"SEO local", i3:"Automations", i4:"Pack complet", other:"Autre",
+      top:"Haut ↑", contact:"Contact"
+    },
+
+    nl: {
+      tagline:"Snelle sites • Lokale SEO • Leads",
+      nav_services:"Diensten", nav_pricing:"Pakketten", nav_process:"Proces", nav_faq:"FAQ", nav_cta:"Consult", nav_open:"Menu openen",
+      hero_pill:"Snel • Lokale SEO • Leads",
+      hero_h1:"We maken van bezoekers klanten met een website die echt voor je werkt.",
+      hero_lead:"We bouwen snelle, duidelijke, mobile-first websites met lokale SEO en een simpele leadflow. Doel: gevonden worden op Google en echte aanvragen krijgen.",
+      hero_cta1:"Offerte aanvragen", hero_cta2:"Gratis audit", hero_cta3:"Pakketten",
+      m1_label:"Laadtijd", m2_label:"Lokale SEO", m2_val:"Structuur + GBP", m3_label:"Conversies", m3_val:"CTA + Funnel",
+      k1_t:"Duidelijkheid", k1_s:"aanbod + boodschap", k2_t:"Vertrouwen", k2_s:"design + bewijs", k3_t:"Meten", k3_s:"tracking",
+      hero_note:"Snelle oplevering, nette build, volledig getest.",
+
+      s_h2:"Diensten", s_p:"Alles is gericht op aanvragen: structuur, boodschap, snelheid, lokale SEO en follow-up.",
+      svc1_t:"Website die converteert", svc1_p:"Landing of volledige site met duidelijke structuur en sterke CTA’s.",
+      svc1_l1:"Strak modern design", svc1_l2:"Conversiegerichte copy", svc1_l3:"Performance + toegankelijkheid",
+      svc2_t:"Lokale SEO (Google)", svc2_p:"Zichtbaarheid in jouw stad/gebied voor jouw diensten.",
+      svc2_l1:"Google Business Profile optimalisatie", svc2_l2:"On-page SEO structuur", svc2_l3:"Titels + meta correct",
+      svc3_t:"Lead automatisering", svc3_p:"Formulier + notificaties + follow-up: sneller reageren, meer sluiten.",
+      svc3_l1:"Simpele aanvraagflow", svc3_l2:"Email templates + snelle reply", svc3_l3:"Makkelijke integraties",
+
+      p_h2:"Pakketten", p_p:"Duidelijke prijzen en deliverables. Custom nodig? We passen aan.",
+      pk1_t:"Start", pk1_s:"Snel en simpel om te starten",
+      pk1_l1:"Hero + diensten + contact", pk1_l2:"CTA’s en conversiestructuur", pk1_l3:"Responsive design", pk1_l4:"Snelle oplevering",
+      pk2_t:"Growth", pk2_s:"Consistente leads & sterke lokale SEO",
+      pk2_l1:"Volledige 3–5 pagina structuur", pk2_l2:"Conversiegerichte copy", pk2_l3:"Lokale SEO + GBP setup", pk2_l4:"Events & basisrapportage",
+      pk3_t:"Pro", pk3_s:"Schalen: locaties + automatiseringen + optimalisatie",
+      pk3_l1:"Stad/gebied pagina’s", pk3_l2:"Automatische follow-up", pk3_l3:"Maandelijkse optimalisatie (optioneel)", pk3_l4:"Rapportage & verbeteringen",
+      recommended:"Aanbevolen", one_time:"eenmalig",
+      t_landing:"1 pagina landing", t_form:"Formulier", t_seo:"Basis SEO", t_pages:"3–5 pagina’s", t_localseo:"Lokale SEO", t_tracking:"Tracking", t_locations:"Locatiepagina’s", t_auto:"Automations", t_opt:"Optimalisatie",
+      btn_quote:"Offerte aanvragen", btn_audit:"Audit", btn_consult:"Consult plannen", btn_talk:"Contact",
+
+      pr_h2:"Proces in 4 stappen", pr_p:"Snel en zonder gedoe.",
+      st1_t:"Audit & doel", st1_s:"Aanvragen, boekingen, afspraken.",
+      st2_t:"Structuur & boodschap", st2_s:"Wireframe + copy + CTA, geen fluff.",
+      st3_t:"Bouw", st3_s:"Website + SEO + formulieren + tests.",
+      st4_t:"Optimaliseer", st4_s:"Meten, verbeteren, meer conversies.",
+
+      a_h2:"Gratis audit", a_p:"Vul 5 velden in en we reageren met concrete stappen.",
+      a_left_t:"Wat je krijgt", a_l1:"3–7 verbeteringen met impact", a_l2:"Aanbevolen structuur", a_l3:"Lokale SEO aanbevelingen", a_l4:"CTA’s & funnel",
+      a_send:"Audit versturen",
+
+      faq_h2:"FAQ", faq_p:"Duidelijke antwoorden. Stel je vraag in het formulier.",
+      q1:"Hoe lang duurt het?", a1:"Afhankelijk van pakket en content. Start is snel; Growth/Pro hangt af van pagina’s en integraties.",
+      q2:"België en Roemenië?", a2:"Ja. Meertalig mogelijk + lokale SEO per stad/gebied.",
+      q3:"Hoe ontvang ik leads?", a3:"Via Netlify Forms: in Netlify + email (Netlify instelling). Automatiseringen mogelijk.",
+
+      c_h2:"Contact", c_p:"Vul het formulier in en we komen terug met stappen + duidelijke offerte.",
+      c_left_t:"Details", c_hours:"Uren:", c_langs:"Talen:", c_send:"Versturen",
+
+      f_name:"Naam", f_email:"Email", f_interest:"Waarmee helpen?", f_message:"Bericht", f_business:"Type bedrijf", f_location:"Stad / gebied", f_goal:"Doel (30 dagen)", f_choose:"Kies…",
+      i1:"Website", i2:"Lokale SEO", i3:"Automations", i4:"Volledig pakket", other:"Anders",
+      top:"Boven ↑", contact:"Contact"
+    },
+
+    es: {
+      tagline:"Webs rápidas • SEO local • Leads",
+      nav_services:"Servicios", nav_pricing:"Planes", nav_process:"Proceso", nav_faq:"FAQ", nav_cta:"Consulta", nav_open:"Abrir menú",
+      hero_pill:"Rápido • SEO local • Leads",
+      hero_h1:"Convertimos visitantes en clientes con una web que realmente trabaja para ti.",
+      hero_lead:"Creamos webs rápidas y claras, mobile-first, con SEO local y un flujo simple de leads. Objetivo: aparecer en Google y recibir solicitudes reales.",
+      hero_cta1:"Pedir presupuesto", hero_cta2:"Auditoría gratis", hero_cta3:"Planes",
+      m1_label:"Tiempo de carga", m2_label:"SEO local", m2_val:"Estructura + GBP", m3_label:"Conversiones", m3_val:"CTA + Funnel",
+      k1_t:"Claridad", k1_s:"oferta + mensaje", k2_t:"Confianza", k2_s:"diseño + prueba", k3_t:"Medición", k3_s:"tracking",
+      hero_note:"Entrega rápida, build limpio y probado.",
+
+      s_h2:"Servicios", s_p:"Todo está pensado para generar solicitudes: estructura, mensaje, velocidad, SEO local y seguimiento.",
+      svc1_t:"Web que convierte", svc1_p:"Landing o web completa con estructura clara y CTA fuertes.",
+      svc1_l1:"Diseño moderno y limpio", svc1_l2:"Copy orientado a conversión", svc1_l3:"Rendimiento + accesibilidad",
+      svc2_t:"SEO local (Google)", svc2_p:"Visibilidad en tu ciudad/zona para tus servicios.",
+      svc2_l1:"Optimización de Google Business Profile", svc2_l2:"Estructura SEO en página", svc2_l3:"Títulos + meta correctos",
+      svc3_t:"Automatización de leads", svc3_p:"Formulario + notificaciones + seguimiento: respondes más rápido y cierras mejor.",
+      svc3_l1:"Flujo simple de solicitudes", svc3_l2:"Plantillas de email + respuesta rápida", svc3_l3:"Integraciones fáciles",
+
+      p_h2:"Planes", p_p:"Precios claros y entregables. ¿Custom? Lo adaptamos.",
+      pk1_t:"Start", pk1_s:"Rápido y simple para empezar",
+      pk1_l1:"Hero + servicios + contacto", pk1_l2:"CTA y estructura de conversión", pk1_l3:"Diseño responsive", pk1_l4:"Entrega rápida",
+      pk2_t:"Growth", pk2_s:"Leads constantes y SEO local sólido",
+      pk2_l1:"Estructura completa 3–5 páginas", pk2_l2:"Copy orientado a conversión", pk2_l3:"SEO local + configuración GBP", pk2_l4:"Eventos & reporte básico",
+      pk3_t:"Pro", pk3_s:"Escalar: ubicaciones + automatizaciones + optimización",
+      pk3_l1:"Páginas por ciudad/zona", pk3_l2:"Seguimiento automático", pk3_l3:"Optimización mensual (opcional)", pk3_l4:"Reportes & mejoras",
+      recommended:"Recomendado", one_time:"pago único",
+      t_landing:"Landing 1 página", t_form:"Formulario", t_seo:"SEO básico", t_pages:"3–5 páginas", t_localseo:"SEO local", t_tracking:"Tracking", t_locations:"Páginas ubicación", t_auto:"Automatizaciones", t_opt:"Optimización",
+      btn_quote:"Pedir presupuesto", btn_audit:"Auditoría", btn_consult:"Agendar consulta", btn_talk:"Hablar",
+
+      pr_h2:"Proceso en 4 pasos", pr_p:"Rápido, sin complicaciones.",
+      st1_t:"Auditoría y objetivo", st1_s:"Solicitudes, reservas, citas.",
+      st2_t:"Estructura y mensaje", st2_s:"Wireframe + copy + CTA, sin relleno.",
+      st3_t:"Implementación", st3_s:"Web + SEO + formularios + pruebas.",
+      st4_t:"Optimización", st4_s:"Medir, mejorar y convertir más.",
+
+      a_h2:"Auditoría gratis", a_p:"Completa 5 campos y respondemos con pasos concretos.",
+      a_left_t:"Recibes", a_l1:"3–7 mejoras de alto impacto", a_l2:"Estructura recomendada", a_l3:"Recomendaciones SEO local", a_l4:"CTA y funnel",
+      a_send:"Enviar auditoría",
+
+      faq_h2:"FAQ", faq_p:"Respuestas claras. Pregunta en el formulario.",
+      q1:"¿Cuánto tarda?", a1:"Depende del plan y el contenido. Start es rápido; Growth/Pro depende de páginas e integraciones.",
+      q2:"¿Trabajan en Bélgica y Rumanía?", a2:"Sí. Multilingüe y SEO local por ciudad/zona.",
+      q3:"¿Cómo recibo los leads?", a3:"Con Netlify Forms: en Netlify + email (configurado en Netlify). Automatizaciones disponibles.",
+
+      c_h2:"Contacto", c_p:"Completa el formulario y volvemos con pasos y presupuesto claro.",
+      c_left_t:"Detalles", c_hours:"Horario:", c_langs:"Idiomas:", c_send:"Enviar",
+
+      f_name:"Nombre", f_email:"Email", f_interest:"¿Qué necesitas?", f_message:"Mensaje", f_business:"Tipo de negocio", f_location:"Ciudad / zona", f_goal:"Objetivo (30 días)", f_choose:"Elegir…",
+      i1:"Web", i2:"SEO local", i3:"Automatizaciones", i4:"Paquete completo", other:"Otro",
+      top:"Arriba ↑", contact:"Contacto"
+    }
+  };
+
+  // Apply language
+  const select = qs("#langSelect");
+  const apply = (lang) => {
+    const d = dict[lang] || dict.ro;
+    document.documentElement.lang = lang;
+
+    qsa("[data-i18n]").forEach(el => {
+      const key = el.getAttribute("data-i18n");
+      if (key && d[key] != null) el.textContent = d[key];
+    });
+
+    try { localStorage.setItem("mrs_lang", lang); } catch(_) {}
+  };
+
+  // Load saved language
+  let initial = "ro";
+  try {
+    const saved = localStorage.getItem("mrs_lang");
+    if (saved && dict[saved]) initial = saved;
+  } catch(_) {}
+
+  if (select) {
+    select.value = initial;
+    select.addEventListener("change", () => apply(select.value));
+  }
+  apply(initial);
+
+  // Forms: validation + POST to Netlify
+  const validateEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(v||"").trim());
+  const setErr = (name, msg) => { const el = qs(`[data-error-for="${name}"]`); if (el) el.textContent = msg || ""; };
+
+  const submitNetlify = async (form, noteEl, rules) => {
+    const fd = new FormData(form);
+    let ok = true;
+
+    Object.keys(rules).forEach(k => setErr(k, ""));
+
+    for (const [field, rule] of Object.entries(rules)) {
+      const v = String(fd.get(rule.name) || "");
+      if (rule.type === "minlen" && v.trim().length < rule.min) { setErr(field, rule.msg); ok = false; }
+      if (rule.type === "email" && !validateEmail(v)) { setErr(field, rule.msg); ok = false; }
+      if (rule.type === "required" && !v.trim()) { setErr(field, rule.msg); ok = false; }
     }
 
-    // Reveal on scroll (safe, no deps)
-    const revealEls = Array.from(document.querySelectorAll(".reveal"));
-    const io = ("IntersectionObserver" in window)
-      ? new IntersectionObserver((entries) => {
-          entries.forEach((en) => {
-            if (en.isIntersecting) {
-              en.target.classList.add("in");
-              io.unobserve(en.target);
-            }
-          });
-        }, { threshold: 0.12 })
-      : null;
-
-    if (io) {
-      revealEls.forEach(el => io.observe(el));
-    } else {
-      revealEls.forEach(el => el.classList.add("in"));
-    }
-
-    // Theme toggle (simple: toggles a "light" palette)
-    const themeBtn = qs("#themeBtn");
-    const applyTheme = (mode) => {
-      if (mode === "light") {
-        document.documentElement.style.setProperty("--bg", "#f6f7ff");
-        document.documentElement.style.setProperty("--panel", "#ffffff");
-        document.documentElement.style.setProperty("--panel2", "#ffffff");
-        document.documentElement.style.setProperty("--text", "#0b1220");
-        document.documentElement.style.setProperty("--muted", "#44507a");
-        document.documentElement.style.setProperty("--line", "rgba(11,18,32,.12)");
-      } else {
-        document.documentElement.style.setProperty("--bg", "#0b1220");
-        document.documentElement.style.setProperty("--panel", "#0f1a30");
-        document.documentElement.style.setProperty("--panel2", "#0c1528");
-        document.documentElement.style.setProperty("--text", "#e9eefc");
-        document.documentElement.style.setProperty("--muted", "#b8c3e6");
-        document.documentElement.style.setProperty("--line", "rgba(255,255,255,.12)");
-      }
-      try { localStorage.setItem("mrs_theme", mode); } catch(_) {}
-    };
+    if (!ok) { if (noteEl) noteEl.textContent = "Please check the highlighted fields."; return; }
+    if (noteEl) noteEl.textContent = "Sending…";
 
     try {
-      const saved = localStorage.getItem("mrs_theme");
-      if (saved) applyTheme(saved);
-    } catch(_) {}
-
-    if (themeBtn) {
-      themeBtn.addEventListener("click", () => {
-        let mode = "dark";
-        try { mode = localStorage.getItem("mrs_theme") || "dark"; } catch(_) {}
-        applyTheme(mode === "dark" ? "light" : "dark");
+      const res = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(fd).toString()
       });
+      if (!res.ok) throw new Error("Bad response");
+      form.reset();
+      if (noteEl) noteEl.textContent = "✅ Sent! We’ll reply as soon as possible.";
+    } catch (_) {
+      if (noteEl) noteEl.textContent = "❌ Could not send. Please try again or email us.";
     }
+  };
 
-    // Forms: client-side validation + POST to Netlify endpoint (keeps page)
-    const validateEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(v || "").trim());
-
-    const setErr = (name, msg) => {
-      const el = qs(`[data-error-for="${name}"]`);
-      if (el) el.textContent = msg || "";
-    };
-
-    const submitNetlify = async (form, noteEl, rules) => {
-      const fd = new FormData(form);
-      let ok = true;
-
-      // clear all errors known
-      Object.keys(rules).forEach(k => setErr(k, ""));
-
-      for (const [field, rule] of Object.entries(rules)) {
-        const v = String(fd.get(rule.name) || "");
-        if (rule.type === "minlen" && v.trim().length < rule.min) {
-          setErr(field, rule.msg);
-          ok = false;
-        }
-        if (rule.type === "email" && !validateEmail(v)) {
-          setErr(field, rule.msg);
-          ok = false;
-        }
-        if (rule.type === "required" && !v.trim()) {
-          setErr(field, rule.msg);
-          ok = false;
-        }
-      }
-
-      if (!ok) {
-        if (noteEl) noteEl.textContent = "Verifică câmpurile marcate mai sus.";
-        return;
-      }
-
-      if (noteEl) noteEl.textContent = "Se trimite…";
-
-      try {
-        const res = await fetch("/", {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: new URLSearchParams(fd).toString()
-        });
-        if (!res.ok) throw new Error("Bad response");
-        form.reset();
-        if (noteEl) noteEl.textContent = "✅ Mulțumim! Mesajul a fost trimis. Revenim cât mai repede.";
-      } catch (e) {
-        if (noteEl) noteEl.textContent = "❌ Nu s-a putut trimite acum. Te rog încearcă din nou sau scrie pe email.";
-      }
-    };
-
-    const leadForm = qs("#leadForm");
-    const leadNote = qs("#formNote");
-    if (leadForm) {
-      leadForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        submitNetlify(leadForm, leadNote, {
-          name: { type:"minlen", name:"name", min:2, msg:"Te rog scrie un nume valid (minim 2 caractere)." },
-          email: { type:"email", name:"email", msg:"Te rog scrie un email valid." },
-          interest: { type:"required", name:"interest", msg:"Te rog alege ce te interesează." },
-          message: { type:"minlen", name:"message", min:10, msg:"Te rog descrie pe scurt (minim 10 caractere)." }
-        });
+  const leadForm = qs("#leadForm");
+  const leadNote = qs("#formNote");
+  if (leadForm) {
+    leadForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      submitNetlify(leadForm, leadNote, {
+        name: { type:"minlen", name:"name", min:2, msg:"Name is too short." },
+        email: { type:"email", name:"email", msg:"Invalid email." },
+        interest: { type:"required", name:"interest", msg:"Please choose an option." },
+        message: { type:"minlen", name:"message", min:10, msg:"Message too short." }
       });
-    }
+    });
+  }
 
-    const auditForm = qs('form[name="audit"]');
-    const auditNote = qs("#auditNote");
-    if (auditForm) {
-      auditForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        submitNetlify(auditForm, auditNote, {
-          audit_name: { type:"minlen", name:"name", min:2, msg:"Te rog scrie un nume valid (minim 2 caractere)." },
-          audit_email: { type:"email", name:"email", msg:"Te rog scrie un email valid." },
-          audit_business: { type:"required", name:"business_type", msg:"Te rog alege tipul de afacere." },
-          audit_location: { type:"minlen", name:"location", min:2, msg:"Te rog scrie oraș/zona (minim 2 caractere)." },
-          audit_message: { type:"minlen", name:"goal", min:10, msg:"Te rog descrie obiectivul (minim 10 caractere)." }
-        });
+  const auditForm = document.querySelector('form[name="audit"]');
+  const auditNote = qs("#auditNote");
+  if (auditForm) {
+    auditForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      submitNetlify(auditForm, auditNote, {
+        audit_name: { type:"minlen", name:"name", min:2, msg:"Name is too short." },
+        audit_email: { type:"email", name:"email", msg:"Invalid email." },
+        audit_business: { type:"required", name:"business_type", msg:"Please choose a business type." },
+        audit_location: { type:"minlen", name:"location", min:2, msg:"Location too short." },
+        audit_goal: { type:"minlen", name:"goal", min:10, msg:"Goal too short." }
       });
-    }
-
-    // Cookie banner (simple)
-    const banner = qs("#cookieBanner");
-    const accept = qs("#cookieAccept");
-    const reject = qs("#cookieReject");
-    const KEY = "mrs_cookie_choice";
-
-    const hideBanner = () => { if (banner) banner.classList.remove("show"); };
-    const showBanner = () => { if (banner) banner.classList.add("show"); };
-
-    try {
-      const choice = localStorage.getItem(KEY);
-      if (!choice) showBanner();
-    } catch(_) {
-      // if storage blocked, just show it
-      showBanner();
-    }
-
-    const setChoice = (v) => {
-      try { localStorage.setItem(KEY, v); } catch(_) {}
-      hideBanner();
-    };
-
-    if (accept) accept.addEventListener("click", () => setChoice("accepted"));
-    if (reject) reject.addEventListener("click", () => setChoice("rejected"));
-  })();
-  </script>
+    });
+  }
+})();
+</script>
 </body>
 </html>
