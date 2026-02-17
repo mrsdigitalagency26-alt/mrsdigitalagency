@@ -6,35 +6,748 @@
   <meta name="theme-color" content="#0b1220" />
 
   <title>MRS Digital Agency | Site-uri rapide, SEO local & leaduri</title>
-  <meta name="description" content="Construim site-uri rapide, SEO local și automatizări care aduc leaduri. Pachete clare. Rezultate măsurabile. Programează o consultare." />
+  <meta name="description" content="Construim site-uri rapide, SEO local și automatizări care aduc leaduri. Pachete clare, rezultate măsurabile. Consultare gratuită." />
   <link rel="canonical" href="https://mrs-digitalagency.com/" />
 
+  <!-- Open Graph -->
   <meta property="og:title" content="MRS Digital Agency" />
-  <meta property="og:description" content="Site-uri rapide, SEO local & leaduri pentru afaceri. Pachete clare, rezultate măsurabile." />
+  <meta property="og:description" content="Site-uri rapide • SEO local • Leaduri. Pachete clare, rezultate măsurabile." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://mrs-digitalagency.com/" />
-  <meta property="og:image" content="https://mrs-digitalagency.com/assets/img/og-cover.svg" />
-
+  <meta property="og:image" content="https://mrs-digitalagency.com/og.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+  <style>
+    :root{
+      --bg:#0b1220;
+      --panel:#0f1a30;
+      --panel2:#0c1528;
+      --text:#e9eefc;
+      --muted:#b8c3e6;
+      --line:rgba(255,255,255,.12);
+      --accent:#7c5cff;
+      --accent2:#22c55e;
+      --warn:#ffcc66;
+      --danger:#ff7a7a;
+      --shadow: 0 18px 70px rgba(0,0,0,.38);
+      --shadow2: 0 14px 40px rgba(0,0,0,.28);
+      --radius: 18px;
+      --radius2: 24px;
+      --max: 1180px;
+      --focus: 0 0 0 4px rgba(124,92,255,.18);
+    }
 
-  <link rel="preload" href="assets/css/styles.css" as="style" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 700px at 20% -10%, rgba(124,92,255,.25), transparent 60%),
+        radial-gradient(900px 600px at 90% 10%, rgba(34,197,94,.18), transparent 55%),
+        radial-gradient(900px 650px at 10% 70%, rgba(255,204,102,.10), transparent 62%),
+        var(--bg);
+      line-height:1.5;
+      overflow-x:hidden;
+    }
+
+    a{ color:inherit; }
+    img{ max-width:100%; height:auto; display:block; }
+    .container{ width:min(var(--max), calc(100% - 32px)); margin-inline:auto; }
+
+    .skip-link{
+      position:absolute; left:-999px; top:auto;
+      width:1px; height:1px; overflow:hidden;
+    }
+    .skip-link:focus{
+      left:16px; top:16px; width:auto; height:auto;
+      background:#000; color:#fff; padding:10px 12px; border-radius:10px;
+      z-index:9999;
+    }
+
+    /* Header */
+    .site-header{
+      position:sticky; top:0; z-index:60;
+      backdrop-filter: blur(10px);
+      background: rgba(11,18,32,.76);
+      border-bottom:1px solid var(--line);
+    }
+    .header-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:12px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      text-decoration:none;
+    }
+    .logo-mark{
+      width:40px; height:40px; border-radius:14px;
+      background: linear-gradient(180deg, rgba(124,92,255,1), rgba(124,92,255,.75));
+      display:grid; place-items:center;
+      box-shadow: 0 10px 25px rgba(124,92,255,.25);
+      flex:0 0 auto;
+    }
+    .logo-mark svg{ width:22px; height:22px; }
+    .brand-text{ display:flex; flex-direction:column; line-height:1.1; }
+    .brand-text strong{ font-size:14px; letter-spacing:.2px; }
+    .brand-text span{ font-size:12px; color:var(--muted); }
+
+    .site-nav{
+      display:flex; align-items:center; gap:18px;
+    }
+    .site-nav a{
+      text-decoration:none;
+      color:var(--muted);
+      font-weight:700;
+      font-size:14px;
+      padding:8px 10px;
+      border-radius:999px;
+    }
+    .site-nav a:hover{ color:var(--text); background: rgba(255,255,255,.06); }
+
+    .nav-actions{
+      display:flex; align-items:center; gap:10px;
+    }
+
+    .nav-toggle{
+      display:none;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color:var(--text);
+      padding:10px 12px;
+      border-radius:14px;
+      cursor:pointer;
+    }
+    .hamburger{
+      width:22px; height:2px; background:var(--text);
+      display:block; position:relative; border-radius:2px;
+    }
+    .hamburger::before,.hamburger::after{
+      content:""; position:absolute; left:0; width:22px; height:2px; background:var(--text);
+      border-radius:2px;
+    }
+    .hamburger::before{ top:-7px; }
+    .hamburger::after{ top:7px; }
+
+    .chip{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      border-radius:999px;
+      font-weight:700;
+      color:var(--muted);
+      font-size:13px;
+      cursor:pointer;
+    }
+    .chip:hover{ background: rgba(255,255,255,.06); color:var(--text); }
+    .chip:focus{ outline:none; box-shadow: var(--focus); }
+
+    /* Buttons */
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 14px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      text-decoration:none;
+      font-weight:900;
+      cursor:pointer;
+      user-select:none;
+      white-space:nowrap;
+    }
+    .btn-primary{
+      background: linear-gradient(180deg, rgba(124,92,255,1), rgba(124,92,255,.82));
+      border-color: rgba(124,92,255,.65);
+      color:white;
+      box-shadow: 0 16px 40px rgba(124,92,255,.18);
+    }
+    .btn-primary:hover{ filter: brightness(1.05); }
+    .btn-ghost{
+      background: rgba(255,255,255,.03);
+      color:var(--text);
+    }
+    .btn-ghost:hover{ background: rgba(255,255,255,.06); }
+    .btn-soft{
+      background: rgba(34,197,94,.10);
+      border-color: rgba(34,197,94,.35);
+      color: var(--text);
+    }
+    .btn-soft:hover{ background: rgba(34,197,94,.16); }
+    .btn:focus{ outline:none; box-shadow: var(--focus); }
+
+    /* Hero */
+    .main{ outline:none; }
+    .hero{
+      padding:56px 0 26px;
+      position:relative;
+    }
+    .hero::before{
+      content:"";
+      position:absolute; inset:-120px -120px auto -120px;
+      height:420px;
+      background: radial-gradient(closest-side at 25% 30%, rgba(124,92,255,.18), transparent 65%),
+                  radial-gradient(closest-side at 70% 10%, rgba(34,197,94,.12), transparent 60%);
+      pointer-events:none;
+      filter: blur(2px);
+      opacity:.9;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:28px;
+      align-items:start;
+      position:relative;
+    }
+    .pill{
+      display:inline-flex; gap:10px; align-items:center;
+      padding:8px 12px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      border-radius:999px;
+      color:var(--muted);
+      margin:0 0 14px;
+      font-weight:800;
+      font-size:13px;
+      width: fit-content;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:999px;
+      background: var(--accent2);
+      box-shadow: 0 0 0 6px rgba(34,197,94,.14);
+    }
+    h1{
+      font-size: clamp(36px, 4.3vw, 60px);
+      line-height:1.02;
+      margin:0 0 12px;
+      letter-spacing:-.6px;
+    }
+    .lead{
+      color:var(--muted);
+      font-size:18px;
+      margin:0 0 18px;
+      max-width: 56ch;
+    }
+    .hero-cta{
+      display:flex; gap:12px; flex-wrap:wrap;
+      margin:10px 0 14px;
+      align-items:center;
+    }
+    .hero-trust{
+      list-style:none; padding:0; margin:12px 0 0;
+      display:flex; gap:12px; flex-wrap:wrap;
+      color:var(--muted);
+      font-weight:700;
+      font-size:13px;
+    }
+    .hero-trust li{
+      display:flex; align-items:center; gap:8px;
+      padding:8px 10px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background: rgba(255,255,255,.02);
+    }
+    .hero-trust svg{ width:16px; height:16px; }
+
+    .hero-card{
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border-radius: var(--radius2);
+      padding:18px;
+      box-shadow: var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-card::after{
+      content:"";
+      position:absolute; inset:auto -60px -90px auto;
+      width:280px; height:280px;
+      background: radial-gradient(closest-side, rgba(124,92,255,.28), transparent 70%);
+      transform: rotate(14deg);
+      pointer-events:none;
+    }
+    .metric{
+      display:flex; justify-content:space-between; align-items:baseline;
+      padding:12px 0;
+      border-bottom:1px solid var(--line);
+      position:relative;
+      z-index:1;
+    }
+    .metric:last-of-type{ border-bottom:none; }
+    .metric-label{ color:var(--muted); font-weight:800; }
+    .metric-value{ font-weight:1000; }
+    .small{ font-size:13px; }
+    .muted{ color:var(--muted); }
+
+    .kpis{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:10px;
+      margin-top:12px;
+      position:relative;
+      z-index:1;
+    }
+    .kpi{
+      border:1px solid var(--line);
+      border-radius: 16px;
+      padding:12px;
+      background: rgba(0,0,0,.18);
+    }
+    .kpi strong{ display:block; font-size:15px; }
+    .kpi span{ display:block; color:var(--muted); font-size:12px; margin-top:2px; }
+
+    /* Sections */
+    .section{ padding:56px 0; }
+    .section.alt{
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0));
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+    .section-head{
+      display:flex; justify-content:space-between; align-items:flex-end; gap:18px;
+      margin-bottom:18px;
+      flex-wrap:wrap;
+    }
+    .section-head h2{
+      margin:0;
+      font-size:30px;
+      letter-spacing:-.2px;
+    }
+    .section-head p{ margin:0; max-width: 70ch; }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:18px;
+      align-items:start;
+    }
+
+    /* Cards */
+    .cards{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:16px;
+    }
+    .card{
+      border:1px solid var(--line);
+      background: rgba(15,26,48,.55);
+      border-radius: var(--radius2);
+      padding:18px;
+      box-shadow: var(--shadow2);
+      position:relative;
+      overflow:hidden;
+      transform: translateY(0);
+      transition: transform .18s ease, background .18s ease, border-color .18s ease;
+    }
+    .card:hover{
+      transform: translateY(-3px);
+      background: rgba(15,26,48,.68);
+      border-color: rgba(124,92,255,.32);
+    }
+    .card h3{ margin:0 0 8px; letter-spacing:-.2px; }
+    .card p{ margin:0 0 10px; color:var(--muted); }
+    .list{ margin:10px 0 0; padding-left:18px; color:var(--muted); }
+    .list li{ margin:6px 0; }
+    .icon{
+      width:42px; height:42px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      display:grid; place-items:center;
+      margin-bottom:12px;
+    }
+    .icon svg{ width:20px; height:20px; }
+
+    /* Pricing */
+    .pricing{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:16px;
+      align-items:stretch;
+    }
+    .price{
+      position:relative;
+      border:1px solid var(--line);
+      background: rgba(15,26,48,.55);
+      border-radius: var(--radius2);
+      padding:18px;
+      box-shadow: var(--shadow2);
+      overflow:hidden;
+    }
+    .price.featured{
+      border-color: rgba(124,92,255,.55);
+      box-shadow: 0 24px 90px rgba(124,92,255,.20);
+      background: linear-gradient(180deg, rgba(124,92,255,.12), rgba(15,26,48,.58));
+    }
+    .badge{
+      position:absolute; top:14px; right:14px;
+      background: rgba(124,92,255,.18);
+      border:1px solid rgba(124,92,255,.45);
+      padding:6px 10px; border-radius:999px;
+      font-size:12px; color:var(--text);
+      font-weight:900;
+    }
+    .price h3{ margin:0 0 6px; }
+    .price-tag{ margin:0 0 10px; color:var(--muted); font-weight:700; }
+    .price-amount{
+      display:flex; align-items:baseline; gap:8px;
+      margin:12px 0 10px;
+      font-weight:1000;
+    }
+    .price-amount .num{ font-size:34px; letter-spacing:-.6px; }
+    .price-amount .per{ color:var(--muted); font-weight:800; }
+    .price .meta{
+      display:flex; flex-wrap:wrap; gap:8px;
+      margin:10px 0 14px;
+    }
+    .tag{
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      color:var(--muted);
+      background: rgba(255,255,255,.02);
+      font-weight:800;
+    }
+
+    /* Portfolio */
+    .portfolio{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:16px;
+    }
+    .work{
+      border:1px solid var(--line);
+      border-radius: var(--radius2);
+      overflow:hidden;
+      background: rgba(15,26,48,.55);
+      box-shadow: var(--shadow2);
+      transition: transform .18s ease, border-color .18s ease;
+    }
+    .work:hover{ transform: translateY(-3px); border-color: rgba(34,197,94,.38); }
+    .work-top{
+      height:150px;
+      background:
+        radial-gradient(450px 220px at 20% 20%, rgba(124,92,255,.35), transparent 60%),
+        radial-gradient(380px 220px at 90% 10%, rgba(34,197,94,.25), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(0,0,0,0));
+      position:relative;
+    }
+    .work-top::after{
+      content:"";
+      position:absolute; inset:auto 14px 14px auto;
+      width:120px; height:40px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(0,0,0,.18);
+      backdrop-filter: blur(10px);
+    }
+    .work-body{ padding:16px; }
+    .work-body h3{ margin:0 0 6px; }
+    .work-body p{ margin:0 0 10px; color:var(--muted); }
+    .work-foot{
+      display:flex; justify-content:space-between; align-items:center;
+      gap:10px;
+    }
+    .mini{
+      display:inline-flex; align-items:center; gap:8px;
+      font-weight:900;
+      color: var(--text);
+      font-size:13px;
+    }
+    .mini svg{ width:16px; height:16px; opacity:.9; }
+
+    /* Testimonials */
+    .testimonials{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:16px;
+      align-items:start;
+    }
+    .quote{
+      border:1px solid var(--line);
+      border-radius: var(--radius2);
+      padding:18px;
+      background: rgba(15,26,48,.55);
+      box-shadow: var(--shadow2);
+    }
+    blockquote{ margin:0; }
+    .quote p{
+      margin:0 0 14px;
+      color:var(--text);
+      font-size:16px;
+    }
+    .quote .who{
+      display:flex; align-items:center; gap:10px;
+      color:var(--muted);
+      font-weight:800;
+    }
+    .avatar{
+      width:38px; height:38px; border-radius:14px;
+      background: linear-gradient(180deg, rgba(34,197,94,.35), rgba(124,92,255,.22));
+      border:1px solid rgba(255,255,255,.16);
+    }
+    .stats{
+      display:grid; gap:12px;
+    }
+    .stat{
+      border:1px solid var(--line);
+      border-radius: var(--radius2);
+      padding:16px;
+      background: rgba(0,0,0,.18);
+    }
+    .stat strong{ font-size:20px; display:block; }
+    .stat span{ color:var(--muted); font-weight:700; font-size:13px; }
+
+    /* Process */
+    .steps{
+      margin:0;
+      padding:0;
+      list-style:none;
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:12px;
+    }
+    .step{
+      border:1px solid var(--line);
+      border-radius: var(--radius2);
+      padding:16px;
+      background: rgba(15,26,48,.55);
+      box-shadow: var(--shadow2);
+      position:relative;
+      overflow:hidden;
+    }
+    .step::before{
+      content:"";
+      position:absolute; inset:-60px auto auto -60px;
+      width:140px; height:140px;
+      background: radial-gradient(closest-side, rgba(124,92,255,.22), transparent 70%);
+      transform: rotate(18deg);
+    }
+    .step .n{
+      display:inline-flex; align-items:center; justify-content:center;
+      width:32px; height:32px; border-radius:12px;
+      background: rgba(124,92,255,.18);
+      border:1px solid rgba(124,92,255,.35);
+      font-weight:1000;
+      margin-bottom:10px;
+      position:relative;
+      z-index:1;
+    }
+    .step strong{ display:block; margin-bottom:6px; position:relative; z-index:1; }
+    .step span{ color:var(--muted); font-weight:700; font-size:13px; position:relative; z-index:1; }
+
+    /* FAQ */
+    .faq{ display:grid; gap:10px; }
+    details{
+      border:1px solid var(--line);
+      background: rgba(15,26,48,.55);
+      border-radius: 16px;
+      padding:14px 16px;
+      box-shadow: var(--shadow2);
+    }
+    summary{
+      cursor:pointer;
+      font-weight:1000;
+      list-style:none;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    summary::-webkit-details-marker{ display:none; }
+    .caret{
+      width:18px; height:18px;
+      transition: transform .16s ease;
+      opacity:.9;
+      flex:0 0 auto;
+    }
+    details[open] .caret{ transform: rotate(180deg); }
+    details p{ margin:10px 0 0; color:var(--muted); font-weight:700; }
+
+    /* Contact */
+    .contact{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:16px;
+      align-items:start;
+    }
+    .contact-card{
+      border:1px solid var(--line);
+      background: rgba(15,26,48,.55);
+      border-radius: var(--radius2);
+      padding:18px;
+      box-shadow: var(--shadow2);
+    }
+    .contact-list{
+      margin:12px 0 0;
+      padding-left:18px;
+      color:var(--muted);
+      font-weight:700;
+    }
+    .contact-list li{ margin:7px 0; }
+
+    .form{
+      border:1px solid var(--line);
+      background: rgba(15,26,48,.55);
+      border-radius: var(--radius2);
+      padding:18px;
+      box-shadow: var(--shadow2);
+    }
+    .field{ display:grid; gap:6px; margin-bottom:12px; }
+    label{ font-weight:1000; font-size:13px; }
+    input, textarea, select{
+      width:100%;
+      padding:12px 12px;
+      border-radius: 14px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.22);
+      color:var(--text);
+      outline:none;
+      font: inherit;
+    }
+    input:focus, textarea:focus, select:focus{
+      border-color: rgba(124,92,255,.7);
+      box-shadow: var(--focus);
+    }
+    textarea{ resize: vertical; min-height: 130px; }
+    .error{ min-height:16px; color:#ffb4b4; font-weight:800; font-size:12px; }
+    .note{ margin:8px 0 0; font-weight:800; color:var(--muted); font-size:13px; }
+
+    /* CTA strip */
+    .cta-strip{
+      border:1px solid rgba(124,92,255,.35);
+      background: linear-gradient(180deg, rgba(124,92,255,.16), rgba(15,26,48,.55));
+      border-radius: var(--radius2);
+      padding:18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      box-shadow: 0 24px 90px rgba(124,92,255,.16);
+      overflow:hidden;
+      position:relative;
+    }
+    .cta-strip::after{
+      content:"";
+      position:absolute; inset:auto -120px -160px auto;
+      width:340px; height:340px;
+      background: radial-gradient(closest-side, rgba(34,197,94,.26), transparent 70%);
+      transform: rotate(12deg);
+      pointer-events:none;
+    }
+    .cta-strip h3{ margin:0 0 6px; }
+    .cta-strip p{ margin:0; color:var(--muted); font-weight:700; max-width: 62ch; }
+    .cta-actions{ display:flex; gap:10px; flex-wrap:wrap; position:relative; z-index:1; }
+
+    /* Footer */
+    .footer{
+      border-top:1px solid var(--line);
+      padding:22px 0;
+      color:var(--muted);
+    }
+    .footer-inner{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .footer a{ color:var(--muted); text-decoration:none; font-weight:800; }
+    .footer a:hover{ color:var(--text); }
+
+    /* Cookie banner */
+    .cookie{
+      position:fixed;
+      left:16px;
+      right:16px;
+      bottom:16px;
+      z-index:80;
+      display:none;
+    }
+    .cookie.show{ display:block; }
+    .cookie-inner{
+      width:min(var(--max), calc(100% - 0px));
+      margin-inline:auto;
+      border:1px solid var(--line);
+      border-radius: var(--radius2);
+      background: rgba(11,18,32,.88);
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
+      padding:14px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+    .cookie p{ margin:0; color:var(--muted); font-weight:700; font-size:13px; }
+    .cookie-actions{ display:flex; gap:10px; flex-wrap:wrap; }
+
+    /* Utilities */
+    .sr-only{
+      position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+      overflow:hidden; clip:rect(0,0,0,0); border:0;
+    }
+    .divider{
+      height:1px;
+      background: var(--line);
+      margin:16px 0;
+    }
+
+    /* Reveal animation */
+    .reveal{
+      opacity:0;
+      transform: translateY(12px);
+      transition: opacity .5s ease, transform .5s ease;
+    }
+    .reveal.in{
+      opacity:1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 1040px){
+      .testimonials{ grid-template-columns: 1fr; }
+      .steps{ grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 980px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      .cards{ grid-template-columns: 1fr; }
+      .pricing{ grid-template-columns: 1fr; }
+      .portfolio{ grid-template-columns: 1fr; }
+      .contact{ grid-template-columns: 1fr; }
+      .kpis{ grid-template-columns: 1fr; }
+      .nav-toggle{ display:inline-flex; }
+      .site-nav{
+        position:absolute;
+        right:16px; top:64px;
+        display:none;
+        flex-direction:column;
+        align-items:stretch;
+        min-width: 240px;
+        padding:12px;
+        background: rgba(11,18,32,.95);
+        border:1px solid var(--line);
+        border-radius: 18px;
+        box-shadow: var(--shadow);
+      }
+      .site-nav[data-open="true"]{ display:flex; }
+      .site-nav a{ width:100%; }
+      .cta-strip{ flex-direction:column; align-items:flex-start; }
+    }
+  </style>
 
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "MRS Digital Agency",
-    "url": "https://mrs-digitalagency.com/",
-    "description": "Site-uri rapide, SEO local și automatizări care aduc leaduri.",
-    "areaServed": ["BE","RO","FR","NL"],
-    "contactPoint": [{
-      "@type": "ContactPoint",
-      "contactType": "sales",
-      "availableLanguage": ["ro","en","fr","nl","es"]
-    }]
+    "@context":"https://schema.org",
+    "@type":"ProfessionalService",
+    "name":"MRS Digital Agency",
+    "url":"https://mrs-digitalagency.com/",
+    "description":"Site-uri rapide, SEO local și automatizări care aduc leaduri.",
+    "areaServed":["BE","RO","FR","NL"],
+    "contactPoint":[{"@type":"ContactPoint","contactType":"sales","availableLanguage":["ro","en","fr","nl","es"]}]
   }
   </script>
 </head>
@@ -42,20 +755,35 @@
 <body>
   <a class="skip-link" href="#main">Sari la conținut</a>
 
-  <header class="site-header" data-header>
+  <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="#top" aria-label="MRS Digital Agency - Acasă">
-        <img src="assets/img/logo.svg" alt="MRS Digital Agency" width="160" height="34" loading="eager" decoding="async" />
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M6 17V7h3l3 6 3-6h3v10h-3v-5l-3 6-3-6v5H6z" fill="white"/>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <strong>MRS Digital Agency</strong>
+          <span>Site-uri rapide • SEO local • Leaduri</span>
+        </span>
       </a>
 
-      <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" data-nav-toggle>
-        <span class="sr-only">Deschide meniul</span>
-        <span class="hamburger" aria-hidden="true"></span>
-      </button>
+      <div class="nav-actions">
+        <button class="chip" type="button" id="themeBtn" aria-label="Schimbă tema">
+          <span aria-hidden="true">🌙</span> Tema
+        </button>
+
+        <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" id="navToggle">
+          <span class="sr-only">Deschide meniul</span>
+          <span class="hamburger" aria-hidden="true"></span>
+        </button>
+      </div>
 
       <nav id="site-nav" class="site-nav" aria-label="Navigare principală" data-nav>
         <a href="#servicii">Servicii</a>
         <a href="#pachete">Pachete</a>
+        <a href="#portofoliu">Portofoliu</a>
         <a href="#proces">Proces</a>
         <a href="#faq">Întrebări</a>
         <a class="btn btn-primary" href="#contact">Consultare</a>
@@ -64,27 +792,46 @@
   </header>
 
   <main id="main" class="main" tabindex="-1">
+    <!-- HERO -->
     <section id="top" class="hero">
       <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="pill">⚡ Rapid • SEO local • Leaduri</p>
+        <div class="reveal">
+          <p class="pill"><span class="dot" aria-hidden="true"></span> Rapid • SEO local • Leaduri</p>
           <h1>Îți facem afacerea vizibilă și îți aducem clienți.</h1>
           <p class="lead">
-            Site-uri rapide + SEO local + automatizări simple. Pachete clare, fără bla-bla.
-            Începem cu un audit scurt și un plan concret.
+            Construim site-uri rapide, optimizate pentru mobil și conversii. Setăm SEO local și un flux simplu de leaduri,
+            ca să nu mai “exiști” doar pe Facebook — ci să fii găsit pe Google.
           </p>
+
           <div class="hero-cta">
-            <a class="btn btn-primary" href="#contact">Vreau consultare</a>
-            <a class="btn btn-ghost" href="#pachete">Vezi pachetele</a>
+            <a class="btn btn-primary" href="#contact">
+              <span aria-hidden="true">⚡</span> Vreau consultare
+            </a>
+            <a class="btn btn-ghost" href="#pachete">
+              <span aria-hidden="true">📦</span> Vezi pachetele
+            </a>
+            <a class="btn btn-soft" href="#audit">
+              <span aria-hidden="true">🔎</span> Audit rapid
+            </a>
           </div>
+
           <ul class="hero-trust">
-            <li>✅ Optimizat pentru mobil</li>
-            <li>✅ Viteză & SEO</li>
-            <li>✅ Mesaje care convertesc</li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Optimizat pentru mobil
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Viteză & SEO
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Mesaje care convertesc
+            </li>
           </ul>
         </div>
 
-        <div class="hero-card" role="img" aria-label="Rezultate: leaduri, trafic și conversii">
+        <div class="hero-card reveal" role="img" aria-label="Dashboard cu indicatori de performanță">
           <div class="metric">
             <span class="metric-label">Timp încărcare</span>
             <span class="metric-value">&lt; 1.5s</span>
@@ -97,196 +844,560 @@
             <span class="metric-label">Leaduri</span>
             <span class="metric-value">+ cereri</span>
           </div>
-          <p class="small muted">*Valorile depind de nișă și concurență. Îți spunem realist ce se poate.</p>
+
+          <div class="kpis">
+            <div class="kpi">
+              <strong>Structură clară</strong>
+              <span>fără pagini inutile</span>
+            </div>
+            <div class="kpi">
+              <strong>CTA-uri puternice</strong>
+              <span>pentru conversii</span>
+            </div>
+            <div class="kpi">
+              <strong>Tracking</strong>
+              <span>măsurăm tot</span>
+            </div>
+          </div>
+
+          <p class="small muted" style="margin:12px 0 0;">
+            *Rezultatele depind de nișă și concurență. Îți spunem realist ce se poate.
+          </p>
         </div>
       </div>
     </section>
 
+    <!-- SERVICES -->
     <section id="servicii" class="section">
       <div class="container">
         <header class="section-head">
-          <h2>Servicii</h2>
-          <p class="muted">Alege un pachet sau combinăm exact ce ai nevoie.</p>
+          <div class="reveal">
+            <h2>Servicii</h2>
+            <p class="muted">Alege un pachet sau combinăm exact ce ai nevoie. Totul orientat spre leaduri și rezultate, nu doar “să arate bine”.</p>
+          </div>
+          <div class="reveal">
+            <a class="btn btn-ghost" href="#contact"><span aria-hidden="true">📞</span> Discutăm 15 min</a>
+          </div>
         </header>
 
         <div class="cards">
-          <article class="card">
+          <article class="card reveal">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 5h16v14H4V5z" stroke="currentColor" stroke-width="2"/><path d="M4 9h16" stroke="currentColor" stroke-width="2"/><path d="M8 19V9" stroke="currentColor" stroke-width="2" opacity=".7"/></svg>
+            </div>
             <h3>Website rapid</h3>
             <p>Landing / site prezentare, structură clară, copy care vinde, optimizat pentru mobil.</p>
             <ul class="list">
-              <li>Design modern</li>
-              <li>Performanță</li>
-              <li>Call-to-action clar</li>
+              <li>Design modern & claritate</li>
+              <li>Performanță (viteza contează)</li>
+              <li>CTA-uri & funnel simplu</li>
             </ul>
           </article>
 
-          <article class="card">
+          <article class="card reveal">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M10 21a8 8 0 1 1 5.3-14" stroke="currentColor" stroke-width="2"/><path d="M21 21l-6-6" stroke="currentColor" stroke-width="2"/><path d="M10 10h4" stroke="currentColor" stroke-width="2" opacity=".7"/></svg>
+            </div>
             <h3>SEO local</h3>
             <p>Google Business Profile, pagini localizate, cuvinte cheie și structură care te urcă în rezultate.</p>
             <ul class="list">
-              <li>Setare & optimizare</li>
-              <li>Structură SEO</li>
-              <li>Raportare</li>
+              <li>Setare & optimizare GBP</li>
+              <li>Pagină/oraș sau zonă</li>
+              <li>Raportare de bază</li>
             </ul>
           </article>
 
-          <article class="card">
+          <article class="card reveal">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M7 7h10v10H7V7z" stroke="currentColor" stroke-width="2"/><path d="M4 12h3" stroke="currentColor" stroke-width="2"/><path d="M17 12h3" stroke="currentColor" stroke-width="2"/><path d="M12 4v3" stroke="currentColor" stroke-width="2"/><path d="M12 17v3" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
             <h3>Automatizări</h3>
             <p>Formulare, emailuri, follow-up, răspunsuri rapide. Mai puțin timp pierdut, mai multe conversii.</p>
             <ul class="list">
               <li>Flux leaduri</li>
-              <li>Template email</li>
+              <li>Template email + follow-up</li>
               <li>Integrări simple</li>
             </ul>
           </article>
         </div>
+
+        <div class="divider"></div>
+
+        <div class="grid-2">
+          <div class="card reveal">
+            <h3>Ce primești în plus (default)</h3>
+            <ul class="list">
+              <li>Structură SEO: titluri, meta, link-uri interne</li>
+              <li>Best practices pentru mobil & accesibilitate</li>
+              <li>Micro-copy: butoane + secțiuni care conving</li>
+              <li>Setare tracking (GA4 / Pixel dacă ai)</li>
+            </ul>
+          </div>
+          <div class="card reveal">
+            <h3>Pentru cine e perfect</h3>
+            <p class="muted" style="margin:0 0 10px;">
+              Dacă ai o afacere locală sau servicii și vrei cereri predictibile.
+            </p>
+            <ul class="list">
+              <li>Horeca (cafenele, restaurante)</li>
+              <li>Beauty (salon, lash, barber)</li>
+              <li>Servicii (reparații, instalatori, curățenie)</li>
+              <li>Clinici / cabinete / profesioniști</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 
+    <!-- PRICING -->
     <section id="pachete" class="section alt">
       <div class="container">
         <header class="section-head">
-          <h2>Pachete</h2>
-          <p class="muted">Transparență totală. Începem cu baza și scalăm.</p>
+          <div class="reveal">
+            <h2>Pachete</h2>
+            <p class="muted">Transparență totală. Începem cu baza și scalăm. Prețurile sunt orientative — îți facem ofertă exactă după audit.</p>
+          </div>
         </header>
 
         <div class="pricing">
-          <article class="price">
+          <article class="price reveal">
             <h3>Start</h3>
             <p class="price-tag">Pentru afaceri la început</p>
+            <div class="price-amount">
+              <span class="num">€299+</span>
+              <span class="per">o singură dată</span>
+            </div>
+            <div class="meta">
+              <span class="tag">Landing 1 pagină</span>
+              <span class="tag">SEO basic</span>
+              <span class="tag">Formular</span>
+            </div>
             <ul class="list">
-              <li>Landing page (1 pagină)</li>
-              <li>Formular contact</li>
-              <li>SEO basic</li>
+              <li>Structură clară + CTA</li>
+              <li>Optimizat pentru mobil</li>
+              <li>Copy simplu care vinde</li>
               <li>Livrare rapidă</li>
             </ul>
-            <a class="btn btn-ghost" href="#contact">Cere ofertă</a>
+            <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+              <a class="btn btn-ghost" href="#contact"><span aria-hidden="true">✉️</span> Cere ofertă</a>
+              <a class="btn btn-soft" href="#audit"><span aria-hidden="true">🔎</span> Audit</a>
+            </div>
           </article>
 
-          <article class="price featured" aria-label="Pachet recomandat">
+          <article class="price featured reveal" aria-label="Pachet recomandat">
             <div class="badge">Recomandat</div>
             <h3>Growth</h3>
             <p class="price-tag">Pentru leaduri constante</p>
+            <div class="price-amount">
+              <span class="num">€599+</span>
+              <span class="per">o singură dată</span>
+            </div>
+            <div class="meta">
+              <span class="tag">3–5 pagini</span>
+              <span class="tag">SEO local</span>
+              <span class="tag">Tracking</span>
+            </div>
             <ul class="list">
-              <li>Site 3–5 pagini</li>
-              <li>SEO local + GBP</li>
+              <li>Site complet 3–5 pagini</li>
+              <li>SEO local + GBP (basic)</li>
               <li>Copy orientat pe conversii</li>
-              <li>Setare analytics</li>
+              <li>Evenimente/analytics</li>
             </ul>
-            <a class="btn btn-primary" href="#contact">Programează consultare</a>
+            <div style="margin-top:14px;">
+              <a class="btn btn-primary" href="#contact"><span aria-hidden="true">📞</span> Programează consultare</a>
+            </div>
           </article>
 
-          <article class="price">
+          <article class="price reveal">
             <h3>Pro</h3>
             <p class="price-tag">Pentru scalare & automatizări</p>
+            <div class="price-amount">
+              <span class="num">€899+</span>
+              <span class="per">o singură dată</span>
+            </div>
+            <div class="meta">
+              <span class="tag">Pagini locații</span>
+              <span class="tag">Automatizări</span>
+              <span class="tag">Optimizări</span>
+            </div>
             <ul class="list">
-              <li>Site complet + pagini locații</li>
+              <li>Site complet + pagini orașe</li>
               <li>Automatizări follow-up</li>
-              <li>Optimizări lunare</li>
+              <li>Optimizări lunare (opțional)</li>
               <li>Raportare</li>
             </ul>
-            <a class="btn btn-ghost" href="#contact">Vorbește cu noi</a>
+            <div style="margin-top:14px;">
+              <a class="btn btn-ghost" href="#contact"><span aria-hidden="true">🤝</span> Vorbește cu noi</a>
+            </div>
+          </article>
+        </div>
+
+        <div style="margin-top:18px" class="cta-strip reveal">
+          <div>
+            <h3>Vrei să îți spunem exact ce merită făcut?</h3>
+            <p>Îți facem un audit scurt: ce lipsește, ce blochează conversiile și ce îți aduce bani în următoarele 30 zile.</p>
+          </div>
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="#audit"><span aria-hidden="true">🔎</span> Începe auditul</a>
+            <a class="btn btn-ghost" href="#contact"><span aria-hidden="true">✉️</span> Scrie-ne</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portofoliu" class="section">
+      <div class="container">
+        <header class="section-head">
+          <div class="reveal">
+            <h2>Portofoliu (demo)</h2>
+            <p class="muted">Aici poți pune proiectele tale. Am lăsat 3 “carduri” demo ca să arate complet. Le schimbi tu cu numele și descrierile reale.</p>
+          </div>
+        </header>
+
+        <div class="portfolio">
+          <article class="work reveal">
+            <div class="work-top" aria-hidden="true"></div>
+            <div class="work-body">
+              <h3>Restaurant / Cafe</h3>
+              <p>Landing cu meniu, rezervări și SEO local (oraș + cartier).</p>
+              <div class="work-foot">
+                <span class="mini">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16" stroke="currentColor" stroke-width="2"/><path d="M14 6l6 6-6 6" stroke="currentColor" stroke-width="2"/></svg>
+                  Conversii: rezervări
+                </span>
+                <span class="tag">1.2s</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="work reveal">
+            <div class="work-top" aria-hidden="true"></div>
+            <div class="work-body">
+              <h3>Beauty / Salon</h3>
+              <p>Site 5 pagini + pagină servicii + butoane WhatsApp / call.</p>
+              <div class="work-foot">
+                <span class="mini">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16" stroke="currentColor" stroke-width="2"/><path d="M14 6l6 6-6 6" stroke="currentColor" stroke-width="2"/></svg>
+                  Leaduri: programări
+                </span>
+                <span class="tag">SEO</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="work reveal">
+            <div class="work-top" aria-hidden="true"></div>
+            <div class="work-body">
+              <h3>Servicii locale</h3>
+              <p>Pagini locații + formular + automatizare follow-up pentru cereri.</p>
+              <div class="work-foot">
+                <span class="mini">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16" stroke="currentColor" stroke-width="2"/><path d="M14 6l6 6-6 6" stroke="currentColor" stroke-width="2"/></svg>
+                  Flux: email + CRM
+                </span>
+                <span class="tag">Pro</span>
+              </div>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
+    <!-- TESTIMONIALS -->
+    <section class="section alt" id="rezultate">
+      <div class="container">
+        <header class="section-head">
+          <div class="reveal">
+            <h2>Încredere & rezultate</h2>
+            <p class="muted">Pune aici testimoniale reale când le ai. Deocamdată sunt exemple ca să arate profi.</p>
+          </div>
+        </header>
+
+        <div class="testimonials">
+          <div class="quote reveal">
+            <blockquote>
+              <p>„În 2 săptămâni am trecut de la ‘nu sună nimeni’ la cereri zilnice. Site-ul e clar, rapid și oamenii înțeleg imediat ce oferim.”</p>
+            </blockquote>
+            <div class="who">
+              <span class="avatar" aria-hidden="true"></span>
+              <div>
+                <div style="font-weight:1000; color:var(--text)">Client demo</div>
+                <div style="font-size:12px">Afacere locală • BE</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="stats">
+            <div class="stat reveal">
+              <strong>+ vizibilitate</strong>
+              <span>SEO local + structură pagini</span>
+            </div>
+            <div class="stat reveal">
+              <strong>+ conversii</strong>
+              <span>CTA-uri, copy, formular clar</span>
+            </div>
+            <div class="stat reveal">
+              <strong>+ încredere</strong>
+              <span>design curat + rapiditate</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
     <section id="proces" class="section">
       <div class="container">
         <header class="section-head">
-          <h2>Proces simplu în 4 pași</h2>
-          <p class="muted">Fără haos. Fără promisiuni aiurea.</p>
+          <div class="reveal">
+            <h2>Proces simplu în 4 pași</h2>
+            <p class="muted">Fără haos. Fără promisiuni aiurea. Doar pași clari și livrare rapidă.</p>
+          </div>
         </header>
 
-        <ol class="steps">
-          <li><strong>Audit rapid</strong><span>Vedem ce ai, ce lipsește, ce aduce bani.</span></li>
-          <li><strong>Plan & structură</strong><span>Wireframe + mesaje + call-to-action.</span></li>
-          <li><strong>Implementare</strong><span>Site + SEO + tracking, totul testat.</span></li>
-          <li><strong>Optimizare</strong><span>Măsurăm, ajustăm, creștem.</span></li>
-        </ol>
+        <ul class="steps">
+          <li class="step reveal">
+            <span class="n">1</span>
+            <strong>Audit rapid</strong>
+            <span>Vedem ce ai, ce lipsește, ce aduce bani.</span>
+          </li>
+          <li class="step reveal">
+            <span class="n">2</span>
+            <strong>Plan & structură</strong>
+            <span>Wireframe + mesaje + call-to-action.</span>
+          </li>
+          <li class="step reveal">
+            <span class="n">3</span>
+            <strong>Implementare</strong>
+            <span>Site + SEO + tracking, totul testat.</span>
+          </li>
+          <li class="step reveal">
+            <span class="n">4</span>
+            <strong>Optimizare</strong>
+            <span>Măsurăm, ajustăm, creștem.</span>
+          </li>
+        </ul>
       </div>
     </section>
 
-    <section id="faq" class="section alt">
+    <!-- AUDIT (Netlify form) -->
+    <section id="audit" class="section alt">
       <div class="container">
         <header class="section-head">
-          <h2>Întrebări frecvente</h2>
+          <div class="reveal">
+            <h2>Audit rapid (gratuit)</h2>
+            <p class="muted">Spune-ne ce afacere ai și unde activezi. Îți răspundem cu pași concreți (nu roman).</p>
+          </div>
         </header>
 
-        <div class="faq" data-accordion>
-          <details>
-            <summary>Cât durează să fie gata?</summary>
-            <p>Depinde de pachet și de cât de repede primim materialele. În general, Start e cel mai rapid.</p>
+        <div class="contact">
+          <div class="contact-card reveal">
+            <h3>Ce verificăm în audit</h3>
+            <ul class="list">
+              <li>Viteză + mobile UX (primele 5 secunde contează)</li>
+              <li>Mesaj & ofertă: înțelege clientul ce vinzi?</li>
+              <li>SEO local: cum apari pe Google + GBP</li>
+              <li>Conversie: CTA-uri, formular, follow-up</li>
+            </ul>
+            <div class="divider"></div>
+            <p class="muted small" style="margin:0;">
+              Tip: dacă ai deja site, pune link-ul. Dacă nu ai, pune pagina ta de Facebook/Instagram.
+            </p>
+          </div>
+
+          <form class="form reveal" name="audit" method="POST" data-netlify="true" data-netlify-honeypot="bot-field-audit" netlify>
+            <input type="hidden" name="form-name" value="audit" />
+            <p class="sr-only"><label>Nu completa: <input name="bot-field-audit" /></label></p>
+
+            <div class="field">
+              <label for="audit_name">Nume</label>
+              <input id="audit_name" name="name" type="text" autocomplete="name" required minlength="2" />
+              <small class="error" data-error-for="audit_name"></small>
+            </div>
+
+            <div class="field">
+              <label for="audit_email">Email</label>
+              <input id="audit_email" name="email" type="email" autocomplete="email" required />
+              <small class="error" data-error-for="audit_email"></small>
+            </div>
+
+            <div class="field">
+              <label for="audit_business">Tip afacere</label>
+              <select id="audit_business" name="business_type" required>
+                <option value="" selected disabled>Alege…</option>
+                <option>Horeca</option>
+                <option>Beauty</option>
+                <option>Servicii locale</option>
+                <option>Clinică / cabinet</option>
+                <option>Altceva</option>
+              </select>
+              <small class="error" data-error-for="audit_business"></small>
+            </div>
+
+            <div class="field">
+              <label for="audit_location">Oraș / zonă</label>
+              <input id="audit_location" name="location" type="text" placeholder="ex: Bruxelles / Halle / București" required minlength="2" />
+              <small class="error" data-error-for="audit_location"></small>
+            </div>
+
+            <div class="field">
+              <label for="audit_link">Link site / social (opțional)</label>
+              <input id="audit_link" name="link" type="url" placeholder="https://..." />
+            </div>
+
+            <div class="field">
+              <label for="audit_message">Ce vrei să obții în următoarele 30 zile?</label>
+              <textarea id="audit_message" name="goal" required minlength="10" placeholder="ex: 10 cereri/săptămână, rezervări, programări etc."></textarea>
+              <small class="error" data-error-for="audit_message"></small>
+            </div>
+
+            <button class="btn btn-primary" type="submit"><span aria-hidden="true">🚀</span> Trimite audit</button>
+            <p class="note" id="auditNote" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section">
+      <div class="container">
+        <header class="section-head">
+          <div class="reveal">
+            <h2>Întrebări frecvente</h2>
+            <p class="muted">Răspunsuri scurte, fără “marketing fluff”.</p>
+          </div>
+        </header>
+
+        <div class="faq">
+          <details class="reveal">
+            <summary>
+              Cât durează să fie gata?
+              <svg class="caret" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </summary>
+            <p>Depinde de pachet și de cât de repede primim materialele. Pentru Start, de obicei e foarte rapid; pentru Growth/Pro, depinde de pagini și conținut.</p>
           </details>
-          <details>
-            <summary>Lucrați și în Belgia (FR/NL)?</summary>
-            <p>Da. Putem face site-uri multilingve și SEO local pe orașe/zone.</p>
+
+          <details class="reveal">
+            <summary>
+              Lucrați în Belgia (FR/NL) și în România?
+              <svg class="caret" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </summary>
+            <p>Da. Putem face site-uri multilingve și SEO local pe orașe/zone. Important e să alegem clar pagina/limba pentru fiecare zonă.</p>
           </details>
-          <details>
-            <summary>Pot să primesc un audit înainte?</summary>
-            <p>Da. Îți facem o analiză scurtă și îți spunem direct ce are impact.</p>
+
+          <details class="reveal">
+            <summary>
+              Puteți integra WhatsApp / call / programări?
+              <svg class="caret" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </summary>
+            <p>Da. Putem adăuga butoane rapide, formulare, rezervări și automatizări de follow-up, în funcție de pachet.</p>
+          </details>
+
+          <details class="reveal">
+            <summary>
+              Aveți mentenanță / optimizări lunare?
+              <svg class="caret" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </summary>
+            <p>Da, opțional. Uneori e suficient “one-time setup”, alteori are sens optimizarea lunară (mai ales pe SEO local/locații).</p>
           </details>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section">
-      <div class="container contact">
-        <div>
-          <h2>Hai să începem</h2>
-          <p class="muted">
-            Completează formularul și îți răspundem cu pași clari.
-          </p>
+    <!-- CONTACT -->
+    <section id="contact" class="section alt">
+      <div class="container">
+        <header class="section-head">
+          <div class="reveal">
+            <h2>Contact</h2>
+            <p class="muted">Completează formularul și îți răspundem cu pași clari. Sau scrie direct pe email.</p>
+          </div>
+        </header>
 
-          <ul class="contact-list">
-            <li><strong>Email:</strong> <a href="mailto:contact@mrs-digitalagency.com">contact@mrs-digitalagency.com</a></li>
-            <li><strong>Program:</strong> Lun–Vin</li>
-            <li><strong>Limbi:</strong> RO / EN / FR / NL / ES</li>
-          </ul>
+        <div class="contact">
+          <div class="contact-card reveal">
+            <h3>Detalii rapide</h3>
+            <ul class="contact-list">
+              <li><strong>Email:</strong> <a href="mailto:contact@mrs-digitalagency.com">contact@mrs-digitalagency.com</a></li>
+              <li><strong>Program:</strong> Lun–Vin</li>
+              <li><strong>Limbi:</strong> RO / EN / FR / NL / ES</li>
+              <li><strong>Focus:</strong> afaceri locale & servicii</li>
+            </ul>
+
+            <div class="divider"></div>
+
+            <h3 style="margin:0 0 8px;">Ce include consultarea</h3>
+            <ul class="list">
+              <li>Îți spunem ce pachet are sens</li>
+              <li>Îți arătăm ce te ține pe loc acum</li>
+              <li>Plan de acțiune simplu (priorități)</li>
+            </ul>
+          </div>
+
+          <!-- Netlify Forms -->
+          <form class="form reveal" id="leadForm" name="lead" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" netlify>
+            <input type="hidden" name="form-name" value="lead" />
+            <p class="sr-only"><label>Nu completa: <input name="bot-field" /></label></p>
+
+            <div class="field">
+              <label for="name">Nume</label>
+              <input id="name" name="name" type="text" autocomplete="name" required minlength="2" />
+              <small class="error" data-error-for="name"></small>
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+              <small class="error" data-error-for="email"></small>
+            </div>
+
+            <div class="field">
+              <label for="company">Firmă (opțional)</label>
+              <input id="company" name="company" type="text" autocomplete="organization" />
+            </div>
+
+            <div class="field">
+              <label for="interest">Ce te interesează?</label>
+              <select id="interest" name="interest" required>
+                <option value="" selected disabled>Alege…</option>
+                <option>Website rapid</option>
+                <option>SEO local</option>
+                <option>Automatizări</option>
+                <option>Tot pachetul (Growth/Pro)</option>
+              </select>
+              <small class="error" data-error-for="interest"></small>
+            </div>
+
+            <div class="field">
+              <label for="message">Cu ce te ajutăm?</label>
+              <textarea id="message" name="message" required minlength="10" placeholder="Scrie pe scurt: ce vinzi, în ce oraș, ce vrei să obții."></textarea>
+              <small class="error" data-error-for="message"></small>
+            </div>
+
+            <button class="btn btn-primary" type="submit"><span aria-hidden="true">✅</span> Trimite</button>
+            <p class="note" id="formNote" aria-live="polite"></p>
+          </form>
         </div>
 
-        <!-- Netlify Forms -->
-        <form
-          class="form"
-          id="leadForm"
-          name="lead"
-          method="POST"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-          netlify
-        >
-          <input type="hidden" name="form-name" value="lead" />
-
-          <p class="sr-only">
-            <label>Nu completa acest câmp: <input name="bot-field" /></label>
-          </p>
-
-          <div class="field">
-            <label for="name">Nume</label>
-            <input id="name" name="name" type="text" autocomplete="name" required minlength="2" />
-            <small class="error" data-error-for="name"></small>
+        <div style="margin-top:18px" class="cta-strip reveal">
+          <div>
+            <h3>Vrei să începem chiar azi?</h3>
+            <p>Dă-ne 2–3 detalii și îți răspundem cu “ce facem acum / ce facem după”. Simplu.</p>
           </div>
-
-          <div class="field">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" autocomplete="email" required />
-            <small class="error" data-error-for="email"></small>
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="#contact"><span aria-hidden="true">⚡</span> Trimite cerere</a>
+            <a class="btn btn-ghost" href="#pachete"><span aria-hidden="true">📦</span> Pachete</a>
           </div>
-
-          <div class="field">
-            <label for="company">Firmă (opțional)</label>
-            <input id="company" name="company" type="text" autocomplete="organization" />
-          </div>
-
-          <div class="field">
-            <label for="message">Cu ce te ajutăm?</label>
-            <textarea id="message" name="message" rows="5" required minlength="10"></textarea>
-            <small class="error" data-error-for="message"></small>
-          </div>
-
-          <button class="btn btn-primary" type="submit">Trimite</button>
-          <p class="small muted" id="formNote" aria-live="polite"></p>
-        </form>
+        </div>
       </div>
     </section>
   </main>
@@ -294,389 +1405,152 @@
   <footer class="footer">
     <div class="container footer-inner">
       <p>© <span id="year"></span> MRS Digital Agency. Toate drepturile rezervate.</p>
-      <a href="#top">Sus ↑</a>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="#top">Sus ↑</a>
+        <a href="#contact">Contact</a>
+      </div>
     </div>
   </footer>
 
-  <script defer src="assets/js/main.js"></script>
-</body>
-</html>
-/* assets/css/styles.css */
-:root{
-  --bg:#0b1220;
-  --panel:#0f1a30;
-  --text:#e9eefc;
-  --muted:#b8c3e6;
-  --line:rgba(255,255,255,.12);
-  --accent:#7c5cff;
-  --accent2:#22c55e;
-  --shadow: 0 20px 60px rgba(0,0,0,.35);
-  --radius: 18px;
-  --max: 1120px;
-}
+  <!-- Cookie banner -->
+  <div class="cookie" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Preferințe cookie">
+    <div class="cookie-inner">
+      <p>Folosim cookie-uri pentru funcționalitate și statistici de bază. Poți accepta sau refuza.</p>
+      <div class="cookie-actions">
+        <button class="btn btn-ghost" type="button" id="cookieReject">Refuz</button>
+        <button class="btn btn-primary" type="button" id="cookieAccept">Accept</button>
+      </div>
+    </div>
+  </div>
 
-*{ box-sizing:border-box; }
-html{ scroll-behavior:smooth; }
-body{
-  margin:0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: radial-gradient(1200px 700px at 20% -10%, rgba(124,92,255,.25), transparent 60%),
-              radial-gradient(900px 600px at 90% 10%, rgba(34,197,94,.18), transparent 55%),
-              var(--bg);
-  color:var(--text);
-  line-height:1.5;
-}
+  <script>
+  (() => {
+    "use strict";
 
-img{ max-width:100%; height:auto; display:block; }
+    const qs = (sel, root=document) => root.querySelector(sel);
 
-.container{
-  width:min(var(--max), calc(100% - 32px));
-  margin-inline:auto;
-}
+    // Year
+    const yearEl = qs("#year");
+    if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-.skip-link{
-  position:absolute; left:-999px; top:auto;
-  width:1px; height:1px; overflow:hidden;
-}
-.skip-link:focus{
-  left:16px; top:16px; width:auto; height:auto;
-  background:#000; color:#fff; padding:10px 12px; border-radius:10px;
-  z-index:9999;
-}
-
-.site-header{
-  position:sticky; top:0; z-index:50;
-  backdrop-filter: blur(10px);
-  background: rgba(11,18,32,.75);
-  border-bottom:1px solid var(--line);
-}
-.header-inner{
-  display:flex; align-items:center; justify-content:space-between;
-  padding:14px 0;
-}
-.brand{ display:flex; align-items:center; gap:10px; text-decoration:none; color:inherit; }
-
-.site-nav{
-  display:flex; align-items:center; gap:18px;
-}
-.site-nav a{
-  color:var(--muted); text-decoration:none; font-weight:600;
-}
-.site-nav a:hover{ color:var(--text); }
-
-.nav-toggle{
-  display:none;
-  border:1px solid var(--line);
-  background:transparent;
-  color:var(--text);
-  padding:10px 12px;
-  border-radius:12px;
-}
-.hamburger{
-  width:22px; height:2px; background:var(--text);
-  display:block; position:relative;
-}
-.hamburger::before,.hamburger::after{
-  content:""; position:absolute; left:0; width:22px; height:2px; background:var(--text);
-}
-.hamburger::before{ top:-7px; }
-.hamburger::after{ top:7px; }
-
-.main{ outline:none; }
-
-.hero{
-  padding:56px 0 26px;
-}
-.hero-grid{
-  display:grid;
-  grid-template-columns: 1.15fr .85fr;
-  gap:28px;
-  align-items:start;
-}
-.pill{
-  display:inline-flex; gap:8px; align-items:center;
-  padding:8px 12px;
-  border:1px solid var(--line);
-  border-radius:999px;
-  color:var(--muted);
-  margin:0 0 14px;
-}
-h1{ font-size: clamp(34px, 4vw, 54px); line-height:1.05; margin:0 0 12px; }
-.lead{ color:var(--muted); font-size:18px; margin:0 0 18px; }
-
-.hero-cta{ display:flex; gap:12px; flex-wrap:wrap; margin:10px 0 12px; }
-.hero-trust{
-  list-style:none; padding:0; margin:12px 0 0;
-  display:flex; gap:16px; flex-wrap:wrap; color:var(--muted);
-}
-.hero-card{
-  border:1px solid var(--line);
-  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-  border-radius: var(--radius);
-  padding:18px;
-  box-shadow: var(--shadow);
-}
-.metric{
-  display:flex; justify-content:space-between; align-items:baseline;
-  padding:12px 0;
-  border-bottom:1px solid var(--line);
-}
-.metric:last-of-type{ border-bottom:none; }
-.metric-label{ color:var(--muted); font-weight:600; }
-.metric-value{ font-weight:800; }
-.small{ font-size:13px; }
-.muted{ color:var(--muted); }
-
-.section{ padding:52px 0; }
-.section.alt{
-  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0));
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-}
-.section-head{ margin-bottom:18px; }
-.section-head h2{ margin:0 0 8px; font-size:30px; }
-.section-head p{ margin:0; }
-
-.cards{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap:16px;
-}
-.card{
-  border:1px solid var(--line);
-  background: rgba(15,26,48,.55);
-  border-radius: var(--radius);
-  padding:18px;
-}
-.card h3{ margin:0 0 8px; }
-.list{ margin:10px 0 0; padding-left:18px; color:var(--muted); }
-
-.pricing{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap:16px;
-  align-items:stretch;
-}
-.price{
-  position:relative;
-  border:1px solid var(--line);
-  background: rgba(15,26,48,.55);
-  border-radius: var(--radius);
-  padding:18px;
-}
-.price.featured{
-  border-color: rgba(124,92,255,.55);
-  box-shadow: 0 20px 80px rgba(124,92,255,.18);
-}
-.badge{
-  position:absolute; top:14px; right:14px;
-  background: rgba(124,92,255,.18);
-  border:1px solid rgba(124,92,255,.45);
-  padding:6px 10px; border-radius:999px;
-  font-size:12px; color:var(--text);
-}
-.price-tag{ margin:4px 0 10px; color:var(--muted); }
-
-.steps{
-  margin:0; padding-left:18px;
-  display:grid; gap:10px;
-  color:var(--muted);
-}
-.steps li strong{ color:var(--text); display:block; margin-bottom:2px; }
-
-.faq details{
-  border:1px solid var(--line);
-  background: rgba(15,26,48,.55);
-  border-radius: 14px;
-  padding:14px 16px;
-}
-.faq{ display:grid; gap:10px; }
-.faq summary{
-  cursor:pointer;
-  font-weight:700;
-}
-.faq p{ margin:10px 0 0; color:var(--muted); }
-
-.contact{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap:18px;
-  align-items:start;
-}
-.contact-list{ padding-left:18px; color:var(--muted); }
-
-.form{
-  border:1px solid var(--line);
-  background: rgba(15,26,48,.55);
-  border-radius: var(--radius);
-  padding:18px;
-}
-.field{ display:grid; gap:6px; margin-bottom:12px; }
-label{ font-weight:700; }
-input, textarea{
-  width:100%;
-  padding:12px 12px;
-  border-radius: 12px;
-  border:1px solid var(--line);
-  background: rgba(0,0,0,.25);
-  color:var(--text);
-  outline:none;
-}
-input:focus, textarea:focus{
-  border-color: rgba(124,92,255,.7);
-  box-shadow: 0 0 0 4px rgba(124,92,255,.15);
-}
-.error{ min-height:16px; color:#ffb4b4; }
-
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  padding:12px 14px;
-  border-radius: 999px;
-  border:1px solid var(--line);
-  text-decoration:none;
-  font-weight:800;
-  cursor:pointer;
-  user-select:none;
-}
-.btn-primary{
-  background: linear-gradient(180deg, rgba(124,92,255,1), rgba(124,92,255,.82));
-  border-color: rgba(124,92,255,.7);
-  color:white;
-}
-.btn-primary:hover{ filter: brightness(1.06); }
-.btn-ghost{
-  background: transparent;
-  color:var(--text);
-}
-.btn-ghost:hover{ background: rgba(255,255,255,.06); }
-
-.footer{
-  border-top:1px solid var(--line);
-  padding:22px 0;
-  color:var(--muted);
-}
-.footer-inner{
-  display:flex; justify-content:space-between; align-items:center;
-  gap:12px; flex-wrap:wrap;
-}
-.footer a{ color:var(--muted); text-decoration:none; }
-.footer a:hover{ color:var(--text); }
-
-.sr-only{
-  position:absolute; width:1px; height:1px; padding:0; margin:-1px;
-  overflow:hidden; clip:rect(0,0,0,0); border:0;
-}
-
-@media (max-width: 980px){
-  .hero-grid{ grid-template-columns: 1fr; }
-  .cards{ grid-template-columns: 1fr; }
-  .pricing{ grid-template-columns: 1fr; }
-  .contact{ grid-template-columns: 1fr; }
-  .nav-toggle{ display:inline-flex; }
-  .site-nav{
-    position:absolute;
-    right:16px; top:64px;
-    display:none;
-    flex-direction:column;
-    min-width: 220px;
-    padding:12px;
-    background: rgba(11,18,32,.95);
-    border:1px solid var(--line);
-    border-radius: 16px;
-  }
-  .site-nav[data-open="true"]{ display:flex; }
-}
-// assets/js/main.js
-(() => {
-  "use strict";
-
-  const qs = (sel, root = document) => root.querySelector(sel);
-
-  const yearEl = qs("#year");
-  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
-
-  const nav = qs("[data-nav]");
-  const toggle = qs("[data-nav-toggle]");
-  if (nav && toggle) {
+    // Mobile nav
+    const nav = qs("[data-nav]");
+    const toggle = qs("#navToggle");
     const closeNav = () => {
+      if (!nav || !toggle) return;
       nav.dataset.open = "false";
       toggle.setAttribute("aria-expanded", "false");
     };
     const openNav = () => {
+      if (!nav || !toggle) return;
       nav.dataset.open = "true";
       toggle.setAttribute("aria-expanded", "true");
     };
-
-    closeNav();
-
-    toggle.addEventListener("click", () => {
-      const isOpen = nav.dataset.open === "true";
-      isOpen ? closeNav() : openNav();
-    });
-
-    nav.addEventListener("click", (e) => {
-      const t = e.target;
-      if (t && t.matches("a")) closeNav();
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeNav();
-    });
-  }
-
-  const form = qs("#leadForm");
-  const note = qs("#formNote");
-
-  const setError = (name, msg) => {
-    const el = qs(`[data-error-for="${name}"]`);
-    if (el) el.textContent = msg || "";
-  };
-
-  const validate = (data) => {
-    let ok = true;
-    setError("name", "");
-    setError("email", "");
-    setError("message", "");
-
-    if (!data.name || data.name.trim().length < 2) {
-      setError("name", "Te rog scrie un nume valid (minim 2 caractere).");
-      ok = false;
+    if (nav && toggle) {
+      closeNav();
+      toggle.addEventListener("click", () => {
+        const isOpen = nav.dataset.open === "true";
+        isOpen ? closeNav() : openNav();
+      });
+      nav.addEventListener("click", (e) => {
+        const t = e.target;
+        if (t && t.matches("a")) closeNav();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeNav();
+      });
     }
 
-    const email = (data.email || "").trim();
-    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    if (!emailOk) {
-      setError("email", "Te rog scrie un email valid.");
-      ok = false;
+    // Reveal on scroll (safe, no deps)
+    const revealEls = Array.from(document.querySelectorAll(".reveal"));
+    const io = ("IntersectionObserver" in window)
+      ? new IntersectionObserver((entries) => {
+          entries.forEach((en) => {
+            if (en.isIntersecting) {
+              en.target.classList.add("in");
+              io.unobserve(en.target);
+            }
+          });
+        }, { threshold: 0.12 })
+      : null;
+
+    if (io) {
+      revealEls.forEach(el => io.observe(el));
+    } else {
+      revealEls.forEach(el => el.classList.add("in"));
     }
 
-    if (!data.message || data.message.trim().length < 10) {
-      setError("message", "Te rog descrie pe scurt (minim 10 caractere).");
-      ok = false;
+    // Theme toggle (simple: toggles a "light" palette)
+    const themeBtn = qs("#themeBtn");
+    const applyTheme = (mode) => {
+      if (mode === "light") {
+        document.documentElement.style.setProperty("--bg", "#f6f7ff");
+        document.documentElement.style.setProperty("--panel", "#ffffff");
+        document.documentElement.style.setProperty("--panel2", "#ffffff");
+        document.documentElement.style.setProperty("--text", "#0b1220");
+        document.documentElement.style.setProperty("--muted", "#44507a");
+        document.documentElement.style.setProperty("--line", "rgba(11,18,32,.12)");
+      } else {
+        document.documentElement.style.setProperty("--bg", "#0b1220");
+        document.documentElement.style.setProperty("--panel", "#0f1a30");
+        document.documentElement.style.setProperty("--panel2", "#0c1528");
+        document.documentElement.style.setProperty("--text", "#e9eefc");
+        document.documentElement.style.setProperty("--muted", "#b8c3e6");
+        document.documentElement.style.setProperty("--line", "rgba(255,255,255,.12)");
+      }
+      try { localStorage.setItem("mrs_theme", mode); } catch(_) {}
+    };
+
+    try {
+      const saved = localStorage.getItem("mrs_theme");
+      if (saved) applyTheme(saved);
+    } catch(_) {}
+
+    if (themeBtn) {
+      themeBtn.addEventListener("click", () => {
+        let mode = "dark";
+        try { mode = localStorage.getItem("mrs_theme") || "dark"; } catch(_) {}
+        applyTheme(mode === "dark" ? "light" : "dark");
+      });
     }
 
-    return ok;
-  };
+    // Forms: client-side validation + POST to Netlify endpoint (keeps page)
+    const validateEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(v || "").trim());
 
-  if (form) {
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      if (note) note.textContent = "";
+    const setErr = (name, msg) => {
+      const el = qs(`[data-error-for="${name}"]`);
+      if (el) el.textContent = msg || "";
+    };
 
+    const submitNetlify = async (form, noteEl, rules) => {
       const fd = new FormData(form);
-      const data = {
-        name: String(fd.get("name") || ""),
-        email: String(fd.get("email") || ""),
-        message: String(fd.get("message") || "")
-      };
+      let ok = true;
 
-      if (!validate(data)) {
-        if (note) note.textContent = "Verifică câmpurile marcate mai sus.";
+      // clear all errors known
+      Object.keys(rules).forEach(k => setErr(k, ""));
+
+      for (const [field, rule] of Object.entries(rules)) {
+        const v = String(fd.get(rule.name) || "");
+        if (rule.type === "minlen" && v.trim().length < rule.min) {
+          setErr(field, rule.msg);
+          ok = false;
+        }
+        if (rule.type === "email" && !validateEmail(v)) {
+          setErr(field, rule.msg);
+          ok = false;
+        }
+        if (rule.type === "required" && !v.trim()) {
+          setErr(field, rule.msg);
+          ok = false;
+        }
+      }
+
+      if (!ok) {
+        if (noteEl) noteEl.textContent = "Verifică câmpurile marcate mai sus.";
         return;
       }
+
+      if (noteEl) noteEl.textContent = "Se trimite…";
 
       try {
         const res = await fetch("/", {
@@ -684,41 +1558,68 @@ input:focus, textarea:focus{
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
           body: new URLSearchParams(fd).toString()
         });
-
-        if (!res.ok) throw new Error("Network response was not ok");
-
+        if (!res.ok) throw new Error("Bad response");
         form.reset();
-        if (note) note.textContent = "✅ Mulțumim! Mesajul a fost trimis. Revenim cât mai repede.";
-      } catch (_) {
-        if (note) note.textContent = "❌ Nu s-a putut trimite acum. Te rog încearcă din nou sau scrie pe email.";
+        if (noteEl) noteEl.textContent = "✅ Mulțumim! Mesajul a fost trimis. Revenim cât mai repede.";
+      } catch (e) {
+        if (noteEl) noteEl.textContent = "❌ Nu s-a putut trimite acum. Te rog încearcă din nou sau scrie pe email.";
       }
-    });
-  }
-})();
-<!-- assets/img/logo.svg -->
-<svg xmlns="http://www.w3.org/2000/svg" width="240" height="48" viewBox="0 0 240 48" fill="none">
-  <rect x="2" y="6" width="36" height="36" rx="12" fill="#7C5CFF"/>
-  <path d="M14 32V16h4l4 8 4-8h4v16h-4V23l-4 8-4-8v9h-4z" fill="white"/>
-  <text x="52" y="31" font-family="system-ui,Segoe UI,Roboto,Arial" font-size="18" font-weight="800" fill="#E9EEFC">MRS Digital Agency</text>
-</svg>
-<!-- assets/img/og-cover.svg -->
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0B1220"/>
-      <stop offset="1" stop-color="#0F1A30"/>
-    </linearGradient>
-  </defs>
-  <rect width="1200" height="630" fill="url(#g)"/>
-  <circle cx="250" cy="160" r="220" fill="#7C5CFF" fill-opacity=".25"/>
-  <circle cx="980" cy="160" r="260" fill="#22C55E" fill-opacity=".18"/>
-  <rect x="90" y="120" width="1020" height="390" rx="28" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.14)"/>
-  <text x="140" y="250" font-family="system-ui,Segoe UI,Roboto,Arial" font-size="58" font-weight="900" fill="#E9EEFC">MRS Digital Agency</text>
-  <text x="140" y="320" font-family="system-ui,Segoe UI,Roboto,Arial" font-size="30" font-weight="700" fill="#B8C3E6">Site-uri rapide • SEO local • Leaduri</text>
-  <text x="140" y="385" font-family="system-ui,Segoe UI,Roboto,Arial" font-size="24" font-weight="600" fill="#B8C3E6">Pachete clare. Rezultate măsurabile.</text>
-</svg>
-<!-- assets/img/favicon.svg -->
-<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
-  <rect x="6" y="6" width="52" height="52" rx="18" fill="#7C5CFF"/>
-  <path d="M18 44V20h6l8 14 8-14h6v24h-6V32l-8 14-8-14v12h-6z" fill="white"/>
-</svg>
+    };
+
+    const leadForm = qs("#leadForm");
+    const leadNote = qs("#formNote");
+    if (leadForm) {
+      leadForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        submitNetlify(leadForm, leadNote, {
+          name: { type:"minlen", name:"name", min:2, msg:"Te rog scrie un nume valid (minim 2 caractere)." },
+          email: { type:"email", name:"email", msg:"Te rog scrie un email valid." },
+          interest: { type:"required", name:"interest", msg:"Te rog alege ce te interesează." },
+          message: { type:"minlen", name:"message", min:10, msg:"Te rog descrie pe scurt (minim 10 caractere)." }
+        });
+      });
+    }
+
+    const auditForm = qs('form[name="audit"]');
+    const auditNote = qs("#auditNote");
+    if (auditForm) {
+      auditForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        submitNetlify(auditForm, auditNote, {
+          audit_name: { type:"minlen", name:"name", min:2, msg:"Te rog scrie un nume valid (minim 2 caractere)." },
+          audit_email: { type:"email", name:"email", msg:"Te rog scrie un email valid." },
+          audit_business: { type:"required", name:"business_type", msg:"Te rog alege tipul de afacere." },
+          audit_location: { type:"minlen", name:"location", min:2, msg:"Te rog scrie oraș/zona (minim 2 caractere)." },
+          audit_message: { type:"minlen", name:"goal", min:10, msg:"Te rog descrie obiectivul (minim 10 caractere)." }
+        });
+      });
+    }
+
+    // Cookie banner (simple)
+    const banner = qs("#cookieBanner");
+    const accept = qs("#cookieAccept");
+    const reject = qs("#cookieReject");
+    const KEY = "mrs_cookie_choice";
+
+    const hideBanner = () => { if (banner) banner.classList.remove("show"); };
+    const showBanner = () => { if (banner) banner.classList.add("show"); };
+
+    try {
+      const choice = localStorage.getItem(KEY);
+      if (!choice) showBanner();
+    } catch(_) {
+      // if storage blocked, just show it
+      showBanner();
+    }
+
+    const setChoice = (v) => {
+      try { localStorage.setItem(KEY, v); } catch(_) {}
+      hideBanner();
+    };
+
+    if (accept) accept.addEventListener("click", () => setChoice("accepted"));
+    if (reject) reject.addEventListener("click", () => setChoice("rejected"));
+  })();
+  </script>
+</body>
+</html>
